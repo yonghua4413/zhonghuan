@@ -1,0 +1,168 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+		<style>
+			.yhjthuadong img{
+				width:100%;
+				height:auto;
+			}
+		</style>
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_yihuajt.js"></script>
+
+	<body>
+
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">{$bg.titd}</span>
+			</div>
+
+			<div class="z_yihuafour">
+				<div class="" style="width:100%;overflow-x:auto;" id="fiveCom">
+					<ul class="z_fourWord">
+						<li class="z_jtzpWo">{$con1.0.title}</li>
+						<li class="z_jtzpWo">{$con1.1.title}</li>
+						<li class="z_jtzpWo">{$con1.2.title}</li>
+						<li class="z_jtzpWo">{$con1.3.title}</li>
+						<li class="z_jtzpWo">{$con1.4.title}</li>
+					</ul>
+				</div>
+			</div>
+            <div style="width: 100%;height: 0.4rem;overflow-x: auto;position: relative;top: 0.32rem;">
+				<div class="z_yihuafourline"></div>
+				<div class="z_fourcircle" id="z_fourcircle"></div>
+			</div>
+			<div class="yhjthuadong" id="carouselFour">
+				<ul class="row">
+					<li class="cloumn" style="height: 9rem;background-color: white;">
+						<div class="cloumn z_cneterfour">
+							<img src="__STATICI__/m_img/qiyeyuan.jpg" class="z_yihuajtImg" alt="集团发展愿景"/>
+						</div>
+						{$con1.0.content}
+					</li>
+					<li class="z_fourjtzp">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj" id="z_jituanzp">{$con1.1.title}</div>
+							<div class="z_jituanxian"></div>
+							<div id="yhjttable">{$con1.1.content}
+							</div>
+						</div>
+					</li>
+					<li style="height: 100%;">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">{$con1.2.title}</div>
+							<div class="z_jituanxian"></div>
+
+							<div class="z_jituanwen">		
+								{$con1.2.content}
+							</div>
+						</div>
+					</li>
+					<li class="z_fourjtzp">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj" id="z_jituanzp">{$con1.3.title}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$con1.3.content}</div>
+						</div>
+					</li>
+					<li>
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">{$con1.4.title}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$con1.4.content}</div>
+							<img src="__STATICI__/m_img/rencaitixi.jpg" class="z_yihuajtImg" alt="公司人才体系"/>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="z_jtzpxx">
+				<ul>
+					{volist name="data" id="vo"}
+					<li>
+						<a href="{:URL('/rencaizp',['pid'=>$vo.id])}" class="row">
+
+							<div class="cloumn" style="width: 100%; height: 100%; align-items: stretch; -webkit-align-items: stretch;">
+								<div class="row" style="margin-top: 0.1rem;">
+									<span class="z_zhaozpzw">{$vo.name}</span>
+									<div class="z_zhaozprs row">
+										<span class="z_zhaozprsNum">{$vo.num}</span>
+										<span class="z_zhaozprsdw">人</span>
+									</div>
+								</div>
+
+								<div class="z_zhaozpxq">
+									<span class="z_zhaozpxqSpan">
+		    						{$vo.miaosu}
+		    					</span>
+								</div>
+							</div>
+						</a>
+					</li>
+					{/volist}
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		$(window).load(function() {  
+			$("table").css("width","100%");
+	    });  
+	</script>
+
+</html>

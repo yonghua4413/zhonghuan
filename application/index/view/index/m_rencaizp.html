@@ -1,0 +1,120 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<style type="text/css">
+		.bdsharebuttonbox {
+			position: absolute;
+			left: 0.8rem;
+			opacity: 0;
+		}
+	</style>
+
+	<body>
+
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="__STATICI__/m_img/logo.png" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;4000-888-115转88</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/lianxiwomen')}">商务合作</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">人才招聘</span>
+			</div>
+
+			<div class="nesinfos row">
+				<div class="column" style="width: 100%;">
+					<span class="newinfotitle">{$data.name}</span>
+					<span class="ninfbd"></span>
+				</div>
+			</div>
+
+			<div class="column recruitinfo">
+				<div class="cruitininfo row">
+					<span>时间：{$data.date_time|date="Y-m-d",###}</span>
+					<span>浏览次数：{$data.look}次</span>
+					<span class="row" style="position: relative;">分享：<img src="__STATICI__/m_img/shareicon.png"/><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":[],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":[]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></span>
+
+				</div>
+			</div>
+
+			<div class="recruitct">
+
+				<div class="recruitcttitle">
+					工作地点:&nbsp;&nbsp;<span class="recruitctcont">{$data.where1}</span>
+				</div>
+				<div class="recruitcttitle">
+					{$data.content}
+				</div>
+				<!--<div class="recruitcttitle">-->
+				<!--岗位要求：-->
+				<!--<p class="recruitctcont">1.参与公司开发项目的机构方案的审核，提出优化机构方案的方案</p>-->
+				<!--<p class="recruitctcont">2.放着相关专业图纸，确保图纸内哦天呐准确率.</p>-->
+				<!--<p class="recruitctcont">3.对工程技术、质量、进度、安全进行全过程管理</p>-->
+				<!--<p class="recruitctcont">4.于总包分包进行工程沟通协调，确保公厕和国内精度符合公司计划</p>-->
+				<!--<p class="recruitctcont">5.生和本专业的设计变更，核签有关工程进度，质量，费用签证</p>-->
+				<!--</div>-->
+				<div class="recruitcttitle">
+					联系方式:&nbsp;&nbsp;<span class="recruitctcont">4000-888-115</span>
+				</div>
+				<div class="recruitcttitle">
+					建立投递:&nbsp;&nbsp;<span class="recruitctcont">jojoy1994@qq.com</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:4000888115">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+	</script>
+
+</html>

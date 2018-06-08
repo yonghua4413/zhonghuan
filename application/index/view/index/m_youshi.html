@@ -1,0 +1,179 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_maidian.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_maidian.js"></script>
+    <style type="text/css">
+    	.z_yihuafourline {
+		    width: 100%;
+		    height: 0.02rem;
+		    background-color: #BCAB7A;
+		    margin-top: 0.1rem;
+		    position: relative;
+		    top: 0.25rem;
+		}
+		.z_fourcircle {
+		    width: 0.2rem;
+		    height: 0.2rem;
+		    border-radius: 50%;
+		    position: absolute;
+		    left: 1.6rem;
+		    top: -0.2rem;
+		    background-color: #BCAB7A;
+		    margin-top: 0.1rem;
+		}
+		.top_center_word {
+		    font-size: 20px;;
+		    color: white;
+		    letter-spacing: 5px;
+		    font-weight: bolder;
+		    position: relative;
+		    bottom: 150px;
+		    font-family: fztysj;
+		}
+		.center_center_word{
+			font-size: 5px;
+		    color: #bcab7a;
+		    letter-spacing: 2px;
+		    font-weight: 10;
+			position: relative;
+			top: -140px;
+		}
+		.bottom_center_word {
+		    font-size: 5px;
+		    line-height: 68px;
+		    background-color: rgb(188, 171, 122);
+		    color: white;
+		    letter-spacing: 3px;
+		    font-family: 方正特雅宋简;
+		    margin: 0px auto;
+		    position: relative;
+   			top: -150px;
+		}
+    </style>
+	<body>
+
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" />
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/lianxiwomen')}">商务合作</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="z_topImgBox">
+				<img src="{$data.img}" class="z_topImgBoxImg" />
+				<center>
+				<span class="top_center_word">{$data.titd}</span>
+				</center>
+				<center>
+				<span class="center_center_word">{$data.tity}</span>
+				</center>
+				<center>
+	            <span class="bottom_center_word">{$data.titx}</span>
+	            </center>
+			</div>
+			<div class="z_yihuafour cloumn">
+				<ul class="row z_fourWord">
+					<li id="z_xuexiaoLi1">学校</li>
+					<li>交通</li>
+					<li>配套</li>
+					<li id="z_jtzpWo">环境</li>
+				</ul>
+			</div>
+			<div class="z_yihuafourline">
+				<div class="z_fourcircle" id="z_fourcircle"></div>
+			</div>
+			<div class="yhjthuadong" id="carouselFour">
+				<ul>
+					<li class="cloumn">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">{$data.titd1}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$data.miaosu1}</div>
+							<img src="{$data.img1}" class="z_yihuajtImg" alt="教育优势"/>
+						</div>
+					</li>
+					<li>
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">{$data.titd2}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$data.miaosu2}</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">{$data.titd3}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$data.miaosu3}</div>
+							<img src="{$data.img3}" class="z_yihuajtImg" alt="配套优势"/>
+						</div>
+					</li>
+					<li class="z_fourjtzp">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj" id="z_jituanzp">{$data.titd4}</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">{$data.miaosu4}</div>
+						</div>
+
+						<img src="{$data.img4}" class="z_yihuajtImg" alt="环境优势"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="z_jtzpxx">
+			<img src="{$data.img2}" class="z_yihuajtImgJiao" alt="交通优势"/>
+		</div>
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:4000888115">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+	</script>
+
+</html>

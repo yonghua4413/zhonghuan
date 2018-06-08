@@ -1,0 +1,171 @@
+<!--后台新闻添加-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><a href="{:url('admin/index/index')}">快报管理</a></li>
+    <li><span>增加快报</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加快报</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/index/insert')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="30" class="input w50" name="title" value=""/>
+                        <div class="tipss">不能超过30个字符</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>分类：</label>
+                    </div>
+                    <div class="field">
+                        &nbsp;新闻分类： <select name="fenlei" style="margin-left:1px;color:#333; font:'微软雅黑'; font-size:14px;border-radius:3px; border: 1px solid #e9e9e9 ; margin-right:1px;">
+                            <option value="2" selected>行业新闻</option>
+                            <option value="1">公司新闻</option>
+                        </select>
+
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>标签 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" name="tab" value=""/>
+                        <div class="tipss">关键词之间使用<span style="color:red;font-weight:600;font-size:16px;">中文逗号</span>隔开 ，请勿手动换行</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报来源 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" name="come" value=""/>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报日期 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="date_time" class="button border-main" id="time" placeholder="选择开始日期" value="">
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报封面图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image" style="margin-top: 10px;float: left">
+                        <!--<input class="tipss" id="addBtn" type="button" onclick="addPic1()" value="继续添加图片">-->
+                        <div class="tipss">建议图片尺寸：360*200</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu"  cols="30"></textarea>
+                        <div class="tipss">内容描述建议50字以内</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报内容 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <!--<textarea type="text" class='ckeditor' id='textarea' name="content"></textarea>-->
+                        <script id="editor" type="text/plain" name="content"></script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)"> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="__STATICA__/js/jedate.js"></script>
+<script>
+    var myDate = new Date();
+    myDate.toLocaleDateString()
+    //时间控件
+    var start = {
+        dateCell: '#time',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '#time1',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    jeDate(start);
+    jeDate(end);
+    function check(form) {
+        if(form.title.value.trim() == '') {
+            layer.msg("请输入标题!");
+            form.title.focus();
+            return false;
+           }
+        if(form.tab.value==''){
+            layer.msg("请输入文字标签!");
+            form.tab.focus();
+            return false;
+        }
+        if(form.come.value.trim() == '') {
+            layer.msg("请输入来源!");
+            form.come.focus();
+            return false;
+        }
+        if(form.date_time.value.trim() == '') {
+            layer.msg("请输入日期!");
+            form.date_time.focus();
+            return false;
+        }
+        if(form.image.value.trim() == '') {
+            layer.msg("请选择封面图片!");
+            form.image.focus();
+            return false;
+        }
+
+
+        if(form.content.value.trim() == '') {
+            layer.msg("请输入内容!");
+            form.content.focus();
+            return false;
+        }
+
+
+        return true;
+    }
+</script>

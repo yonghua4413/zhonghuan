@@ -1,0 +1,62 @@
+<!--后台新闻添加-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<style type="text/css">
+    textarea{
+        resize: none;
+    }
+</style>
+<ul class="bread">
+    <li><a href="" class="icon-home"> 首页</a></li>
+    <li><span>报名窗口管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>更新报名窗口内容</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Baom/upd')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <div class="form-group">
+                    <div class="label">
+                        <label>窗口背景图 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 100%;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img}" style="height: 100%;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>咨询电话 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd" value="{$data.titd}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>优惠内容信息 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd1" value="{$data.titd1}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)">提交修改</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>

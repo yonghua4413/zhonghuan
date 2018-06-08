@@ -1,0 +1,297 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<!--<script type="text/javascript" src="__STATICI__/m_js/jquery-1.9.1.min.js"></script>-->
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<style type="text/css">
+		
+		.mengc {
+			display: block;
+		}
+		
+		.z_hx_top_title {
+			text-align: center;
+			color: #c9b07e;
+			font-size: 0.40rem;
+			padding-top: 1.2rem;
+			position: relative;
+		}
+		
+		.z_hx_top_title span {
+			position: relative;
+			bottom: 0.3rem;
+		}
+		
+		.z_hx_top_xian {
+			width: 40%;
+			height: 0.03rem;
+			margin-top: 0.05rem;
+			background-color: #c9b07e;
+			position: relative;
+			margin: 0 auto;
+		}
+		
+		.zhonghgjyhxyBox {
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			position: fixed;
+			z-index: 100000;
+			font-size: 0.30rem;
+			display: none;
+			overflow-y: auto;
+		}
+		
+		.zhonghgjyhxyBox::-webkit-scrollbar {
+			width: 3px;
+			height:30px;
+		}
+		
+		.zhonghgjyhxyBox::-webkit-scrollbar-track {
+			background:white;
+		}
+		
+		.zhonghgjyhxyBox::-webkit-scrollbar-thumb {
+			background:#E3E3E3;
+			border-radius: 4px;
+		}
+		
+		.zhonghgjyhxyBox::-webkit-scrollbar-corner {
+			background: red;
+		}
+		
+		.zhonghgjyhxySbox {
+			width: 90%;
+			height: 100%;
+			margin: auto;
+		}
+		
+		.newsincowap b {
+			display: block;
+		}
+		
+		.newsincowap span {
+			display: block;
+			text-align: justify;
+		}
+		
+		#zghgClose {
+			font-size: 0.5rem;
+			position: fixed;
+			right:0.6rem;
+			top: 0.6rem;
+			color: red;
+			z-index: 99;
+		}
+		
+		body {
+			background-color: #f0f0f0;
+		}
+	</style>
+
+	<body>
+		<div class="mengc transition">
+			<div class="menccont column">
+				<span class="coloses"><a href="{$u}">X</a></span>
+				<div class="mengctop">
+					<div class="menctitle row">
+						<div class="column" style="width: 100%;">
+							<div class="row">
+								<div class="mchtitll row">
+									<span class="column borderridus">户型</span> {$data.title}
+								</div>
+								<div class="mchtitcot">
+									<div>{$data.living} {$data.group}</div>
+									<span>建面：约{$data.area}m² 赠送：约{$data.sarea}m²</span>
+									<span class="mcteborder">均价：{$data.av_price}元/m² 参考总价：{$data.money}万元/套</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="column mengimgauto">
+						<img src="{$data.picture}" alt="户型图"/>
+					</div>
+					<div class="mencmiaoshu">
+						{$data.content}
+					</div>
+					<div class="mengcbtm row">
+						<div class="mecwapckwap column" style="width: 100%;">
+							<span class="mcuserbz">订阅信息（我们将为您保密个人信息）</span>
+							<div class="floacheck row">
+								<label form="inputbj"><input type="checkbox" id="inputbj" value="变价通知"/>变价通知</label>
+								<label form="inputyh"><input type="checkbox" id="inputyh" value="优惠通知"/>优惠通知</label>
+								<label form="inputkp"><input type="checkbox" id="inputkp" value="开盘通知"/>开盘通知</label>
+							</div>
+							<div class="floacheck row">
+								<label form="inputzx"><input type="checkbox" id="inputzx" value="最新通知"/>最新通知</label>
+								<label form="inputkf"><input type="checkbox" id="inputkf" value="看房团通知"/>看房团通知</label>
+							</div>
+							<div class="mclrickwap">
+								<div class="mcusericonwap">
+									<input type="text" class="mcuserphone borderridus" value="" placeholder="请输入手机号" />
+								</div>
+								<label class="row"><input class="yuedu" type="checkbox">我已阅读并同意(<span class="ydzhhgjxy">中环国际国际网用户协议</span>)</label>
+								<input class="mcsubbtn" type="button" disabled="disabled" value="立即订阅">
+							</div>
+						</div>
+						<span class="riborder"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" alt="中环国际公司logo"/>首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:4000888115">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="zhonghgjyhxyBox">
+
+			<div class="zhonghgjyhxySbox">
+
+				<div id="zghgClose">X</div>
+
+				<div class="z_hx_top_title">
+					<span>中环国际国际网用户协议</span>
+					<div class="z_hx_top_xian">
+					</div>
+				</div>
+
+				<div class="newsincowap" style="font-size: 0.30rem;width:100%;margin:auto; text-align: left;">
+					<b>一、版权</b>
+					<span>本网站包含的所有内容（包括但不限于：文本、图形、图片、视像及声音内容、LOGO标识，版面设计，专栏目录与名称、内容分类）的所有权归益华集团所有。本网站的内容和软件均受《中华人民共和国著作权法》及其它相关法律的保护。任何单位或个人将本网站提供的内容与服务用于商业、盈利、广告性等目的时，需征得益华集团或相关权利人的书面许可；将本网站提供的内容与服务用于非商业用途时，应遵守著作权法以及其他相关法律的规定，不得侵犯网站所有者及相关权利人的权益。</span><br/> 1、版权异议
+					<br/>
+					<span>如权利人认为本网站内容中所涉及的文字作品、图片和音视频资料（以下简称“作品”），侵犯其著作权的，请及时书面通知本网站，本网站将依法删除被指侵权的作品或断开相应的链接；但权利人不能出示有效身份证明、著作权权属证明及侵权情况证明的，视为未提出异议。因权利人的通知导致本网站错误删除作品，或者错误断开与作品的链接的，本网站不承担任何责任。</span><br/> 2、转载
+					<br/>
+					<span>本网站内容中凡注明“来源：益华集团”的所有文字、图片和音视频资料等，版权均属本网站所有，任何媒体、网站或个人转载或引用本网站内容必须是以新闻性或资料性公共免费信息为使用目的的合理、善意使用，不得对本网站内容原意进行曲解、修改，并注明“来源：益华集团”。违者本网站将依法追究责任。本网站摘录或转载的属于第三方的信息将注明具体的来源。任何媒体、网站或个人从本网站下载使用，必须保留本网注明的信息来源，并自行承担版权等法律责任。</span><br/>
+					<b>二、网站使用规定</b>
+					<span>本网站属于官方网站，未经益华集团许可，任何商业性网站不得建立与本网站及其内容的链接。未经网站所有者的授权，任何人不得建立本网站的镜像（包括全部和局部镜像）。任何组织和个人不得非法复制、抄袭，或为任何未经允许的商业目的使用本网站及其内容。如果本网站所有者确定用户行为违法或有损网站利益，则将保留采取相关法律行为的权利。本网站努力确保本网站自身发布的政务信息、资料等内容的真实性和准确性，本网站内发布的法律、法规、政策等规范性法律文件以纸质文本为准。本网站可能通过网页上的链接向用户提供来自其它网站的内容及服务。本网站对这些网站及其内容不进行控制，也不负任何责任。请用户在使用该类网站所提供的服务时注意浏览这些网站的相关规定，并自行判断可能带来的结果和风险，以决定是否使用这些网站提供的内容或服务。</span><br/>
+					<b>三、用户信息</b> 1、信息采集
+					<br/>
+					<span>用户在匿名的状态下即可访问本网站并获取信息，但用户在使用本网站上部分功能时（如网上邮箱、在线问答等），可能需要向本网站提供个人资料，包括但不限于用户的姓名、出生日期、性别、联络资料、身份证号码、电子邮件地址、教育程度、职业等。用户必须保证提供的资料真实、准确、有效和完整，并随时更新登记资料，否则，本网站有权取消用户登记或拒绝提供相应的网站服务。</span><br/>
+					<span>当用户浏览本网站时，本网站的系统将自动收集用户的IP地址及网站浏览信息。这些信息有助于我们在整体基础上评估我们的网站浏览者以及用户如何使用、浏览我们的网站，包括浏览者和用户对每一网页的访问次数、频率和浏览时间。通过收集上述信息，我们将进行流量统计，从而改进网站的管理和服务。</span><br/> 2、信息使用
+					<br/>
+					<span>用户向本网站提供的个人信息将可能用于下列用途：（1）核实用户身份，并提供相应的服务；（2）执行用户的指示、回应用户或以该用户名义提出的查询、建议或举报内容；（3）用于编制有关网站使用的流量统计数据；（4）通过发送电子邮件或以其他方式，告知用户相关信息；（5）用于用户在提供信息时特别指定的目的，例如参与民意征集、嘉宾访谈、发表评论等。</span><br/> 　 <span>在未得到用户许可前，本网站不会将用户的任何个人信息提供给任何第三方，但发生以下事由的除外：（1）按照本网站制订的规则和程序，本网站有充分的理由相信已经获得用户的授权；（2）按照中华人民共和国的法律、法规、政策等规范性法律文件规定，要求本网站提供的；（3）不能归咎于本网站的客观情势，所导致的个人资料的公开；（4）因不可抗力，所导致的个人资料的公开；（5）由于用户自身过错，而导致的个人资料的公开；（6）超出本网站使用的硬件和软件的技术能力范围，所导致的个人资料的公开；（7）紧急情况下为维护用户个人或社会大众的隐私和安全的；（8）为维护本网站的所有权及相关权利的。</span><br/>					3、信息安全
+					<br/> 　　 <span>本网站将对用户所提供的资料进行严格的管理及保护，并将使用相应的技术措施（例如设置服务器备份数据和对用户密码加密等），防止用户的个人资料丢失、被盗用或遭窜改。如因不可抗力或计算机病毒感染、黑客攻击等特殊原因，导致用户信息被破坏、泄密并受到损失的，本网站将采取必要措施尽力减少用户的损失，但本网站对此不承担任何责任。</span><br/> 4、用户权利
+					<br/> 　　 <span>用户可通过本网站的相关网页查看、更新并修改提供给本网站的个人信息，也可以要求本网站删除该信息。</span>
+					<b>四、免责</b> 　　 <span>本网站对本网站上所有由第三方提供的信息、内容和服务，不提供明示或暗示的担保。本网站对使用上述信息、内容和服务所造成的任何损失不承担责任，包括直接损失和间接损失。</span><br/>
+
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script src="__STATIC__/layer/layer.js"></script>
+<script>
+	$(function() {
+		$(".ydzhhgjxy").click(function() {
+			$(".zhonghgjyhxyBox").css("display", "block");
+		});
+		$("#zghgClose").click(function() {
+			$(".zhonghgjyhxyBox").css("display", "none");
+		})
+		$(".yuedu").click(function() {
+			if ($(this).is(":checked")) {
+				$(".mcsubbtn").css({
+					"background": "#E2CA8C",
+					"color": '#fff'
+				})
+				$(".mcsubbtn").removeAttr("disabled");
+			} else {
+				$(".mcsubbtn").css({
+					"background": "#999",
+					"color": '#fff'
+				})
+				$(".mcsubbtn").attr("disabled", "disabled");
+			}
+		})
+		$('.mcsubbtn').click(function() {
+			var arr = '';
+			$(this).parent(".mclrickwap").siblings(".floacheck").find("input").each(function() {
+				if ($(this).is(":checked")) {
+					arr += "-" + $(this).val();
+				}
+			})
+			var name1 = arr;
+			var phone1 = $(this).parent(".mclrickwap").children(".mcusericonwap").children("input").val().trim();
+			var partten = /^1[3,5,8]\d{9}$/;
+			if (name1 == "") {
+				layer.alert('请勾选你需要咨询的！');
+				return false;
+			} else {
+				if (phone1 == "") {
+					layer.alert('请输电话号码');
+					return false;
+				} else {
+					var name2 = '订阅用户(' + name1 + ')';
+					var is_do1 = 3;
+					if (partten.test(phone1)) {
+						$.ajax({
+							type: "POST",
+							url: "{:URL('/add')}",
+							data: {
+								name: name2,
+								phone: phone1,
+								is_do: is_do1
+							},
+							success: function(data) {
+								if (data == '报名成功') {
+									layer.msg(data);
+									setTimeout(function() {
+										location = location;
+									}, 1000)
+									$("#phone").val("");
+									$("#username").val("");
+								} else {
+									setTimeout(function() {
+										location = location;
+									}, 1000)
+									layer.msg(data, {
+										icon: 1
+									});
+									$("#phone").val("");
+									$("#username").val("");
+								}
+							}
+						});
+					} else {
+						layer.alert('请输入正确的电话号码');
+						return false;
+					}
+				}
+			}
+		});
+	})
+</script>

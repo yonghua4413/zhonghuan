@@ -1,0 +1,291 @@
+<link rel="stylesheet" href="__STATICI__/css/z_youshi.css" />
+<link rel="stylesheet" href="__STATICI__/css/z_yihuajituan.css" />
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<style type="text/css">
+	#z_main {
+		background-image: url({$bg.img});
+		position: relative;
+	}
+</style>
+<div class="t-main" id="z_main">
+	<div class="clicknav">
+	</div>
+	<span class="z_yihua_top_title">{$bg.titd}</span>
+	<span class="z_yihua_top_xian"><img src="__STATICI__/img/jituanxian.png"/></span>
+</div>
+<!--介绍优势-->
+<div class="z_goodness" id="zGoodness">
+	<ul class="z_good_top_ul">
+		<li class="z_good_zero">
+			<a v-link="{path:'/jituanyj'}">{$con1.0.title}</a>
+		</li>
+		<li  class="z_good_four">
+			<a v-link="{path:'/goodZaiJian'}">{$con1.1.title}</a>
+		</li>
+		<li class="z_good_two">
+			<a v-link="{path:'/jiaotong'}">{$con1.2.title}</a>
+		</li>
+		<li class="z_good_three">
+			<a v-link="{path:'/huanjing'}">{$con1.3.title}</a>
+		</li>
+		<li class="z_good_one" style="margin-right: 0;">
+			<a v-link="{path:'/school'}">{$con1.4.title}</a>
+		</li>
+	</ul>
+	<div class="z_good_circle">
+		<div class="z_circle">
+		</div>
+	</div>
+	<div class="bottom_router">
+		<router-view></router-view>
+	</div>
+	<div class="z_zhaoping_msg">
+		<div class="z_zhaoping_zhiwei">
+			<ul>
+				{volist name="data" id="vo"}
+				<li class="row">
+					<a href="{:URL('/rencaizp',['pid'=>$vo.id])}" class="column">
+
+						<div class="row z_zhaopinLiPosi">
+							<span class="z_zhiwei_mc">{$vo.name}</span>
+							<div class="z_zhao_dan">
+								<span class="z_zhao_ren">{$vo.num}</span>人
+							</div>
+						</div>
+
+						<span class="z_zhao_jie">{$vo.miaosu}</span>
+					</a>
+
+				</li>
+				{/volist}
+			</ul>
+		</div>
+	</div>
+</div>
+<template id="zjituanyj">
+	<div class="danchu_ani">
+		<span class="good_msg">{{msg}}</span>
+		<div class="z_good_xaXian"></div>
+		<span class="z_good_introduce_z">{$con1.0.content}</span>
+		<!--<span class="good_msg">{{msg}}</span>
+		<div class="z_good_xaXian"></div>
+		<span class="z_good_introduce">{{introduce}}</span>
+		<img v-bind:src="imgSrc" class="jituanyj_img" alt="集团发展愿景" />-->
+	</div>
+</template>
+<template id="zGoodShool">
+	<div class="danchu_ani">
+		<span class="good_msg">{{msg}}</span>
+		<div class="z_good_xaXian"></div>
+		<span class="z_good_introduce">{$con1.4.content}</span>
+	</div>
+</template>
+<template id="zGoodJiao">
+	<div class="danchu_ani">
+		<span class="good_msg">{{msg}}</span>
+		<div class="z_good_xaXian"></div>
+		<span class="z_good_introduce_z">{$con1.2.content}</span>
+	</div>
+</template>
+<template id="zGoodHuan">
+	<div class="danchu_ani">
+		<span class="good_msg">{{msg}}</span>
+		<div class="z_good_xaXian"></div>
+		<span class="z_good_introduce">{$con1.3.content}</span>
+		<img v-bind:src="imgSrc" />
+	</div>
+</template>
+<template id="zGoodZaiJian" style="display: none;">
+	<div class="danchu_ani">
+		<div class="cloumn z_cneterfour">
+			<div class="z_jtfzyj" id="z_jituanzp">{$con1.1.title}</div>
+			<div class="z_jituanxian"></div>
+			<div id="yhjttable">{$con1.1.content}
+			</div>
+			<!--<table border="none" border-colr="red" cellspacing="0" cellpadding="0" id="yhjttable">-->
+				<!--<tr class="rowborder" style="height: 52px;">-->
+					<!--<td colspan="4">楼盘基本信息</td>-->
+				<!--</tr>-->
+				<!--<tr class="rowborder">-->
+					<!--<td>楼盘地址</td>-->
+					<!--<td>清镇市云岭大街中段</td>-->
+					<!--<td> 开盘时间 </td>-->
+					<!--<td>2014年5月</td>-->
+				<!--</tr>-->
+				<!--<tr class="rowborder">-->
+					<!--<td>入住时间 </td>-->
+					<!--<td>2017年12月 </td>-->
+					<!--<td>第一次交房时间</td>-->
+					<!--<td></td>-->
+				<!--</tr>-->
+				<!--<tr class="rowtable">-->
+					<!--<td>建筑面积</td>-->
+					<!--<td>400万平方米</td>-->
+					<!--<td>建筑类别</td>-->
+					<!--<td>板塔结合 </td>-->
+				<!--</tr>-->
+				<!--<tr class="rowborder">-->
+					<!--<td>物业类别 </td>-->
+					<!--<td>住宅、商业 </td>-->
+					<!--<td>容积率 </td>-->
+					<!--<td>4．91</td>-->
+				<!--</tr>-->
+				<!--<tr class="rowborder">-->
+					<!--<td>绿化率 </td>-->
+					<!--<td>27％</td>-->
+					<!--<td> 装修情况 </td>-->
+					<!--<td>毛坯 </td>-->
+				<!--</tr>-->
+				<!--<tr class="rowtable">-->
+					<!--<td>物业费 </td>-->
+					<!--<td>1.20元/平方米每月 </td>-->
+					<!--<td>物业公司</td>-->
+					<!--<td>2</td>-->
+				<!--</tr>-->
+				<!--<tr class="rowtable">-->
+					<!--<td>总户数 </td>-->
+					<!--<td> 10421户 </td>-->
+					<!--<td>开发商</td>-->
+					<!--<td>贵州益华房地产开发有限公司</td>-->
+				<!--</tr>-->
+			<!--</table>-->
+		</div>
+	</div>
+</template>
+<script type="text/javascript" src="__STATICI__/js/z_yihuajituan.js"></script>
+<script type="text/javascript">
+	$('.topnavli a').each(function() {
+		if($($(this))[0].href == String(window.location)) {
+			// $(this).css({
+			// 	'background-image': 'url(http://www.yhjtcity.com/static/index/img/navhover.jpg)'
+			// }).attr('href', 'javascript:void(0);')
+			$(this).addClass("ahref").parent().siblings().children().removeClass("ahref");
+		}
+		// console.log(window.location)
+	})
+	$(".weixin").hover(function() {
+		$(".weixinhao").css("display", "block");
+	}, function() {
+		$(".weixinhao").css("display", "none");
+	})
+	$(".weixinhao").hover(function() {
+		$(".weixinhao").css("display", "block");
+	}, function() {
+		$(".weixinhao").css("display", "none");
+	});
+    window.onload=function(){
+        (function(){
+            var Jituanyj=Vue.extend({
+                template:"#zjituanyj",
+                data:function(){
+                    return{
+                        "msg":"{$con1.0.title}",
+//                        "introduce1":"成立于2005年12月，清镇最具影响力的企业集团之一。",
+//                        "introduce2":"是一家多元化集团公司，以当地产开发为主，集绿化、装修物业等为一体的多元化、现代化企业。",
+//                        "introduce3":"旗下有8家公司：贵州益华房地产开发有限责任公司、贵州倾城物业管理 有限公司、清镇市翠竹园林绿化有限公司、清镇月半湾经济发展有限责任公司、 一品禾装饰装潢公司、贵州纳川商业管理有限公司、贵阳市翠枫园赛鸽中心、商混公司等企业。 集团总资产33亿元，现有员工400余人。",
+//                        "introduce01":"2006至2015年期间获得中国清镇市委清镇市人民政府颁发的二十强纳税企业奖项。",
+//                        "introduce02":"2008年、2009获得清镇市青龙街道办事处颁发的文明企业奖项。",
+//                        "introduce03":"2009年获得贵阳市绿化模范单位。",
+//                        "introduce04":"2011年至2015年获得中国清镇市委清镇市人民政府颁发的诚信房开企业。",
+//                        "introduce05":"2011年获得贵阳市环境保护局颁发的贵阳市绿色社区奖项。",
+//                        "introduce06":"2012年获得清镇市住建系统先进房开奖项2013年获得清镇撤县建市20周年大型群众文化活动和献礼工程特别贡献单位奖项。",
+//                        "introduce07":"2015年被评为贵阳市二十五家重点房地产企业之一。"
+                    }
+                }
+            });
+            var School=Vue.extend({
+                template:"#zGoodShool",
+                data:function(){
+                    return{
+                        "msg":"{$con1.4.title}",
+//                        "introduce":"益华集团始终秉承人才发展战略，加强专业人才队伍建设。在内部优化提升用人机制、人才培养体系、薪酬激励机制等，加快从内部培养和提拔优秀经营管理人才；积极创新和完善人才引进评价机制，通过多种渠道和方式，大力引进国内外的金融人才、管理人才和专业技术人才，全力构建国际化、高层次的专业人才团队。"
+                    }
+                }
+            });
+            var JiaoTong=Vue.extend({
+                template:"#zGoodJiao",
+                data:function(){
+                    return{
+                        "msg":"{$con1.2.title}",
+//                        "introduce1":"成立于2005年12月，清镇最具影响力的企业集团之一。",
+//                        "introduce2":"是一家多元化集团公司，以当地产开发为主，集绿化、装修物业等为一体的多元化、现代化企业。",
+//                        "introduce3":"旗下有8家公司：贵州益华房地产开发有限责任公司、贵州倾城物业管理 有限公司、清镇市翠竹园林绿化有限公司、清镇月半湾经济发展有限责任公司、 一品禾装饰装潢公司、贵州纳川商业管理有限公司、贵阳市翠枫园赛鸽中心、商混公司等企业。 集团总资产33亿元，现有员工400余人。"
+                    }
+                }
+            });
+            var HuanJing=Vue.extend({
+                template:"#zGoodHuan",
+                data:function(){
+                    return{
+                        "msg":"{$con1.3.title}",
+                        //"introduce":"我们需要人才，但是我们宁缺毋滥。只要你有坦诚精神、有高效率的工作状态、愿意挑战高于现在水平20%的事情。超越自我意识的屏障，你就来加入迎接我们的挑战！",
+
+                    }
+                }
+            });
+            var ZaiJian=Vue.extend({
+                template:"#zGoodZaiJian"
+            });
+            var router=new VueRouter();
+            router.map({
+                "/jituanyj":{
+                    component:Jituanyj
+                },
+                "/school":{
+                    component:School
+                },
+                "/jiaotong":{
+                    component:JiaoTong
+                },
+                "/huanjing":{
+                    component:HuanJing
+                },
+                "/goodZaiJian":{
+                    component:ZaiJian
+                }
+            });
+            router.redirect({
+                "/":"/jituanyj"
+            });
+            var zGood=Vue.extend({});
+            router.start(zGood,"#zGoodness");
+            var goodLocation=window.location.href;
+            var goodLocationJQ=goodLocation.slice(43);
+            switch (goodLocationJQ){
+                case "jituanyj":
+                    var zGoodLeZ=$(".z_good_zero").offset().left;
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLeZ+40.5)+"px)");
+                    $(".z_good_zero").children("a").css("color","#BCAB7A");
+                    break;
+                case "school":
+                    var zGoodLe=$(".z_good_one").offset().left;
+                    $(".z_good_zero").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLe+53.5)+"px)");
+                    $(".z_good_one").children("a").css("color","#BCAB7A");
+                    break;
+                case "jiaotong":
+                    console.log(1);
+                    var zGoodLetwo=$(".z_good_two").offset().left;
+                    $(".z_good_zero").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLetwo+78.5)+"px)");
+                    $(".z_good_two").children("a").css("color","#BCAB7A");
+                    break;
+                case "huanjing":
+                    console.log(1);
+                    var zGoodLethree=$(".z_good_three").offset().left
+                    $(".z_good_zero").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLethree+44)+"px)");
+                    $(".z_good_three").children("a").css("color","#BCAB7A");
+                    $(".z_zhaoping_msg").css("display","block");
+                    break;
+                case "goodZaiJian":
+                    var zGoodLeFour=$(".z_good_four").offset().left
+                    $(".z_good_zero").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLeFour+44)+"px)");
+                    $(".z_good_four").children("a").css("color","#BCAB7A");
+                    break;
+            }
+        })()
+    }
+</script>

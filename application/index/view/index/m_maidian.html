@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m-index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_maidian.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m-index.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_maidian.js"></script>
+
+	<body>
+
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="__STATICI__/m_img/logo.png" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;4000-888-115</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/lianxiwomen')}">商务合作</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="z_topImgBox">
+				<img src="__STATICI__/m_img/maidianBg.jpg" class="z_topImgBoxImg" alt="世界就在公园里"/>
+			</div>
+			<div class="z_yihuafour cloumn">
+				<ul class="row z_fourWord">
+					<li id="z_xuexiaoLi1">学校</li>
+					<li>交通</li>
+					<li>配套</li>
+					<li id="z_jtzpWo">环境</li>
+				</ul>
+			</div>
+			<div class="z_yihuafourline">
+				<div class="z_fourcircle" id="z_fourcircle"></div>
+			</div>
+			<div class="yhjthuadong" id="carouselFour">
+				<ul>
+					<li class="cloumn">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">5大教育资源，孩子未来有保障</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">中环国际依托贵州职教城庞大的教育资源，与国内外知名教育巨头携手打造贵阳西部顶级学区，从师资力量以及教学方式上，汲取到国内外教育的精髓，打造适合贵州学子的先进教育理念。全龄化覆盖的文化教育资源配套，实现了15年一体化教育，形成早教中心、双语幼儿园、全日制的国际小学、职业培训实训基地为主线的一站式教育教学体系。</div>
+							<img src="__STATICI__/m_img/maidianxuex.jpg" class="z_yihuajtImg" alt="中环国际教育资源"/>
+						</div>
+					</li>
+					<li>
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">轻轨旁的大社区，连双城通贵阳</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">贵阳市轨道交通S2号线，连接都拉营乡-白云区-观山湖区-清镇市-贵安新区。<br/> 清镇站位于清镇一中，而中环国际距离清镇一中步行约十分钟路程，位置十分便捷，城际轨道交通的建立，使整个清镇纳入“大贵阳”城市商圈范畴，真正意义上实现“轻轨连接双城，坐拥两城商圈”。
+								<br/> S2号线时速高达100km每小时，将于2017年年底动工！
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj">6大商业体系，让居住更有价值</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">中环国际项目位于清镇市云岭中路，项目一期集100万m²商业集群、280万m²住宅、20万m²现代化CITY MALL、55层208米的中环国际大厦，倾力打造都会生活范本，商业航母封疆大作。以一城精粹，荟萃一等商圈繁华，三大生态主题公园、大型购物超市、大型购物、多所名校等综合配套，是集商业住宅为一体的宜居地点，让这个世界潮流触手可及。</div>
+							<img src="../img/maidianpeit.jpg" class="z_yihuajtImg" alt="中环国际教育资源"/>
+						</div>
+					</li>
+					<li class="z_fourjtzp">
+						<div class="cloumn z_cneterfour">
+							<div class="z_jtfzyj" id="z_jituanzp">三山三水双公园，城市与自然相得益彰</div>
+							<div class="z_jituanxian"></div>
+							<div class="z_jituanwen">一个集山水、闲逸、绿色、阳光编织的绝妙佳境；纯自然的优质生活在这里拉开序幕。中环国际被山水自然簇拥，感受绿色生活的真谛，三条城市内河（老马河、东门河、朱家河）环绕其间，周边植被茂密，公园一号比邻政府大力建设梯青塔湿地公园、龙凤公园湿地，孕育着这里的一切，都是为了纯自然的优质生活！</div>
+						</div>
+
+						<img src="__STATICI__/m_img/maidianhuanj.jpg" class="z_yihuajtImg" alt="中环国际教育资源" />
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="z_jtzpxx">
+			<img src="__STATICI__/m_img/maidianjiaot.jpg" class="z_yihuajtImgJiao" alt="中环国际交通资源" />
+		</div>
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" /> 首页
+					</div>
+				</a>
+			</div>
+
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" /> 特惠报名
+					</div>
+				</a>
+			</div>
+
+			<div class="bnavitem row">
+				<a href="tel:18798873057">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+	</script>
+
+</html>

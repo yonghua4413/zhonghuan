@@ -1,0 +1,419 @@
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href="" class="icon-home"> 首页</a></li>
+    <li><span>首页管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>更新首页图片及内容</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Home/update')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <div class="form-group">
+                    <div class="label">
+                        <label>LOGO图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image1" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 77px;width: 225px;float: left;margin-left:5px ">
+                            <img src="{$data.img1}" style="height: 77px;width: 225px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>微信图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image2" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 100px;width: 100px;float: left;margin-left:5px ">
+                            <img src="{$data.img2}" style="height: 100px;width: 100px"/>
+                        </div>
+                    </div>
+                </div>
+                <!--首页模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="title" value="{$data.title}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>seo关键词 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="keywords" value="{$data.keywords}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>seo描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="desc" value="{$data.desc}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页大标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd" value="{$data.titd}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页小标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titx" value="{$data.titx}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页英文标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="tity" value="{$data.tity}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页背景图片（手机端） <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_image" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 320px;width: 200px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img}" style="height: 320px;width: 200px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>首页背景图片跳转连接：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="t1img" value="{$data.t1img}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--学校模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校大标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd1" value="{$data.titd1}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校小标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titx1" value="{$data.titx1}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校英文标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="tity1" value="{$data.tity1}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image3" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img3}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校背景图片（手机端） <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_image3" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 320px;width: 200px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img3}" style="height: 320px;width: 200px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>学校背景图片跳转连接：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="t2img" value="{$data.t2img}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--交通模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通大标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titd2" value="{$data.titd2}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通小标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titx2" value="{$data.titx2}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通英文标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="tity2" value="{$data.tity2}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image4" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img4}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通背景图片（手机端） <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_image4" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 320px;width: 200px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img4}" style="height: 320px;width: 200px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>交通背景图片跳转连接：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="t3img" value="{$data.t3img}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--配套模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套大标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titd3" value="{$data.titd3}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套小标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titx3" value="{$data.titx3}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套英文标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="tity3" value="{$data.tity3}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image5" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img5}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套背景图片（手机端）<span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_image5" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 320px;width: 200px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img5}" style="height: 320px;width: 200px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>配套背景图片跳转连接：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="t4img" value="{$data.t4img}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--环境模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境大标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titd4" value="{$data.titd4}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境小标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="titx4" value="{$data.titx4}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境英文标题：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w50" name="tity4" value="{$data.tity4}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image6" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img6}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境背景图片（手机端） <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_image6" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 320px;width: 200px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img6}" style="height: 320px;width: 200px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>环境背景图片跳转连接：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="t5img" value="{$data.t5img}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>底部内容更新</strong></div>
+                </br>
+                <div class="form-group">
+                    <div class="label">
+                        <label>项目地址 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="address" value="{$data.address}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)">提交修改</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+<!--<script>-->
+    <!--function check(form) {-->
+        <!--if(form.title.value.trim() == '') {-->
+            <!--layer.msg("请输入标题!");-->
+            <!--form.title.focus();-->
+            <!--return false;-->
+        <!--}-->
+        <!--return true;-->
+    <!--}-->
+<!--</script>-->

@@ -1,0 +1,243 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/vue.min.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/vue-router.js"></script>
+	<style type="text/css">
+        #carousel .imageList ul li{
+        	display: none;
+        }
+        #carousel .imageList ul li:nth-child(1){
+        	display: block;
+        }
+        .lan{
+        	margin-top:3%;
+			background: #C9B27C;
+	    	height: 2px;
+	    	width: 80%;
+        }
+        .titd{
+        	font-family: fztysj;
+			font-size:28px;
+			color:#fff;
+			margin-top:30%;
+        	width:80%;
+       	    text-align: center;
+        }
+        .titx{
+			font-size:14px;
+			color:#fff;
+			margin-top: 3%;
+			width: 80%;
+        	text-align: center;
+        }
+        .tity{
+        	margin-top:1%;
+			font-size:8px;
+       	    color: #C9B27C;
+        	letter-spacing: 6px;
+        }
+	</style>
+
+	<body id="app">
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home['img1']}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="carousel" id="carousel">
+			<div class="imageList" style="background:black;">
+				<ul>
+					<li>
+						<div class="m-maincont column" style="background-image: url(
+							{php}if(!empty($home['m_img'])){
+									echo $home['m_img'];
+								 }else{
+									echo $home['img'];
+								 };{/php});">
+							<span class="titd">{$home.titd}</span>
+							<!-- <div class="lan"></div> -->
+							<span class="titx">{$home.titx}</span>
+							<p class="tity">{$home.tity}</p>
+						</div>
+					</li>
+					<li>
+						<div class="m-maincont column" {if condition="$home.t2img neq ''"}onclick="window.open('{$home.t2img}')"{/if} style="background-image: url({php}if(!empty($home['m_img3'])){
+									echo $home['m_img3'];
+								 }else{
+									echo $home['img3'];
+								 };{/php});">
+							<span class="titd">{$home.titd1}</span>
+							<!-- <div class="lan"></div> -->
+							<span class="titx">{$home.titx1}</span>
+							<p class="tity">{$home.tity1}</p>
+							</br>
+							<!-- <a href="{:URL('/youshi')}#!/school" class="clikxq">查看详情</a> -->
+						</div>
+					</li>
+
+					<li>
+						<div class="m-maincont column" {if condition="$home.t3img neq ''"}onclick="window.open('{$home.t3img}')"{/if} style="background-image: url({php}if(!empty($home['m_img4'])){
+									echo $home['m_img4'];
+								 }else{
+									echo $home['img4'];
+								 };{/php});">
+							<span class="titd">{$home.titd2}</span>
+							<!-- <div class="lan"></div> -->
+							<span class="titx">{$home.titx2}</span>
+							<p class="tity">{$home.tity2}</p>
+							</br>
+							<!-- <a href="{:URL('/youshi')}#!/jiaotong" class="cq">查看详情</a> -->
+						</div>
+					</li>
+
+					<li>
+						<div class="m-maincont column" {if condition="$home.t4img neq ''"}onclick="window.open('{$home.t4img}')"{/if} style="background-image: url({php}if(!empty($home['m_img5'])){
+									echo $home['m_img5'];
+								 }else{
+									echo $home['img5'];
+								 };{/php});">
+							<span class="titd">{$home.titd3}</span>
+							<!-- <div class="lan"></div> -->
+							<span class="titx">{$home.titx3}</span>
+							<p class="tity">{$home.tity3}</p>
+							</br>
+							<!-- <a href="{:URL('/youshi')}#!/peitao" class="cq">查看详情</a> -->
+						</div>
+					</li>
+
+					<li>
+						<div class="m-maincont column" {if condition="$home.t5img neq ''"}onclick="window.open('{$home.t5img}')"{/if} style="background-image: url({php}if(!empty($home['m_img6'])){
+									echo $home['m_img6'];
+								 }else{
+									echo $home['img6'];
+								 };{/php});">
+							<span class="titd">{$home.titd4}</span>
+							<!-- <div class="lan"></div> -->
+							<span class="titx">{$home.titx4}</span>
+							<p class="tity">{$home.tity4}</p>
+							</br>
+							<!-- <a href="{:URL('/youshi')}#!/huanjing" class="cq">查看详情</a> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="indqhnav" style="display:none;">
+				<div class="row indrowauto">
+					<div class="column autocenter">
+						<div class="row">
+							<div class="column indbtitem" style="display: none;">
+								<span class="shcolltex">首页</span>
+							</div>
+							<div class="column indbtitem">
+								<img src="__STATICI__/m_img/shcollicon.png" />
+								<span class="shcolltex">学校</span>
+							</div>
+							<div class="column indbtitem">
+								<img src="__STATICI__/m_img/jiaotongicon.png" />
+								<span class="shcolltex">交通</span>
+							</div>
+							<div class="column indbtitem">
+								<img src="__STATICI__/m_img/peitaoicon.png" />
+								<span class="shcolltex">配套</span>
+							</div>
+							<div class="column indbtitem">
+								<img src="__STATICI__/m_img/huanjicon.png" />
+								<span class="shcolltex">环境</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="indborder row">
+					<div class="bordresile"></div>
+					<span class="indboridu"></span>
+					<div class="bordresil"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<script>
+			$(".indbanconta").css({"left":"0.01rem","width":"38%","height":"70%","margin-left":"2.6rem","margin-top":"0.8rem"});
+			$(".indbanconta img").css({"height":"100%"});
+				
+			! function(n) {
+				var e = n.document,
+					t = e.documentElement,
+					i = 750,
+					d = i / 100,
+					o = "orientationchange" in n ? "orientationchange" : "resize",
+					a = function() {
+						var n = t.clientWidth || 320;
+						n > 750 && (n = 750), t.style.fontSize = n / d + "px";
+						pageHeight = document.documentElement.clientHeight;
+						$(".m-maincont").css({
+							"height": pageHeight / (t.style.fontSize = n / d) - (0.9 + 1.6) + "rem",
+							"width": "100%"
+						});
+						$(".imageList").css({
+							"height": pageHeight / (t.style.fontSize = n / d) - (0.9 + 1.6) + "rem",
+							"width": "100%"
+						});
+						$(".menccont").css({
+							"height": pageHeight / (t.style.fontSize = n / d) - 0.9 + "rem",
+							"width": "100%"
+						});
+					};
+				e.addEventListener && (n.addEventListener(o, a, !1), e.addEventListener("DOMContentLoaded", a, !1))
+			}(window);
+		</script>
+
+		<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+		<script type="text/javascript" src="__STATICI__/m_js/m_indexHua.js"></script>
+	</body>
+
+</html>

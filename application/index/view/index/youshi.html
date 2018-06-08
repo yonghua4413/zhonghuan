@@ -1,0 +1,194 @@
+<link rel="stylesheet" href="__STATICI__/css/z_youshi.css"/>
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<!--<style type="text/css">-->
+    <!--#z_main{-->
+        <!--background-image: url({$data.img});-->
+        <!--position: relative;-->
+    <!--}-->
+<!--</style>-->
+<div class="t-main" id="z_main" style="background-image: url({$data.img});position: relative">
+    <div class="clicknav">
+    </div>
+    <div class="center_word">
+    {if condition="$data.titd neq ''"}
+        <span class="top_center_word">{$data.titd}</span>
+    {else /}{/if}
+    {if condition="$data.tity neq ''"}
+        <div class="z_center_div">
+            <div class="center_line_box z_left_line">
+                <span class="center_left_line z_box_line"></span>
+                <span class="center_left_circle z_box_circle"></span>
+            </div>
+            <span class="center_center_word">{$data.tity}</span>
+            <div class="center_line_box z_right_line">
+                <span class="center_right_line z_box_line"></span>
+                <span class="center_right_circle z_box_circle"></span>
+            </div>
+        </div>
+    {else /}{/if}
+    {if condition="$data.titx neq ''"}
+        <span class="bottom_center_word">{$data.titx}</span>
+    {else /}{/if}
+        
+    </div>
+</div>
+<!--介绍优势-->
+<div class="z_goodness" id="zGoodness">
+    <ul class="z_good_top_ul">
+        <li class="z_good_one">
+            <a v-link="{path:'/school'}">学校</a>
+        </li>
+        <li class="z_good_two">
+            <a v-link="{path:'/jiaotong'}">交通</a>
+        </li>
+        <li class="z_good_three">
+            <a v-link="{path:'/peitao'}">配套</a>
+        </li>
+        <li style="margin-right: 0;" class="z_good_four">
+            <a v-link="{path:'/huanjing'}">环境</a>
+        </li>
+    </ul>
+    <div class="z_good_circle">
+        <div class="z_circle">
+
+        </div>
+    </div>
+    <div class="bottom_router">
+        <router-view></router-view>
+    </div>
+</div>
+<template id="zGoodShool">
+    <div class="danchu_ani">
+        <span class="good_msg">{{msg}}</span>
+        <div class="z_good_xaXian"></div>
+        <span class="z_good_introduce">{$data.miaosu1}</span>
+        <img v-bind:src="imgSrc" alt="中环国际学校优势"/>
+    </div>
+</template>
+<template id="zGoodJiao">
+    <div class="danchu_ani">
+        <span class="good_msg">{{msg}}</span>
+        <div class="z_good_xaXian"></div>
+        <div class="z_good_introduce" style="margin-bottom: 0px;">{$data.miaosu2}</div>
+        <img v-bind:src="imgSrc" alt="中环国际交通优势"/>
+    </div>
+</template>
+<template id="zGoodPei">
+    <div class="danchu_ani">
+        <span class="good_msg">{{msg}}</span>
+        <div class="z_good_xaXian"></div>
+        <span class="z_good_introduce">{$data.miaosu3}</span>
+        <img v-bind:src="imgSrc" alt="中环国际配套优势"/>
+    </div>
+</template>
+<template id="zGoodHuan">
+    <div class="danchu_ani">
+        <span class="good_msg">{{msg}}</span>
+        <div class="z_good_xaXian"></div>
+        <span class="z_good_introduce">{$data.miaosu4}</span>
+        <img v-bind:src="imgSrc" alt="中环国际环境优势"/>
+    </div>
+</template>
+<script type="text/javascript" src="__STATICI__/js/z_youshi.js"></script>
+<script type="text/javascript">
+    $('.topnavli a').each(function() {
+        if ($($(this))[0].href == String(window.location)) {
+            $("topnavli").eq(0).addClass("ahref");
+        }
+    })
+    $(".weixin").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    })
+    $(".weixinhao").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    });
+    window.onload=function(){
+        (function(){
+            var School=Vue.extend({
+                template:"#zGoodShool",
+                data:function(){
+                    return{
+                        "msg":"{$data.titd1}",
+                        "imgSrc":"{$data.img1}"
+                    }
+                }
+            });
+            var JiaoTong=Vue.extend({
+                template:"#zGoodJiao",
+                data:function(){
+                    return{
+                        "msg":"{$data.titd2}",
+                        "imgSrc":"{$data.img2}"
+                    }
+                }
+            });
+            var PeiTao=Vue.extend({
+                template:"#zGoodPei",
+                data:function(){
+                    return{
+                        "msg":"{$data.titd3}",
+                        "imgSrc":"{$data.img3}"
+                    }
+                }
+            });
+            var HuanJing=Vue.extend({
+                template:"#zGoodHuan",
+                data:function(){
+                    return{
+                        "msg":"{$data.titd4}",
+                        "imgSrc":"{$data.img4}"
+                    }
+                }
+            });
+            var router=new VueRouter();
+            router.map({
+                "/school":{
+                    component:School
+                },
+                "/jiaotong":{
+                    component:JiaoTong
+                },"/peitao":{
+                    component:PeiTao
+                },"/huanjing":{
+                    component:HuanJing
+                }
+            });
+            router.redirect({
+                "/":"/school"
+            });
+            var zGood=Vue.extend({});
+            router.start(zGood,"#zGoodness");
+            var goodMsg=$(".good_msg").html();
+            switch (goodMsg){
+                case "{$data.titd1}":
+                    var zGoodLe=$(".z_good_one").offset().left
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLe+14)+"px)");
+                    $(".z_good_one").children("a").css("color","#BCAB7A");
+                    break;
+                case "{$data.titd2}":
+                    var zGoodLetwo=$(".z_good_two").offset().left;
+                    $(".z_good_one").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLetwo+14)+"px)");
+                    $(".z_good_two").children("a").css("color","#BCAB7A");
+                    break;
+                case "{$data.titd3}":
+                    var zGoodLethree=$(".z_good_three").offset().left;
+                    $(".z_good_one").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLethree+14)+"px)");
+                    $(".z_good_three").children("a").css("color","#BCAB7A");
+                    break;
+                case "{$data.titd4}":
+                    var zGoodLefour=$(".z_good_four").offset().left;
+                    $(".z_good_one").children("a").css("color","");
+                    $(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLefour+14)+"px)");
+                    $(".z_good_four").children("a").css("color","#BCAB7A");
+                    break;
+            }
+        })()
+    }
+</script>

@@ -1,0 +1,308 @@
+<!--后台客户管理-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href="" class="icon-home"> 首页</a></li>
+    <li><span>客户管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong class="icon-reorder"> 客户管理</strong></div>
+        <li style="float: right;">
+            <form action="{:url('admin/Excel/Down')}?tid={:input('param.tid/d')}" method="post" id="formsubmit">
+                <input type="text" class="button border-main" id="time" placeholder="选择开始日期" value="">
+                <input type="hidden" id="tim" name="start"  value="">
+                <input type="text" class="button border-main" id="time1" placeholder="选择结束日期" value="">
+                <input type="hidden" id="tim1" name="end"  value="">
+                <input class="button border-main"  onclick="return ss()" value="导出该时间段的Excel数据表">
+            </form>
+        </li>
+        <form method="post" action="{:url('admin/Book/delall')}?tid={:input('param.tid/d')}">
+        <div class="padding border-bottom">
+            <ul class="search">
+                <li>
+
+                        <a type="button"  class="button border-main" href="{:url('admin/Book/index')}?page=1&tid=2"><span></span>未联系 </a>
+                        <a type="button"  class="button border-main" href="{:url('admin/Book/index')}?page=1&tid=1"><span></span>已联系</a>
+                        <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
+                        <button type="submit" class="button border-red" href="javascript:void(0)" onclick="return DelSelect()"><span class="icon-trash-o"></span> 批量删除</button>
+                </li>
+            </ul>
+        </div>
+        <table class="table table-hover text-center">
+            <tr>
+                <th width="120">ID</th>
+                <th>姓名</th>
+                <th>联系状态</th>
+                <th>电话</th>
+                <th>IP</th>
+                <th>留言时间</th>
+                <th width="230">操作</th>
+            </tr>
+            {if empty($data)}
+            <tr><td colspan="7" style="color: red;height: 50px;font-size: 17px;"> 当前无任何客户 ! </td></tr>
+            {else}
+            {volist name="data" id="vo"}
+            <tr>
+                <td><input type="checkbox" name="id[]" value="{$vo.id}" />
+                    {$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>
+                    {if $vo.is_do == 1}
+                    <span style="color: red">已联系</span>
+                    {elseif $vo.is_do ==2 || $vo.is_do == 3}
+                    <span style="color: orange">未联系</span>
+                    {/if}
+                </td>
+                <td>{$vo.phone}</td>
+                <td>{:long2ip($vo.ip)}</td>
+                <td>{$vo.time|date="Y-m-d H:i",###}</td>
+                <td>
+                    <div class="button-group">
+                        {if $vo.is_do == 2 || $vo.is_do == 3}
+                        <a class="button border-main" href="javascript:void(0)" onclick="return set({$vo.id})"><span class="icon-check"></span> 已联系</a>
+                        {/if}
+                        <a class="button border-red" href="javascript:void(0)" onclick="return del({$vo.id})"><span class="icon-trash-o"></span> 删除</a>
+                    </div>
+                </td>
+            </tr>
+            {/volist}
+            <tr>
+                <td colspan="8">
+                    <div class="pagelist">
+                        {if !empty($count)}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> {$count} </b> 条数据</span>
+                        {elseif !empty($tcount)}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> {$tcount} </b>条数据</span>
+                        {else}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> 0 </b>条数据</span>
+                        {/if}
+                        {if input('param.page/d') > 1}
+                        <a href="?page={:input('param.page/d') - 1}&tid={:input('param.tid/d')}"  class="last">上一页</a>
+                        {else}
+                        <a href="?page=1&tid={:input('param.tid/d')}"  class="last">上一页</a>
+                        {/if}
+                        {for start="1" end="$pageNum+1"}
+                        <a href="?page={$i}&tid={:input('param.tid/d')}">{$i}</a>
+                        {/for}
+                        {if input('param.page/d') < $pageNum}
+                        <a href="?page={:input('param.page/d') + 1}&tid={:input('param.tid/d')}"  class="lest">下一页</a>
+                        {else}
+                        <a href="?page={$pageNum}&tid={:input('param.tid/d')}" class="lest">下一页</a>
+                        {/if}
+                        <a href="?page={$pageNum}&tid={:input('param.tid/d')}" class="list">尾页</a>
+                    </div>
+                </td>
+            </tr>
+            {/if}
+        </table>
+        </form>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="__STATICA__/js/jedate.js"></script>
+<script>
+    var myDate = new Date();
+    myDate.toLocaleDateString()
+
+    //时间控件
+    var start = {
+        dateCell: '#time',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '#time1',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    jeDate(start);
+    jeDate(end);
+</script>
+<script type="text/javascript">
+    $(".last").click(function () {
+        var page = {:input('param.page/d')};
+        if (page == 1){
+            $(".last").removeAttr("href");
+            layer.alert('已经是第一页了', {
+                tips: [4, '#78BA32']
+            });
+            //layer.alert('已经是第一页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    $(".lest").click(function () {
+        var page = {:input('param.page/d')};
+        if(page == {$pageNum}){
+            $(".lest").removeAttr("href");
+            layer.alert('已经是最后一页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    $(".list").click(function () {
+        var page = {:input('param.page/d')};
+        if(page == {$pageNum}){
+            $(".list").removeAttr("href");
+            layer.alert('已经是尾页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    function ss(){
+        var oldTime;
+        var oldTime1;
+        layer.confirm('您确定要导出吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            var time=$("#time").val();
+            if (time === ""){
+                layer.alert('请选择要导出的开始日期');
+            }
+            var time1=$("#time1").val();
+            if (time === ""){
+                layer.alert('请选择要导出的结束日期');
+            }
+             oldTime = (new Date(time)).getTime() / 1000; //得到毫秒数
+             oldTime1 = (new Date(time1)).getTime() / 1000; //得到毫秒数
+
+                $("#tim").val(oldTime);
+                $("#tim1").val(oldTime1);
+
+            if (oldTime > oldTime1){
+                layer.alert('开始日期不能大于结束日期');
+                return false;
+            }
+            $("#formsubmit").submit();
+            layer.closeAll();
+        }, function(){
+        });
+    }
+    function del(id){
+        layer.confirm('您确定要删除吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.ajax({
+                type:"post",
+                url:"{:url('admin/Book/del')}?tid={:input('param.tid/d')}",
+                data:{
+                    id:id,
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');
+                    if (data.status == 1){
+                        layer.msg(data.msg, {icon: 1});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+
+                    }else if(data.status == 0){
+                        layer.msg(data.msg, {icon: 2});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }
+                }
+            });
+        }, function(){
+        });
+    }
+    function excel(){
+        layer.confirm('您确定要导出数据？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.ajax({
+                type:"post",
+                url:"{:url('admin/Excel/Down')}",
+                success:function(data){
+                    var data = eval('(' + data + ')');
+                    if (data.status == 1){
+                        layer.msg(data.msg, {icon: 1});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+
+                    }else if(data.status == 0){
+                        layer.msg(data.msg, {icon: 2});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }
+                }
+            });
+        }, function(){
+        });
+    }
+    function set(id){
+        layer.confirm('您确定该客户已联系过吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.ajax({
+                type:"post",
+                url:"{:url('admin/Book/set')}?tid={:input('param.tid/d')}",
+                data:{
+                    id:id,
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');
+                    if (data.status == 1){
+                        layer.msg(data.msg, {icon: 1});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }else if(data.status == 0){
+                        layer.msg(data.msg, {icon: 2});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }
+                }
+            });
+        }, function(){
+        });
+    }
+    $("#checkall").click(function(){
+        $("input[name='id[]']").each(function(){
+            if (this.checked) {
+                this.checked = false;
+            }
+            else {
+                this.checked = true;
+            }
+        });
+    })
+    function DelSelect(){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+            var t=confirm("您确认要删除选中的内容吗？");
+            if (t==false) {
+                return false;
+            }
+            return true;
+        }else{
+            layer.alert('请选择您要删除的内容！');
+            return false;
+        }
+    }
+</script>

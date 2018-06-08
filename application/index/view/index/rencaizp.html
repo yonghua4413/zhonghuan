@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="__STATICI__/css/z_rencaizp.css"/>
+<style type="text/css">
+    #z_main{
+    background-image: url({$bg.img1});
+    position: relative;
+    width: 100%;
+    }
+</style>
+<div class="t-main" id="z_main">
+    <div class="clicknav">
+    </div>
+    <span class="z_yihua_top_title">{$bg.titd1}</span>
+    <span class="z_yihua_top_xian"><img src="__STATICI__/img/jituanxian.png"/></span>
+</div>
+<!--招聘信息-->
+<div class="z_zpxx">
+    <!--招聘岗位信息-->
+    <div class="z_gangwei">
+        <p>{$data.name}</p>
+    </div>
+    <div class="z_gangwei_xian"></div>
+    <!--招聘时间和浏览次数-->
+    <div class="z_zpsjcs">
+        <span>发布时间 : {$data.date_time|date="Y-m-d",###}</span>
+        <span>浏览次数 : {$data.look}次</span>
+    </div>
+    <!--工作地点-->
+    <div class="z_gzdd">
+        <span>工作地点:<span class="z_gzddwz"> {$data.where1}</span></span>
+    </div>
+    <!--职位描述-->
+    <div class="z_zwms">
+        {$data.content}
+    </div>
+    <!--岗位要求-->
+    <!--<div class="z_zwms">-->
+        <!--<span>岗位要求 : </span>-->
+        <!--<p>1、建筑工程、土木工程等相关专业，全日制本科及以上学历。 </p>-->
+        <!--<p>2、英语四级及以上水平，熟练掌握各种办公软件、CAD绘图软件的操作。</p>-->
+        <!--<p>3、具有良好的土建专业技术知识，熟悉工程施工流程和土建施工管理要点。</p>-->
+        <!--<p>4、具备良好的沟通、协调能力，较强的执行和实际操作能力。</p>-->
+    <!--</div>-->
+    <!--联系方式-->
+    <div class="z_lxfs">
+        <span>联系方式 : 4000-888-115</span><br/>
+        <span class="z_jltd">简历投递 : jojoy1994@QQ.com</span>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(".weixin").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    })
+    $(".weixinhao").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    });
+    $(window).scroll(function () {
+        var sctop = $(window).height() / 2 + $(this).scrollTop();
+        $(".baoname").css("top", sctop + "px");
+    });
+    $(".z_zwms p span").css({"font-size":"16px","line-height":"30px"});
+</script>

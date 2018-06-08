@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<link rel="stylesheet" href="{$siteurl}/static/index/css/t_index.css" />
+		<link rel="stylesheet" href="__STATICI__/css/anmition.css" />
+		<link rel="stylesheet" href="https://www.ttitt.net/css/Main.css" />
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	
+		<style type="text/css">
+			.iePanduan{
+				display: none;
+				background-color: white;
+				position: fixed;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<!--[if lt IE 10]>
+			<style>
+				.iePanduan{
+					display: block;
+					z-index:122000;
+					text-align:left;
+					font-size:28px;
+					color:#ff4400;
+					line-height:60px;
+					background-image:url("http://www.yhjtcity.com/static/index/img/banbenbg.jpg");
+					background-size:cover;
+					background-repeat:no-repeat;
+					background-position: center center;
+				}
+				.iePandUl{
+					display:block;
+				}
+				.iePandUl li{
+					display:block;
+					width:180px;
+					height:150px;
+					float:left;
+					margin-right:100px;
+					line-height:50px;
+					padding:20px 0;
+					border-radius:5px;
+					font-size:24px;
+					text-align:center;
+					color:black;
+				}
+				.iePandUl li a{
+					color:white;
+					background-color:#ff4400;
+					padding:0 5px;
+					font-size:20px;
+				}
+			</style>
+		<![endif]-->
+	</head>
+	<script type="text/javascript" src="__STATICI__/js/jquery-2.1.0.js"></script>
+
+	<body>
+        <div style="width: 100%;height: 100%;" class="iePanduan">
+        	<div style="width: 900px;margin: 0 auto;">
+        		<div style="height: 76px;width: 100%;margin-top: 10px;">
+        			<img src="{$home['img1']}" alt="公司logo" title="贵阳【中环国际.公园1号】项目官网,为您提供中环国际最新的房价走势,优惠信息让你时时掌握中环国际.公园1号楼盘最新动态" style="height: 100%;width: auto;"/>
+        		</div>
+	        	<div style="margin-top: 30px;"><img src="__STATICI__/img/banbents.png"/></div>
+	        	<div>建议升级浏览器：</div>
+	        	<ul class="iePandUl">
+	        		<li>
+	        			<img src="__STATICI__/img/Chrome.jpg"/>
+	        			<div>谷歌 Chrome</div>
+	        			<a href="https://www.google.cn/intl/zh-CN/chrome/browser/desktop/index.html">前往下载</a>
+	        		</li>
+	        		<li>
+	        			<img src="__STATICI__/img/360llq.png"/>
+	        			<div>360浏览器</div>
+	        			<a href="http://se.360.cn/">前往下载</a>
+	        		</li>
+	        		<li>
+	        			<img src="__STATICI__/img/qqllq.png"/>
+	        			<div>qq 浏览器</div>
+	        			<a href="http://browser.qq.com/?adtag=SEM1">前往下载</a>
+	        		</li>
+	        	</ul>
+	        	<br /><br /><br /><br />
+	        	<div style="width: 100%;">
+	        		<span style="font-size: 20px;">或直接用&nbsp;</span><span>微信APP扫码浏览</span>
+	        	</div>
+	        	<img src="__STATICI__/img/weixinhao.png" />
+        	</div>
+        </div>
+		<div class="baoname row" style="background-image: url({$baom.img});width: 245px;height: 278px;">
+			<img style="margin-top:-180px;margin-left: 40px;" src="{$home['img1']}" width="60%" />
+			<img src="__STATICI__/img/×.png" style="position: absolute;right: 0px;top: 0px;cursor: pointer;" id="guanbiBM" />
+			<div class="column" style="width: 100%;">
+				<!--<form action="" method="post">-->
+				<!--{$baom.titd}电话-->
+				<!--{$baom.titd1}文字-->
+				<!--{$baom.img}图片-->
+				<div class="zyl_top_pho" style="color: #cab37d;"><span>{$baom.titd}</span></div>
+				<div class="zyl_cneter_word"><span>{$baom.titd1}</span></div>
+				<input class="nuserphon" type="text" name="name" id="username" value="" placeholder="请输入你的姓名" style="width: 86.1904%;" />
+				<input class="usernam" type="text" name="phone" id="phone" value="" placeholder="请输入你的电话" style="width: 86.1904%;" />
+				<div class="qrclick" type="submit" id="btn11" style="width: 89.5238%;">确认报名</div>
+				<!--</form>-->
+			</div>
+		</div>
+		<div class="column headerwap">
+			<div class="t-header row">
+				<div class="logicon">
+					<span class="imgcenter"></span>
+					<a href="{:URL}">
+						<img src="{$home['img1']}" alt="公司logo" title="贵阳【中环国际.公园1号】项目官网,为您提供中环国际最新的房价走势,优惠信息让你时时掌握中环国际.公园1号楼盘最新动态" />
+					</a>
+				</div>
+				<div class="navwap">
+					<ul class="topnavul row">
+						<li class="topnavli">
+							<a href="{:URL}" style="padding: 0px 24px 10px 24px">首页</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+						
+						<li class="topnavli">
+							<a href="{:URL('/yihuajituan')}">益华集团</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+						
+						<li class="topnavli">
+							<a href="{:URL('/zhuzhai')}" style="padding: 0px 24px 10px 24px;">住宅</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+												
+						<li class="topnavli">
+							<a href="{:URL('/shangpu')}" style="padding: 0px 24px 10px 24px;">商铺</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+						
+						<li class="topnavli">
+							<a href="{:URL('/rxhx')}#fid=0">热销户型</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+
+						<li class="topnavli">
+							<a href="{:URL('/xwzx',['fid'=>2])}">新闻中心</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+
+						<li class="topnavli">
+							<a href="{:URL('/lianxiwomen')}">商务合作</a>
+						</li>
+						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+					</ul>
+				</div>
+				<div class="wxwbfxwap row">
+					<span class="weixin row">
+						<img src="__STATICI__/img/wexinicon.png"/>
+						&nbsp;微信
+					</span>
+
+					<div class="weixinhao">
+						<span class="zhengsanjiao"></span>
+						<img src="{$home['img2']}" />
+					</div>
+
+					<span class="share row">
+						<img src="__STATICI__/img/shareicon.png"/>
+						&nbsp;分享
+						<div class="bdsharebuttonbox" style="position: relative;right: 35px;top:2px;width: 50px;"><a href="#" class="bds_more" data-cmd="more" style="width: 50px;opacity: 0;"></a></div>
+						<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"http://www.yhjtcity.com/static/index/img/logo.png","bdStyle":"0","bdSize":"16","bdUrl" : 'http://www.yhjtcity.com/', 	},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		{__CONTENT__}
+
+		<div class="t-bottom column">
+			<ul class="btnnavul row">
+				<li class="btnnavli">
+					<a href="{:URL('/lianxiwomen')}">联系我们</a>
+				</li>
+				<li class="btnnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+				<li class="btnnavli">
+					<a href="">友情链接</a>
+				</li>
+				<li class="btnnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
+				<li class="btnnavli">
+					<a href="{:URL('/mzsm')}">免责声明</a>
+				</li>
+				<li class="btnnavli">&nbsp;&nbsp;&nbsp;&nbsp;项目地址：{$home.address}</li>
+				<li class="btnnavli">黔ICP备18004819号-1</li>
+				<li class="btnnavli">贵州益华房地产开发有限责任公司</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>
+<script src="__STATIC__/layer/layer.js"></script>
+<!-- 导航脚本 -->
+    <script type="text/javascript">
+        $(function() {
+            var _this1 = null;
+            $('.nav>li').hover(function() {
+                _this1 = $(this);
+                _this1.find('.second-nav').show();
+                var _this2 = null;
+                _this1.find('.second-nav').find('li').hover(function() {
+                    _this2 = $(this);
+                    _this2.find('.third-nav').show();
+                    _this2.find('.third-nav').hover(function() {
+                        $(this).show();
+                    }, function() {
+                        $(this).hide();
+                    });
+                }, function() {
+                    _this2.find('.third-nav').hide();
+                });
+            }, function() {
+                _this1.find('.second-nav').hide();
+            });
+        });
+    </script>
+<script>
+	$(function() {
+		$("#guanbiBM").click(function() {
+			$(".baoname").css({
+                "height": "0",
+                "width": "0",
+                "transition": "all 1s"
+            });
+			setTimeout(function() {
+				$(".qrclick").css({
+					"display": "none"
+				});
+                $(".zyl_top_pho").css({
+                    "display": "none"
+                });
+                $(".zyl_cneter_word").css({
+                    "display": "none"
+                });
+				$(".nuserphon").css({
+					"display": "none"
+				});
+				$(".usernam").css({
+					"display": "none"
+				});
+				$("#guanbiBM").css({
+					"display": "none"
+				});
+			}, 300);
+
+		});
+	});
+	$(function() {
+		var jmz = {};
+		jmz.GetLength = function(str) {
+			var realLength = 0,
+				len = str.length,
+				charCode = -1;
+			for(var i = 0; i < len; i++) {
+				charCode = str.charCodeAt(i);
+				if(charCode >= 0 && charCode <= 128) realLength += 1;
+				else realLength += 2;
+			}
+			return realLength;
+		}
+		$('#btn11').click(function() {
+			var name1 = $("#username").val().trim(),
+				phone1 = $("#phone").val().trim();
+			var partten = /^1[3,5,8]\d{9}$/;
+			if(name1 === "") {
+				layer.alert('请输入姓名');
+				return false;
+			} else {
+				var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+				if(reg.test(name1)) {} else {
+					layer.alert('你的姓名太屌了，服务器被吓坏鸟');
+					return false;
+				}
+				if(jmz.GetLength(name1) >= 2 && jmz.GetLength(name1) <= 10) {} else {
+					layer.alert('你的姓名太长鸟，服务器被吓坏鸟');
+					return false;
+				}
+				if(phone1 === "") {
+					layer.alert('请输电话号码');
+					return false;
+				} else {
+					if(partten.test(phone1)) {
+						$.ajax({
+							type: "POST",
+							url: "{:URL('/add')}",
+							data: {
+								name: name1,
+								phone: phone1,
+							},
+							success: function(data) {
+								if(data == '报名成功') {
+                                    layer.msg(data, {
+                                        icon: 1
+                                    });
+									setTimeout(function() {
+										location = location;
+									}, 2000)
+									$("#phone").val("");
+									$("#username").val("");
+								} else {
+									setTimeout(function() {
+										location = location;
+									}, 2000)
+									layer.msg(data, {
+										icon: 1
+									});
+									$("#phone").val("");
+									$("#username").val("");
+								}
+							}
+						});
+					} else {
+						layer.alert('请输入正确的电话号码');
+						return false;
+					}
+				}
+			}
+		});
+	})
+</script>

@@ -1,0 +1,44 @@
+<!--后台新闻修改-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href=""class="icon-home"> 首页</a></li>
+    <li><span>益华集团</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>更新内容</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Position/updcon')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <div class="form-group">
+                    <div class="label">
+                        <label>快报标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="50"  class="input w50" name="title" value="{$data.title}"/>
+                        <input type="hidden" name="id" value="{$data.id}"/>
+                        <div class="tipss">不能超过30个字符</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>内容 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <script id="editor" type="text/plain" name="content">{$data.content}</script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)"> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>

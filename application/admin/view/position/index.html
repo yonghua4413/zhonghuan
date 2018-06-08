@@ -1,0 +1,106 @@
+<!--后台职位管理-->
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><span>益华集团管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong class="icon-reorder"> 职位列表</strong></div>
+        <div class="padding border-bottom">
+            <ul class="search">
+                <button type="button" class="button border-blue" onclick="window.location.href='{:url('admin/Position/bg')}'"> 背景图标题管理</button>
+                <button type="button" class="button border-blue" onclick="window.location.href='{:url('admin/Position/con1')}'"> 子项目内容管理</button>
+                <button type="button" class="button border-yellow" onclick="window.location.href='{:url('admin/Position/add')}'"><span class="icon-plus-square-o"></span> 添加职位</button>
+            </ul>
+
+        </div>
+        <table class="table table-hover text-center">
+            <tr>
+                <th width="10%">职位名称</th>
+                <th width="10%">招聘人数</th>
+                <th width="10%">发布时间</th>
+                <th width="12%">工作地点</th>
+                <th width="16%">职位描述</th>
+                <th width="10%">浏览次数</th>
+                <th width="15%">操作</th>
+            </tr>
+            {if empty($data)}
+            <tr><td colspan="7" style="color: red;height: 50px;font-size: 17px;"> 当前无任何内容 ! </td></tr>
+            {else}
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$vo.name}</td>
+                <td>{$vo.num}</td>
+                <td>{$vo.date_time|date="Y-m-d H:i",###}</td>
+                <td>{$vo.where1}</td>
+                <td>{$vo.miaosu}</td>
+                <td>{$vo.look}</td>
+                <td><div class="button-group">
+                    <a class="button border-main" href="{:url('admin/Position/edit')}?id={$vo.id}"><span class="icon-edit"></span> 修改</a>
+                     <a class="button border-red" href="javascript:void(0)" onclick="return del({$vo.id})"><span class="icon-trash-o"></span> 删除</a>
+                </div></td>
+            </tr>
+            {/volist}
+            <tr>
+                <td colspan="12">
+                    <div class="pagelist">
+                        {if !empty($count)}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> {$count} </b> 条数据</span>
+                        {else}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> 0 </b>条数据</span>
+                        {/if}
+                        {if input('param.page/d') > 1}
+                        <a href="?page={:input('param.page/d') - 1}"  class="last">上一页</a>
+                        {else}
+                        <a href="?page=1"  class="last">上一页</a>
+                        {/if}
+                        {for start="1" end="$pageNum+1"}
+                        <a href="?page={$i}">{$i}</a>
+                        {/for}
+                        {if input('param.page/d') < $pageNum}
+                        <a href="?page={:input('param.page/d') + 1}"  class="lest">下一页</a>
+                        {else}
+                        <a href="?page={$pageNum}" class="lest">下一页</a>
+                        {/if}
+                        <a href="?page={$pageNum}" class="list">尾页</a>
+                    </div>
+                </td>
+            </tr>
+            {/if}
+        </table>
+    </div>
+    <script src="__STATIC__/layer/layer.js"></script>
+    <script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+    <script type="text/javascript">
+        //询问框
+        function del(id){
+            layer.confirm('您确定要删除吗？', {
+                btn: ['确定','取消']
+            }, function(){
+                $.ajax({
+                    type:"post",
+                    url:"{:url('admin/Position/del')}",
+                    data:{
+                        id:id,
+                    },
+                    success:function(data){
+                        var data = eval('(' + data + ')');
+                        if (data.status == 1){
+                            layer.msg(data.msg, {icon: 1});
+                            setTimeout(function () {
+                                location=location;
+                            },1000)
+
+                        }else if(data.status == 0){
+                            layer.msg(data.msg, {icon: 2});
+                            setTimeout(function () {
+                                location=location;
+                            },1000)
+                        }
+                    }
+                });
+            }, function(){
+            });
+        }
+    </script>
+</div>

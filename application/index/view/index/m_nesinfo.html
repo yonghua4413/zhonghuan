@@ -1,0 +1,192 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<style type="text/css">
+		.xwxqfx {
+			height: auto;
+			position: relative;
+		}
+		
+		.bdsharebuttonbox {
+			width: 0.5rem;
+			height: 0.5rem;
+			position: absolute;
+			left: 0.8rem;
+			opacity: 0;
+		}
+		
+		.newinfocont p {
+			text-indent: 35px !important;
+			display: block;
+		}
+		
+		.newinfocont p span {
+			width: 100% !important;
+			margin: auto !important;
+			display: block !important;
+		}
+	</style>
+
+	<body>
+
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo" />
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli">
+						<a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli">
+						<a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip">
+						<a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip">
+						<a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip">
+						<a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip">
+						<a href="{:URL('/lianxiwomen')}">商务合作</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">新闻中心</span>
+			</div>
+			<div class="nesinfos row">
+				<div class="column" style="width: 100%;">
+					<span class="newinfotitle">{$data.title}</span>
+
+				</div>
+			</div>
+			<div class="newsinfo row">
+				<div>时间：{$data.date_time|date="Y-m-d",###}&nbsp;&nbsp;&nbsp;</div>
+				<div>浏览：{$data.look}次&nbsp;&nbsp;&nbsp;</div>
+				<span class="row xwxqfx"><span class="xwxqfx">分享：&nbsp;&nbsp;</span><img src="__STATICI__/m_img/shareicon.png" alt="分享" />
+				<div class="bdsharebuttonbox">
+					<a href="#" class="bds_more" data-cmd="more"></a>
+				</div>
+				</span>
+
+			</div>
+			<div class="newinfocont column">
+				<!--创建一个空的iframe,不需要指定地址-->  
+				<iframe name="cmsCon" id="cmsCon" class="cmsCon" frameborder="0" width="100%" scrolling="no" height="auto"></iframe> 
+				<div class="Bread">
+					<div class="Previotop">
+						<div class="Previo">上一篇：</div>
+						<div class="next">下一篇：</div>
+					</div>
+					<div class="Previobtn">
+						<a href="{:URL('/nesinfo',['nid'=>$shang.id])}" class="Previoa">{$shang.title}</a>
+						<a href="{:URL('/nesinfo',['nid'=>$xia.id])}" class="nexta">{$xia.title}</a>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:4000888115">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+			<span style="display: none;" class="miaosu">{$data.miaosu}</span>
+		</div>
+	</body>
+
+	<script>
+		$(function() {
+
+			$(".newinfocont img").each(function() {
+				var xx = $(this).parents("p").html();
+				$(this).parents("p").replaceWith(xx.trim());
+			})
+
+			$(".newinfocont p").each(function() {
+				var xx = $(this).html();
+				$(this).replaceWith("<p>" + xx.trim() + "</p>");
+			})
+
+			$(".newinfocont p span").css("font-size", "16px");
+
+		})
+		$('#cmsCon').contents().find('head').append('<style>img{width:100%;height:auto;}</style>')
+		$('#cmsCon').contents().find('body').html('{$data.content}');
+		autoHeight();  //动态调整高度  
+		  
+		var count = 0;  
+		        var autoSet = window.setInterval('autoHeight()',500);  
+		        function autoHeight(){  
+		            var mainheight;  
+		            count++;  
+		            if(count == 1){  
+		                mainheight = $('.cmsCon').contents().find("body").height()+50;  
+		            }else{  
+		                mainheight = $('.cmsCon').contents().find("body").height()+24;  
+		            }  
+		            $('.cmsCon').height(mainheight);  
+		            if(count == 5){  
+		                window.clearInterval(autoSet);  
+		            }  
+		              
+		        }  
+	</script>
+	<script>
+		var miaosu = $(".miaosu").html();
+		var topTitle = $(".newinfotitle").html();
+		var shareUrl = window.location.href;
+		window._bd_share_config = {
+			"common": {
+				"bdSnsKey": {},
+				"bdText": miaosu,
+				"bdMini": "2",
+				"bdMiniList": false,
+				"bdPic": "http://www.yhjtcity.com/static/index/img/logo.png",
+				"bdStyle": "0",
+				"bdSize": "16",
+				"bdUrl": shareUrl,
+				"bdDesc": topTitle
+			},
+			"share": {}
+		};
+		with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+	</script>
+
+</html>

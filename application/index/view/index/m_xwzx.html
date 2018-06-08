@@ -1,0 +1,214 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="m-newscont column">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">新闻中心</span></div>
+			<div class="newsbordre row">
+				<div class="column newauto">
+					<div class="row clnewsitem">
+						<span>所有新闻</span>
+						<span>公司新闻</span>
+						<span>行业新闻</span></div>
+					<div class="newbowap">
+						<div class="newbdauto"></div>
+						<span class="newborridu"></span>
+					</div>
+				</div>
+			</div>
+			<div class="yhjthuadong carousel" id="carousel" style="width:100%;position:relative;overflow-x: hidden;top:0rem;margin-bottom: 0.5rem;height:auto !important">
+				<div class="imageListA">
+					<ul class="row">
+						<li class="cloumn hxtjitem">
+							<div class="newilistwap z_tianjiaDj1">
+								{volist name="data1" id="vo"}
+									<div class="listitem">
+										<a href="{:URL('/nesinfo',['nid'=>$vo.id])}" class="row" style="height:100%;display:black;width:100%">
+											<div class="column listcont">
+												<div class="listtitel">{$vo.title}</div>
+												<div class="row" style="width:100%;">
+													<div class="listconts">{$vo.miaosu}</div>
+													<img src="{$vo.img1}" class="listitmimg" alt="新闻图片"/>
+												</div>
+											</div>
+										</a>
+									</div>
+								{/volist}
+							</div>
+							<div class="z_ajiazaimore1">加载更多</div>
+						</li>
+
+						<li class="hxtjitem">
+							<div class="newilistwap z_tianjiaDj2">
+								{volist name="data2" id="vo"}
+								<div class="listitem">
+									<a href="{:URL('/nesinfo',['nid'=>$vo.id])}" class="row" style="height:100%;display:black">
+									<div class="column listcont">
+										<div class="listtitel">{$vo.title}</div>
+										<div class="row" style="width:100%;">
+											<div class="listconts">{$vo.miaosu}</div>
+											<img src="{$vo.img1}" class="listitmimg" alt="新闻图片"/>
+										</div>
+									</div>
+									</a>
+								</div>
+								{/volist}
+							</div>
+							<div class="z_ajiazaimore2">加载更多</div>
+						</li>
+						<li class="hxtjitem">
+							<div class="newilistwap z_tianjiaDj3">
+								{volist name="data3" id="vo"}
+								<div class="listitem">
+								<a href="{:URL('/nesinfo',['nid'=>$vo.id])}" class="row" style="height:100%">
+									<div class="column listcont">
+										<div class="listtitel">{$vo.title}</div>
+										<div class="row" style="width:100%;">
+											<div class="listconts">{$vo.miaosu}</div>
+											<img src="{$vo.img1}" class="listitmimg" alt="新闻图片"/>
+
+										</div>
+									</div>
+									</a>
+								</div>
+								{/volist}
+							</div>
+							<div class="z_ajiazaimore3">加载更多</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="m-bottom row">
+				<div class="bnavitem row">
+					<a href="{:URL}">
+						<div class="btn-nav column">
+							<img src="__STATICI__/m_img/homicon.png" />首页
+						</div>
+					</a>
+				</div>
+				<div class="bnavitem row">
+					<a href="{:URL('/bname')}">
+						<div class="btn-nav column">
+							<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+						</div>
+					</a>
+				</div>
+				<div class="bnavitem row">
+					<a href="tel:{$baom.titd}">
+						<div class="btn-nav column">
+							<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__STATICI__/m_js/m_newsWeb.js"></script>
+		<script>
+			$(".listitem").each(function(){
+				var listInde=$(this).index();
+				var listTitle=$(this).find(".listtitel").html().substr(0,18);
+				if(listTitle.length>=18){
+					$(this).find(".listtitel").html(listTitle+"...");
+				}else{
+					$(this).find(".listtitel").html(listTitle);
+				}
+			})
+			$(function(){
+				for(var ss = 0; ss <= 8; ss++) {
+					$(".z_tianjiaDj1>div").eq(ss).css("display", "block");
+					if($(".z_tianjiaDj1>div").length == ss - 1) {
+						break;
+					};
+				}
+				for(var ss = 0; ss <= 8; ss++) {
+					$(".z_tianjiaDj2>div").eq(ss).css("display", "block");
+					if($(".z_tianjiaDj2>div").length == ss - 1) {
+						break;
+					};
+				}
+				for(var ss = 0; ss <= 8; ss++) {
+					$(".z_tianjiaDj3>div").eq(ss).css("display", "block");
+					if($(".z_tianjiaDj3>div").length == ss - 1) {
+						break;
+					};
+				}
+				var sq1 = 1;
+				var sq2 = 1;
+				var sq3 = 1;
+				$(".z_ajiazaimore1").click(function() {
+					sq1++;
+					var sqq1 = sq1 * 9 - 1;
+					for(var ssq1 = 0; ssq1 <= sqq1; ssq1++) {
+						$(".z_tianjiaDj1>div").eq(ssq1).css("display", "block");
+						if($(".z_tianjiaDj1>div").length == ssq1 + 1) {
+							$(".z_ajiazaimore1").html("我们正在努力添加更多");
+							break;
+						};
+					}
+					var tjian1He=$(".z_tianjiaDj1").height();
+					$("#carousel").css("height",tjian1He+200+"px");
+				});
+				$(".z_ajiazaimore2").click(function() {
+					sq2++;
+					var sqq2 = sq2 * 9 - 1;
+					for(var ssq2 = 0; ssq2 <= sqq2; ssq2++) {
+						$(".z_tianjiaDj2>div").eq(ssq2).css("display", "block");
+						if($(".z_tianjiaDj2>div").length == ssq2 + 1) {
+							$(".z_ajiazaimore2").html("我们正在努力添加更多");
+							break;
+						};
+					}
+					var tjian2He=$(".z_tianjiaDj2").height();
+					$("#carousel").css("height",tjian2He+200+"px");
+				});
+				$(".z_ajiazaimore3").click(function() {
+					sq3++;
+					var sqq3 = sq3 * 9 - 1;
+					for(var ssq3 = 0; ssq3 <= sqq3; ssq3++) {
+						$(".z_tianjiaDj3>div").eq(ssq3).css("display", "block");
+						if($(".z_tianjiaDj3>div").length == ssq3 + 1) {
+							$(".z_ajiazaimore3").html("我们正在努力添加更多");
+							break;
+						};
+					}
+					var tjian3He=$(".z_tianjiaDj3").height();
+					$("#carousel").css("height",tjian3He+200+"px");
+					
+				});
+			})
+		</script>
+	</body>
+
+</html>

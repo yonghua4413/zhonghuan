@@ -1,0 +1,174 @@
+<!--后台登录-->
+<!DOCTYPE html>
+{__NOLAYOUT__}
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>后台管理登录</title>
+    <link rel="stylesheet" href="__STATICA__/css/pintuer.css">
+    <link rel="stylesheet" href="__STATICA__/css/admin.css">
+    <script src="__STATICA__/js/jquery.js"></script>
+    <script src="__STATICA__/js/pintuer.js"></script>
+    <style type="text/css">
+        body{
+
+            -moz-user-select:none;/*火狐*/
+
+            -webkit-user-select:none;/*webkit浏览器*/
+
+            -ms-user-select:none;/*IE10*/
+
+            -khtml-user-select:none;/*早期浏览器*/
+
+            user-select:none;
+
+            }
+    </style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+    <div class="line bouncein">
+        <div class="xs6 xm4 xs3-move xm4-move">
+            <div style="height:150px;"></div>
+            <div class="media media-y margin-big-bottom">           
+            </div>
+            <div class="panel loginbox">
+                <div class="text-center margin-big padding-big-top" style="float: left;height: 50px;margin-left: 70px;margin-top: 0px">
+                    <img src="" style="height: 50px;">
+                </div>
+                <div class="text-center margin-big padding-big-top" style="float: left">
+                    <h1>后台登录中心</h1>
+                </div>
+                <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
+                    <div class="form-group">
+                        <div class="field field-icon-right">
+                            <input type="text" class="input input-big" name="name" placeholder="登录账号" data-validate="required:请填写账号" />
+                            <span class="icon icon-user margin-small"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field field-icon-right">
+                            <input type="password" class="input input-big inputatp" name="password" placeholder="登录密码" data-validate="required:请填写密码" />
+                            <span class="icon icon-key margin-small btnatp"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="field">
+                            <input type="text" class="input input-big" name="code" placeholder="填写右侧的验证码" data-validate="required:请填写右侧的验证码" />
+                           <img src="{:captcha_src()}" id="verify_img" alt="" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" src="{:captcha_src()}" onclick="rey()">
+                        </div>
+                    </div>
+                </div>
+                <div style="padding:30px;"><bottom class="button button-block bg-main text-big input-big text-center" style="cursor:pointer" id="btn">登录</bottom></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script>
+    $(function(){
+        $(".btnatp").click(function(){
+            var pas=$(".inputatp").attr("type");
+            if(pas=="password"){
+                $(".inputatp").attr("type","text");
+            }else{
+                $(".inputatp").attr("type","password");
+            }
+        })
+    })
+</script>
+<script type="text/javascript" language=JavaScript charset="UTF-8">
+      document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];           
+             if(e && e.keyCode==13){ // enter 键
+                //要做的事情
+                sub();
+                //layer.msg('hah');
+            }
+        }; 
+    function rey(){
+        var ts = Date.parse(new Date())/1000;
+        var img = document.getElementById('verify_img');
+        img.src = "/captcha?id="+ts;
+    }
+    btn.onclick = function(e){
+        sub();
+    }
+    function sub(){
+        var pwd = document.getElementsByTagName('input')[1];
+        var viy2 = document.getElementsByTagName('input')[2];
+        var isname = document.getElementsByTagName('input')[0];
+        var btn = document.getElementById('btn');
+        $('#spanviy1').html('');
+        var username = isname.value;
+        var password = pwd.value;
+        var viy = viy2.value;
+        $("input").each(function(index){
+            var e=$(this);
+            if(e.attr("data-validate")){
+                e.closest('.field').find(".input-help").remove();
+                var $checkdata=e.attr("data-validate").split(',');
+                var $checkvalue=e.val();
+                if(index==$("input").length-1){
+                    var $checkstate=true;
+                }
+                var $checktext="";
+                if(e.attr("placeholder")==$checkvalue){
+                    $checkvalue="";
+                }
+                if($checkvalue!="" || e.attr("data-validate").indexOf("required")>=0){
+                    for(var i=0;i<$checkdata.length;i++){
+
+                        var $checktype=$checkdata[i].split(':');
+                        if(! $pintuercheck(e,$checktype[0],$checkvalue)){
+                            $checkstate=false;
+                            $checktext=$checktext+"<li>"+$checktype[1]+"</li>";
+                        }
+                    }
+                };
+                if($checkstate){
+                    e.closest('.form-group').removeClass("check-error");
+                    e.parent().find(".input-help").remove();
+                    e.closest('.form-group').addClass("check-success");
+                    $("input").closest('.form-group').removeClass("check-error");
+                    $("input").parent().find(".input-help").remove();
+                    $("input").closest('.form-group').addClass("check-success");
+                    $.ajax({
+                            type: "POST",
+                            url: "{:url('admin/index/login')}",
+                            data: "username="+username+"&password="+password+"&viy="+viy,
+                            success: function(msg){
+                                if (msg == '1'){
+                                    $('#div1').html('');
+                                    var n = 2;
+                                    layer.msg('登录成功 3 秒后跳到后台');
+                                    //$('#spanviy1').html('登录成功 3 秒后跳到首页');
+                                    var divbj= $("<div class='bjcolor' style='position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.6);top: 0px;left: 0px;bottom: 0px;right:0px;z-index:9999 '></div>")
+                                    divbj.appendTo($("body"));
+                                    timer = setInterval(function(){
+                                        layer.msg('登录成功 '+n+' 秒后跳到后台');
+                                        if (n == 0){
+                                            window.location.href = "{:url('admin/index/index')}?page=1";
+                                        }
+                                        n = n-1;
+                                    },1100);
+                                }else{
+                                    layer.alert(msg,{icon: 0});
+                                }
+                            }
+                        });
+                }else{
+                    e.closest('.form-group').removeClass("check-success");
+                    e.closest('.form-group').addClass("check-error");
+                    e.closest('.field').append('<div class="input-help"><ul>'+$checktext+'</ul></div>');
+                }
+            }
+        }); 
+    }
+</script>
+</body>
+</html>

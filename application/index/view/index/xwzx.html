@@ -1,0 +1,126 @@
+
+    <link rel="stylesheet" href="__STATICI__/css/z_youshi.css" />
+    <link rel="stylesheet" href="__STATICI__/css/z_xwzx.css" />
+    <style type="text/css">
+    	.top {
+				position: fixed;
+				right: 50px;
+				bottom: 50px;
+				display: none;
+				cursor: pointer;
+				
+			}
+		#z_main{
+			background-image: url({$newbg.img});
+			position: relative;
+			width: 100%;
+		}
+    </style>
+	<script type="text/javascript" src="__STATICI__/js/vue.min.js" ></script>
+	<script type="text/javascript" src="__STATICI__/js/vue-router.js" ></script>
+		<div class="t-main" id="z_main">
+			<div class="clicknav">
+			</div>
+			<div class="xwxitiao">
+				<span class="z_yihua_top_title">{$newbg.titd}</span>
+				<span class="z_yihua_top_xian"><img src="__STATICI__/img/jituanxian.png"/></span>
+			</div>
+		</div>
+        <!--介绍优势-->
+        <div class="z_goodness" id="zGoodness">
+            <ul class="z_good_top_ul">
+            	<li class="z_good_zero">
+                    <a href="{:URL('/xwzx',['fid'=>2])}" v-link="{path:'/allNews'}" class="allnew">所有新闻</a>
+                </li>
+                <li class="z_good_one">
+                    <a href="{:URL('/xwzx',['fid'=>1])}" v-link="{path:'/companyNews'}" class="companynew">公司新闻</a>
+                </li>
+                <li style="margin-right: 0;" class="z_good_three">
+                    <a href="{:URL('/xwzx',['fid'=>0])}" v-link="{path:'/hangyeNews'}" class="hangyenew">行业新闻</a>
+                </li>
+            </ul> 
+            <div class="z_good_circle">
+                <div class="z_circle">
+                    
+                </div>
+            </div>
+            <div class="bottom_router">
+           	    <ul class="z_hangye" id="demo">
+					{volist name="data" id="vo"}
+	            	<li style="width: 100%;height: 200px;">
+	            		<a  href="{:URL('/nesinfo',['nid'=>$vo.id])}" style="display: block;width: 100%;height: auto;position: relative;bottom: 14px;">
+		    				<span class="z_xw_title">{$vo.title}</span>
+		    				<div style="width: 70%;height: 120px;overflow: hidden;">
+			    				<span class="z_xw_jj" style="width: 100%;display: inline-block;float: left;font-size: 18px;line-height: 30px;">{$vo.miaosu}</span>
+		    				</div>
+		    				<div class="z_xwzxSmallImg" style="width: 30%;height: 143px;position: absolute;right: 0;top:0;">
+			    				<img src="{$vo.img1}" class="z_xw_img" alt="新闻图片">
+			    			</div>
+		            		<span class="z_xw_time" style="bottom: 8px;">{$vo.date_time|date="Y年m月d日",###}</span>
+	    				</a>
+	            	</li>
+					{/volist}
+	            </ul>
+            </div>
+            <div id="z_login">
+            	<span class="ajiazaimore">加载更多</span>
+            </div>
+        </div>
+        <div id="gotop" class="top">
+			<img src="__STATICI__/img/top.png" alt="" />
+		</div>
+    <script type="text/javascript" src="__STATICI__/js/z_xwzx.js" ></script>
+    <script type="text/javascript">
+        $(function(){
+        	$(".z_hangye li").each(function(){
+        		var zliIndex=$(this).index();
+        		var jianJieH=$(this).find(".z_xw_jj").html().substr(0,110);
+        		var jianJieTitle=$(this).find(".z_xw_title").html().substr(0,30);
+				if(jianJieH.length>=110){
+					$(this).find(".z_xw_jj").html(jianJieH+"...");
+				}else{
+					$(this).find(".z_xw_jj").html(jianJieH);
+				};
+				if(jianJieTitle.length>=30){
+					$(this).find(".z_xw_title").html(jianJieTitle+"...");
+				}else{
+					$(this).find(".z_xw_title").html(jianJieTitle);
+				};
+        	})
+            var local=window.location.href;
+            var localid=local.substr(local.length-6,6);
+            $(".z_goodness .z_good_top_ul li ").children("a").css("color","black");
+            switch (localid){
+            	case "2.html":
+                    var zgoodNum=0;
+            	break;
+            	case "1.html":
+                    var zgoodNum=1;
+            	break;
+            	case "0.html":
+                    var zgoodNum=2;
+            	break;
+            };
+            $(".z_goodness .z_good_top_ul li ").children("a").eq(zgoodNum).css("color","#C1AB78");
+            var zgoodLeft=$(".z_goodness .z_good_top_ul li ").children("a").eq(zgoodNum).offset().left;
+            var zgoodWidth=$(".z_goodness .z_good_top_ul li ").children("a").eq(zgoodNum).width();
+            $(".z_circle ").css("left",zgoodLeft+zgoodWidth/2-2+"px");
+            $('.topnavli a').each(function() {
+
+
+
+                if ($($(this))[0].href == String(window.location)) {
+
+
+                    // $(this).css({
+                    // 	'background-image': 'url(http://www.yhjtcity.com/static/index/img/navhover.jpg)'
+                    // }).attr('href', 'javascript:void(0);')
+
+
+                    $(this).addClass("ahref").parent().siblings().children().removeClass("ahref");
+                }
+
+
+
+            }) })
+    </script>

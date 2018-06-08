@@ -1,0 +1,450 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="breasoncont column">
+			<img src="{$yo.m_img}" width="100%"/>
+			<div class="hreathbjee column">
+
+				<div class="column heathrhxwap">
+					<span class="bytitle">户型优势</span>
+					<div class="bdttbdmin"></div>
+					<span class="bdttbmax"></span>
+				</div>
+
+				<div class="heatitem column">
+					<div class="heathsig column">
+						<span class="hxjstitel">{$yo.titd1}</span>
+						<span class="hxjsborder"></span>
+						<span class="hxjscont">{$yo.miaosu1}</span>
+					</div>
+
+					<div class="heathsig column">
+						<span class="hxjstitel">{$yo.titd2}</span>
+						<span class="hxjsborder"></span>
+						<span class="hxjscont">{$yo.miaosu2}</span>
+					</div>
+
+					<div class="heathsig column">
+						<span class="hxjstitel">{$yo.titd3}</span>
+						<span class="hxjsborder"></span>
+						<span class="hxjscont">{$yo.miaosu3}</span>
+					</div>
+
+					<div class="heathsig column">
+						<span class="hxjstitel">{$yo.titd4}</span>
+						<span class="hxjsborder"></span>
+						<span class="hxjscont">{$yo.miaosu4}</span>
+					</div>
+
+					<div class="heathsig column">
+						<span class="hxjstitel">{$yo.titd5}</span>
+						<span class="hxjsborder"></span>
+						<span class="hxjscont">{$yo.miaosu5}</span>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="heathxlist">
+			<div class="column heathrhxwap">
+				<span class="bytitle">热销户型</span>
+				<div class="bdttbdmin"></div>
+				<span class="bdttbmax"></span>
+			</div>
+
+			<div class="fxborderridu column">
+
+				<div class="row rxhxtext">
+					<span class="transition">全部户型</span>
+					<span class="transition">两房</span>
+					<span class="transition">三房</span>
+					<span class="transition">四房</span>
+				</div>
+
+				<div class="rwo rxhxborderwap">
+					<div class="rxborder"></div>
+					<span></span>
+				</div>
+
+				<div class="carousel" id="carousel" style="width: 90%;margin-bottom: 50px;">
+					<div class="imageList">
+						<ul>
+							<!--*******************全部户型*******************-->
+
+							<li class="hxtjitem">
+								{volist name="data" id="vo"}
+								<a href="{:URL('/mengban',['id'=>$vo.id,'ty'=>2])}" class="hxtjitemleft  column">
+									<div class="column">
+										<div class="imggdgao">
+											<img src="{$vo.picture}" alt="户型图"/>
+											<span style="position:absolute;top:0.1rem;left:0.1rem;background-color:#C1AB78;color:white;padding:0.07rem;font-size:0.24rem">
+													{$vo.group}
+											</span>
+										</div>
+										<span class="hxmaoshu">{$vo.title}户型&nbsp;{:trim(substr($vo.living, 0 , 14),'|')}</span>
+										<span class="tjhxms">建面：约{$vo.area}m²&nbsp;赠{$vo.sarea}m²</span>
+									</div>
+								</a>
+								{/volist}
+							</li>
+
+							<!--************两房*******************-->
+							<li class="hxtjitem">
+								{volist name="data1" id="vo"}
+								<a href="{:URL('/mengban',['id'=>$vo.id,'ty'=>2])}" class="hxtjitemleft column">
+									<div class="column">
+										<div class="imggdgao">
+											<img src="{$vo.picture}" alt="户型图"/>
+											<span style="position:absolute;top:0.1rem;left:0.1rem;background-color:#C1AB78;color:white;padding:0.07rem;font-size:0.24rem">
+													{$vo.group}
+											</span>
+										</div>
+
+										<span class="hxmaoshu">{$vo.title}户型&nbsp;{:trim(substr($vo.living, 0 , 14),'|')}</span>
+										<span class="tjhxms">建面：约{$vo.area}m²&nbsp;赠{$vo.sarea}m²</span>
+									</div>
+								</a>
+								{/volist}
+							</li>
+
+							<!--*******************三部户型*******************-->
+							<li class="hxtjitem">
+								{volist name="data2" id="vo"}
+								<a href="{:URL('/mengban',['id'=>$vo.id,'ty'=>2])}" class="hxtjitemleft  column">
+									<div class="column">
+										<div class="imggdgao">
+											<img src="{$vo.picture}" alt="户型图"/>
+											<span style="position:absolute;top:0.1rem;left:0.1rem;background-color:#C1AB78;color:white;padding:0.07rem;font-size:0.24rem">
+													{$vo.group}
+											</span>
+										</div>
+
+										<span class="hxmaoshu">{$vo.title}户型&nbsp;{:trim(substr($vo.living, 0 , 14),'|')}</span>
+										<span class="tjhxms">建面：约{$vo.area}m²&nbsp;赠{$vo.sarea}m²</span>
+									</div>
+								</a>
+								{/volist}
+							</li>
+
+							<!--*******************四部户型*******************-->
+							<li class="hxtjitem">
+								{volist name="data3" id="vo"}
+								<a href="{:URL('/mengban',['id'=>$vo.id,'ty'=>2])}" class="hxtjitemleft  column">
+									<div class="column">
+										<div class="imggdgao">
+											<img src="{$vo.picture}" alt="户型图"/>
+											<span style="position:absolute;top:0.1rem;left:0.1rem;background-color:#C1AB78;color:white;padding:0.07rem;font-size:0.24rem">
+													{$vo.group}
+											</span>
+										</div>
+										<span class="hxmaoshu">{$vo.title}户型&nbsp;{:trim(substr($vo.living, 0 , 14),'|')}</span>
+										<span class="tjhxms">建面：约{$vo.area}m²&nbsp;赠{$vo.sarea}m²</span>
+									</div>
+								</a>
+								{/volist}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+		$(".coloses").click(function() {
+			$(".mengc").fadeOut(300)
+		})
+		$(".hxtjitemleft").click(function() {
+			$(".mengc").fadeIn(600);
+		})
+	</script>
+
+	<script type="text/javascript">
+		var max;
+		$(function() {
+			
+			var fgauto = Math.ceil($(".hxtjitem:eq(0)").children(".hxtjitemleft").length / 2);
+			$(".carousel").height(4.5 * fgauto + 3 + "rem");
+			//得到轮播图里面的li
+			heathx(0, 1, 3)
+
+			function heathx(idxe, nexe, pree) {
+				var carousel = document.getElementById("carousel");
+				var imageLis = document.querySelectorAll("#carousel .imageList li");
+				//信号量
+				var idx = idxe; //当前中间图片
+				var next = nexe; //下一张
+				var prev = pree; //上一张
+				var windowWidth;
+				//初始化
+				init();
+				//屏幕尺寸改变重新执行初始化
+				window.onresize = init;
+
+				function init() {
+					//屏幕的宽度
+					windowWidth = document.documentElement.clientWidth;
+					//设置盒子的高度
+					//			carousel.style.height = 10+ "rem";
+					//设置li的默认位置
+					for (var i = nexe; i < imageLis.length; i++) {
+						imageLis[i].style.webkitTransform = "translateX(" + windowWidth + "px)";
+					}
+					//去掉过渡，移动的时候我希望实时跟随鼠标，而不是有过渡效果
+					imageLis[idx].style.transition = "none";
+					imageLis[next].style.transition = "none";
+					imageLis[prev].style.transition = "none";
+					//新的位置
+					imageLis[idx].style.webkitTransform = "translateX(0px)";
+					imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+					imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+					imageLis[idx].style.webkitTransform = "translateY(0px)";
+				}
+				//事件监听
+				carousel.addEventListener("touchstart", touchstartHandler, false);
+				carousel.addEventListener("touchmove", touchmoveHandler, false);
+				carousel.addEventListener("touchend", touchendHandler, false);
+				//手指的偏移量
+				var deltaX;
+				//触摸开始时候的手指位置
+				var startX;
+				//时间戳，从1970年1月1日0:00到现在的毫秒数
+				var startTime;
+				//事件处理函数
+				function touchstartHandler(event) {
+					//阻止默认事件
+					//event.preventDefault();
+					//手指个数
+					if (event.touches.length > 1) {
+						return;
+					}
+					//记录偏移量
+					deltaX = event.touches[0].clientX;
+					//记录手指位置
+					startX = event.touches[0].clientX;
+					//去掉过渡，移动的时候我希望实时跟随鼠标，而不是有过渡效果
+					imageLis[idx].style.transition = "none";
+					imageLis[next].style.transition = "none";
+					imageLis[prev].style.transition = "none";
+					//记录时间戳
+					startTime = new Date();
+					//就位（这个事儿没有必要，纯粹为了防穿帮）
+					imageLis[idx].style.webkitTransform = "translateX(0px)";
+					imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+					imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+				}
+				//手指移动的时候
+				function touchmoveHandler(event) {
+					//阻止默认事件
+					//event.preventDefault();
+					//手指个数
+					if (event.touches.length > 1) {
+						return;
+					}
+					//清除定时器
+					//得到坐标
+					var clientX = event.touches[0].clientX;
+					//改变图片的位置
+					imageLis[idx].style.webkitTransform = "translateX(" + (clientX - deltaX) + "px)";
+					imageLis[next].style.webkitTransform = "translateX(" + (windowWidth + clientX - deltaX) + "px)";
+					imageLis[prev].style.webkitTransform = "translateX(" + (-windowWidth + clientX - deltaX) + "px)";
+				};
+				$("#carousel .imageList ul li").css("z-index", "1");
+				//手指结束触摸的时候
+				function touchendHandler(event) {
+					//阻止默认事件
+					//event.preventDefault();
+					//决断滑动是否成功
+					var distance = event.changedTouches[0].clientX - startX;
+					//滑动的时间
+					var time = new Date() - startTime;
+					//如果你像右边滑动超过了屏幕的一半，或者你向右边滑动且时间小于500，就认为滑动成功
+					if (distance >= windowWidth / 2 || (distance > 80 && time < 300)) {
+						//向右边滑动成功
+						var aqq = idx;
+						aqq--;
+						if (aqq < 0) {
+							aqq = 3;
+						};
+						$("#carousel .imageList ul li").css("display", "none");
+						$("#carousel .imageList ul li").eq(aqq).css("display", "block");
+						//先改变信号量
+						next = idx;
+						idx = prev;
+						//改变next
+						prev--;
+						if (prev < 0) {
+							prev = 3;
+						}
+						$(".rxhxtext span").eq(idx).css({
+							"color": "#c9b27c"
+						}).siblings().css({
+							"color": "black"
+						});
+						$(".rxhxborderwap span").css("left", ($(".rxhxtext span").eq(idx).offset().left) + ($(".rxhxtext span").eq(idx).width() / 2) - $(".rxhxborderwap span").width() / 2 + "px")
+							//加上过渡
+						imageLis[idx].style.transition = "all 0.3s ease 0s";
+						imageLis[next].style.transition = "all 0.3s ease 0s";
+						//移动
+						imageLis[idx].style.webkitTransform = "translateX(0px)";
+						imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+						var fgitem = $(".hxtjitem:eq(" + idx + ")").children(".hxtjitemleft").height();
+						var fgauto = Math.ceil($(".hxtjitem:eq(" + idx + ")").children(".hxtjitemleft").length / 2);
+						$(".carousel").height("0px");
+						$(".carousel").height((fgitem * fgauto / 50) + 5 + "rem");
+					} else if (distance <= -windowWidth / 2 || (distance < -80 && time < 300)) {
+						showNext();
+					} else {
+						//绝对值不到windowWidth/2，  滑动不成功
+						//加上过渡
+						imageLis[prev].style.transition = "all 0.3s ease 0s";
+						imageLis[idx].style.transition = "all 0.3s ease 0s";
+						imageLis[next].style.transition = "all 0.3s ease 0s";
+						//移动
+						imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+						imageLis[idx].style.webkitTransform = "translateX(0px)";
+						imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+					};
+				}
+
+				function showNext() {
+					prev = idx;
+					idx = next;
+					//改变next
+					next++;
+					if (next > 3) {
+						next = 0;
+					}
+					$("#carousel .imageList ul li").css("display", "none");
+					$("#carousel .imageList ul li").eq(idx).css("display", "block");
+					$(".rxhxtext span").eq(idx).css({
+						"color": "#c9b27c"
+					}).siblings().css({
+						"color": "black"
+					});
+					$(".rxhxborderwap span").css("left", ($(".rxhxtext span").eq(idx).offset().left) + ($(".rxhxtext span").eq(idx).width() / 2) - $(".rxhxborderwap span").width() / 2 + "px")
+					var fgitem = $(".hxtjitem:eq(" + idx + ")").children(".hxtjitemleft").height();
+					var fgauto = Math.ceil($(".hxtjitem:eq(" + idx + ")").children(".hxtjitemleft").length / 2);
+					$(".carousel").height("0px");
+					$(".carousel").height((fgitem * fgauto / 50) + 5 + "rem");
+					imageLis[next].style.transition = "none";
+					imageLis[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+					//加上过渡
+					imageLis[prev].style.transition = "all 0.3s ease 0s";
+					imageLis[idx].style.transition = "all 0.3s ease 0s";
+					//移动
+					imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+					imageLis[idx].style.webkitTransform = "translateX(0px)";
+					//$(window).scroll().top+=windowWidth+"px";
+				}
+			}
+			$(".fxborderridu .rxhxtext span").click(function() {
+				$(".fxborderridu .rxhxtext span").css("color", "black");
+				$(this).css("color", "#BCAB7A");
+				var thaLeft = $(this).offset().left;
+				var wordWidth1 = $(this).width();
+				$(".rxhxborderwap span").css({
+					"left": thaLeft + wordWidth1 / 2 - 6 + "px",
+					"transition": "all 0.3s ease 0s"
+				});
+				$("#carousel .imageList ul li").css("display", "block");
+				idxs = $(this).index();
+				qq = idxs;
+				qq++;
+				nexts = qq;
+				if (nexts > 3) {
+					nexts = 0;
+				};
+				pp = idxs;
+				pp--;
+				prevs = pp
+				if (prevs < 0) {
+					prevs = 3;
+				};
+				var fgitem = $(".hxtjitem:eq(" + idxs + ")").children(".hxtjitemleft").height();
+				var fgauto = Math.ceil($(".hxtjitem:eq(" + idxs + ")").children(".hxtjitemleft").length / 2);
+				$(".carousel").height("0px");
+				$(".carousel").height((fgitem * fgauto / 50) + 5 + "rem");
+				var imageLis = document.querySelectorAll("#carousel .imageList  ul li");
+				windowWidth = document.documentElement.clientWidth;
+				for (var i = nexts; i < imageLis.length; i++) {
+					imageLis[i].style.webkitTransform = "translateX(" + windowWidth + "px)";
+				}
+				imageLis[idxs].style.transition = "none";
+				imageLis[nexts].style.transition = "none";
+				imageLis[prevs].style.transition = "none";
+				imageLis[idxs].style.webkitTransform = "translateX(0px)";
+				imageLis[nexts].style.webkitTransform = "translateX(" + windowWidth + "px)";
+				imageLis[prevs].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+				$("#carousel .imageList ul li").css("z-index", "1");
+				$("#carousel .imageList ul li").eq(idxs).css({
+					"z-index": "123",
+					"display": "block"
+				});
+				heathx(idxs, nexts, prevs);
+			})
+		})
+	</script>
+
+
+</html>

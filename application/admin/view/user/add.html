@@ -1,0 +1,75 @@
+<!--后台添加管理员-->
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><a href="{:url('admin/User/index')}?page=1">管理员管理</a></li>
+    <li><span>增加管理员</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top" id="add">
+        <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 增加管理员</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/User/insert')}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="label">
+                        <label>名称：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="" name="name" data-validate="required:请输入标题" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>密码：</label>
+                    </div>
+                    <div class="field field-icon-right" style="width: 21.3%">
+                        <input type="password" class="input w50 inputatp" value="" name="password" data-validate="required:请输入标题" style="width: 100%"/>
+                        <span class="icon icon-key margin-small btnatp"></span>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>电话：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="" name="phone" data-validate="required:请输入标题" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>等级：</label>
+                    </div>
+                    <div class="field" style="margin-top: 8px;">
+                        <select name="admin_rank">
+                            <option value="1">超级管理员</option>
+                            <option value="2" selected>普通管理员</option>
+                        </select>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $(".btnatp").click(function(){
+            var pas=$(".inputatp").attr("type");
+            if(pas=="password"){
+                $(".inputatp").attr("type","text");
+            }else{
+                $(".inputatp").attr("type","password");
+            }
+        })
+    })
+</script>

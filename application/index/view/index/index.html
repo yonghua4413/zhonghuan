@@ -1,0 +1,273 @@
+<div class="t-main">
+	<div class="bannercont row">
+		<div class="column tlecenter">
+			<div class="column">
+				<!-- <div class="shcollcont">
+					<span class="shtitle row z_wenzGuDKuan">{$home.titd}</span>
+					<span class="anmtionborder"></span>
+					<span class="strongborder"></span>
+				</div> -->
+				<span class="indsmal z_wenzGuDKuan1">{$home.titx}</span>
+				<span class="indsmalen z_wenzGuDKuan2">{$home.tity}</span>
+			</div>
+		</div>
+		<!-- 学校 -->
+		<div class="column tlecenter" {if condition="$home.t2img neq ''"}onclick="window.open('{$home.t2img}')"{/if}>
+			<div class="column">
+				<!-- <div class="shcollcont">
+					<span class="shtitle row z_wenzGuDKuan">{$home.titd1}</span>
+					<span class="anmtionborder"></span>
+					<span class="strongborder"></span>
+				</div> -->
+				<span class="indsmal z_wenzGuDKuan1" style="letter-spacing:4px">{$home.titx1}</span>
+				<span class="indsmalen z_wenzGuDKuan2">{$home.tity1}</span>
+				<div class="bybox">
+					<!-- <span class="boxt">
+                    <a href="{:URL('/youshi')}#!/school">
+                        查看详情<span class="nextantion"><img src="__STATICI__/img/igenduo.png"></span>
+					<span class="boxt-s0"></span>
+					<span class="boxt-line boxt-s1"></span>
+					<span class="boxt-line boxt-s2"></span>
+					<span class="boxt-line boxt-s3"></span>
+					<span class="boxt-line boxt-s4"></span>
+					</a>
+					</span> -->
+				</div>
+			</div>
+		</div>
+		<!-- 交通 -->
+		<div class="column tlecenter" {if condition="$home.t3img neq ''"}onclick="window.open('{$home.t3img}')"{/if}>
+			<div class="column">
+				<!-- <div class="shcollcont">
+					<span class="shtitle row z_wenzGuDKuan">{$home.titd2}</span>
+					<span class="anmtionborder"></span>
+					<span class="strongborder"></span>
+				</div> -->
+				<span class="indsmal z_wenzGuDKuan1">{$home.titx2}</span>
+				<span class="indsmalen z_wenzGuDKuan2">{$home.tity2}</span>
+				<div class="bybox">
+					<!-- <span class="boxt">
+                        <a href="{:URL('/youshi')}#!/jiaotong">
+                        		查看详情<span class="nextantion">
+                        		<img src="__STATICI__/img/igenduo.png"> </span>
+					<span class="boxt-s0"></span>
+					<span class="boxt-line boxt-s1"></span>
+					<span class="boxt-line boxt-s2"></span>
+					<span class="boxt-line boxt-s3"></span>
+					<span class="boxt-line boxt-s4"></span>
+					</a>
+					</span> -->
+				</div>
+			</div>
+		</div>
+		<!-- 配套 -->
+		<div class="column tlecenter" {if condition="$home.t4img neq ''"}onclick="window.open('{$home.t4img}')"{/if}>
+			<div class="column">
+				<!-- <div class="shcollcont">
+					<span class="shtitle row z_wenzGuDKuan">{$home.titd3}</span>
+					<span class="anmtionborder"></span>
+					<span class="strongborder"></span>
+				</div> -->
+				<span class="indsmal z_wenzGuDKuan1" style="letter-spacing:4px">{$home.titx3}</span>
+				<span class="indsmalen z_wenzGuDKuan2">{$home.tity3}</span>
+				<div class="bybox">
+					<!-- <div class="boxt">
+						<a href="{:URL('/youshi')}#!/peitao">查看详情
+							<span class="nextantion"> 
+								<img src="__STATICI__/img/igenduo.png">
+							</span>
+							<span class="boxt-s0"></span>
+							<span class="boxt-line boxt-s1"></span>
+							<span class="boxt-line boxt-s2"></span>
+							<span class="boxt-line boxt-s3"></span>
+							<span class="boxt-line boxt-s4"></span>
+						</a>
+					</div> -->
+				</div>
+			</div>
+		</div>
+
+		<!--环境-->
+		<div class="column tlecenter" {if condition="$home.t5img neq ''"}onclick="window.open('{$home.t5img}')"{/if}>
+			<div class="column">
+				<!-- <div class="shcollcont">
+					<span class="shtitle row z_wenzGuDKuan">{$home.titd4}</span>
+					<span class="anmtionborder"></span>
+					<span class="strongborder"></span>
+				</div> -->
+				<span class="indsmal z_wenzGuDKuan1" style="letter-spacing:4px">{$home.titx4}</span>
+				<span class="indsmalen z_wenzGuDKuan2">{$home.tity4}</span>
+				<div class="bybox">
+					<!-- <span class="boxt">
+							<a href="{:URL('/youshi')}#!/huanjing">
+							查看详情<span class="nextantion"> <img src="__STATICI__/img/igenduo.png"> </span>
+					<span class="boxt-s0"></span>
+					<span class="boxt-line boxt-s1"></span>
+					<span class="boxt-line boxt-s2"></span>
+					<span class="boxt-line boxt-s3"></span>
+					<span class="boxt-line boxt-s4"></span>
+					</a>
+					</span> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clickLF">
+		< 
+	</div>
+	<div class="clickRI">
+		>
+	</div>
+	<div class="clicknav column" style="display:none;">
+		<div class="indicon row">
+			<img src="__STATICI__/img/shcollicon.png" alt="首页" style="display:none;" />
+			<img src="__STATICI__/img/shcollicon.png" alt="学校" />
+			<img src="__STATICI__/img/pticon.png" alt="配套" />
+			<img src="__STATICI__/img/jticon.png" alt="交通" />
+			<img src="__STATICI__/img/hjicon.png" alt="环境" />
+		</div>
+
+		<div class="row borderwap">
+			<div class="borderridus"></div>
+			<span class="ridusitem"></span>
+			<div class="borderright"></div>
+		</div>
+		<div class="indtext row">
+			<span style="display:none;">首页</span>
+			<span>学校</span>
+			<span>交通</span>
+			<span>配套</span>
+			<span>环境</span>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript">
+	$(function(){
+   	 	$(".t-bottom").css({"position":"absolute","bottom":"0"});
+	})
+</script>
+<script type="text/javascript" src="__STATICI__/js/t_index.js"></script>
+<script>
+	$(function () {
+        var shouyeWenzK0=$(window).width();
+
+        if(shouyeWenzK0<=1073){
+            $(".z_wenzGuDKuan").css("width",shouyeWenzK0-50+"px");
+            $(".z_wenzGuDKuan1").css("width",shouyeWenzK0-50+"px");
+            $(".z_wenzGuDKuan2").css("width",shouyeWenzK0-50+"px");
+        }else{
+            $(".z_wenzGuDKuan").css("width","auto");
+            $(".z_wenzGuDKuan1").css("width","auto");
+            $(".z_wenzGuDKuan2").css("width","auto");
+        }
+		$(window).resize(function () {
+			var shouyeWenzK=$(window).width();
+			if(shouyeWenzK<=1073){
+				$(".z_wenzGuDKuan").css("width",shouyeWenzK-50+"px");
+                $(".z_wenzGuDKuan1").css("width",shouyeWenzK-50+"px");
+                $(".z_wenzGuDKuan2").css("width",shouyeWenzK-50+"px");
+			}else{
+                $(".z_wenzGuDKuan").css("width","auto");
+                $(".z_wenzGuDKuan1").css("width","auto");
+                $(".z_wenzGuDKuan2").css("width","auto");
+			}
+		})
+		$(".t-main").css({
+			"background-image": "url({$home.img})"
+		});
+	/*********首页轮播**********/
+	var imgfaster = "";
+	var bannerbj = ["{$home.img}", "{$home.img3}", "{$home.img4}", "{$home.img5}", "{$home.img6}"];
+	var flage = 0,
+	xc = 0,
+	rthis = null,
+	sthis = null,
+	timer = null,
+	leftwidth = null,
+	rightwidth = null;
+
+	$(".indicon img").click(function() {
+	rthis = $(this);
+	ggfn(rthis)
+	});
+
+	$(".indtext span").click(function() {
+	sthis = $(this);
+	ggfn(sthis)
+	});
+
+	$(".clickLF").click(function() {
+		flage <= 0 ? flage = (bannerbj.length - 1) : flage--;
+		lickrl(flage);
+	})
+	$(".clickRI").click(function() {
+		flage >= (bannerbj.length - 1) ? flage = 0 : flage++;
+		lickrl(flage);
+	})
+
+	function lickrl(flage) {
+	clearInterval(timer);
+	$(".t-main").css({
+	"background-image": "url(" + imgfaster + bannerbj[flage] + ")"
+	});
+	$(".tlecenter").eq(flage).fadeIn(2000).siblings(".tlecenter").hide();
+	fn(flage)
+	}
+
+	function ggfn(rthis) {
+	$this = rthis
+	xc >= (bannerbj.length - 1) ? xc = 0 : xc = $this.index() + 1;
+
+	if (xc >= 4) {
+	xc = 0;
+	}
+	clearInterval(timer);
+	leftwidth = $this.offset().left + 22;
+	rightwidth = $(window).width() - leftwidth;
+	$(".t-main").css({
+	"background-image": "url(" + imgfaster + bannerbj[$this.index()] + ")"
+	});
+	$(".tlecenter").eq($this.index()).fadeIn(2000).siblings(".tlecenter").hide();
+	$(".ridusitem").css({
+	"left": leftwidth + "px",
+	"display": "block"
+	});
+	$(".borderridus").css({
+	"width": leftwidth + "px"
+	});
+	$(".borderright").css({
+	"width": rightwidth + "px"
+	});
+	fn(xc)
+	}
+	fn(0);
+
+	function fn(xc) {
+	timer = setInterval(function() {
+	$(".tlecenter").eq(flage).fadeIn(2000).siblings(".tlecenter").hide();
+
+	$(".t-main").css({
+	"background-image": "url(" + imgfaster + bannerbj[flage] + ")"
+	});
+	var leftwidth = $(".indicon img").eq(flage).offset().left + 22;
+	var rightwidth = $(window).width() - leftwidth;
+
+	if (flage >= 1) {
+	$(".ridusitem").fadeIn();
+	} else {
+	$(".ridusitem").css({
+	"display": "none"
+	});
+	}
+	$(".borderridus").css({
+	"width": leftwidth + "px"
+	});
+	$(".borderright").css({
+	"width": rightwidth + "px"
+	});
+	flage >= (bannerbj.length - 1) ? flage = 0 : flage++;
+	}, 3000)
+	}
+    })
+</script>

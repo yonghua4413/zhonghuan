@@ -1,0 +1,156 @@
+<!--后台户型修改-->
+<script type='text/javascript' src='__STATIC__/ckeditor/ckeditor.js'></script>
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><a href="{:url('admin/Page/index')}?tid=1&page=1">户型管理</a></li>
+    <li><span>修改户型</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top" id="add">
+        <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 修改户型</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Page/update')}?id={$data.id}" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="label">
+                        <label>户型：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" name="title" value="{$data.title}" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>组团名称：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" name="group" value="{$data.group}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>标签：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" name="tab" value="{$data.tab}"/>
+                        <div class="tipss">关键词之间使用<span style="color:red;font-weight:600;font-size:16px;">中文逗号</span>隔开 ，请勿手动换行</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>室厅卫：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="{$data.living}" name="living"/>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>是否推荐：</label>
+                    </div>
+                    <div class="field" style="margin-top:8px">
+                        {if $data.rec == 0}
+                        <input type="radio" value="0" name="rec" checked/>否
+                        <input type="radio" value="1" name="rec"/>是
+                        {else}
+                        <input type="radio" value="0" name="rec" />否
+                        <input type="radio" value="1" name="rec" checked/>是
+                        {/if}
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>均价（元/㎡）：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="{$data.av_price}" name="av_price" data-validate="required:请输入标题" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>总价（万元/套）：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="{$data.money}" name="money" data-validate="required:请输入标题" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>面积 (m²)：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="{$data.area}" name="area"/>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>赠送面积 (m²)：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" value="{$data.sarea}" name="sarea" data-validate="required:请输入标题" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="label">
+                        <label>图片：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <!--<input class="tipss" id="addBtn" type="button" onclick="addPic1()" value="继续添加图片">-->
+                        <div style="height: 200px;width: 320px;float: left;margin-left:5px ;">
+                            <img src="{$data.picture}" style="height: 200px;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-top:15px">
+                    <div class="label">
+                        <label>描述：</label>
+                    </div>
+                    <div class="field">
+                        <script id="editor" type="text/plain" name="content">{$data.content}</script>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>所属房型：</label>
+                    </div>
+                    <div class="field" style="margin-top: 8px;">
+                        <select name="sort" id="">
+                            {switch name="data.sort" }
+                            {case value="2"}
+                            <option value="2" selected>两房</option>
+                            <option value="3">三房</option>
+                            <option value="4">四房</option>{/case}
+                            {case value="3"}
+                            <option value="2">两房</option>
+                            <option value="3" selected>三房</option>
+                            <option value="4">四房</option>{/case}
+                            {case value="4"}
+                            <option value="2">两房</option>
+                            <option value="3">三房</option>
+                            <option value="4" selected>四房</option>{/case}
+                            {/switch}
+                        </select>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="submit"> 提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

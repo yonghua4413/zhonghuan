@@ -1,0 +1,275 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" alt="公司logo" height="100%" />
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$data.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/lianxiwomen')}">商务合作</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="m-maincont" style="background: none;">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">钜惠报名</span>
+			</div>
+			<div class="bmtitle column">
+				<span>{$data.titd1}</span>
+			</div>
+			<div class="formname column">
+				<div class="usericonwap"><input class="username" id="username" type="text" placeholder="请输入姓名" /></div>
+				<div class="phoniconwap"><input class="userinfo" id="phone" type="text" placeholder="请输入电话" /></div>
+				<buttom class="clsubmit" id="btn11">立即预约</buttom>
+			</div>
+			<div class="userinfoit column" style="margin-bottom: 1.5rem;">
+				<span class="usertitle">已有<span style="color:#DFD1B0;">{$num}</span>人报名</span>
+				<ul class="uerul">
+					<li class="userli">
+						<span class="thch">称呼</span>
+						<span class="thdh">电话号码</span>
+						<span class="thms">报名情况</span>
+					</li>
+				</ul>
+				<div class="movelist">
+					<div class="ulmove">
+						<ul class="uerul">
+							{volist name="user" id="vo"}
+							<li class="userli">
+								<span class="thname">{$vo.name}</span>
+								<span class="thphon">{$vo.phone}</span>
+								<span>已报名成功</span>
+							</li>
+							{/volist}
+							<li class="userli">
+								<span class="thname">刘珊</span>
+								<span class="thphon">15748935642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">王珊</span>
+								<span class="thphon">18351365642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">陈珊</span>
+								<span class="thphon">1829785642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">李珊</span>
+								<span class="thphon">13742855642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">安珊</span>
+								<span class="thphon">14792325642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">赵珊</span>
+								<span class="thphon">13845845642</span>
+								<span>已报名成功</span>
+							</li>
+							<li class="userli">
+								<span class="thname">门珊</span>
+								<span class="thphon">13974115642</span>
+								<span>已报名成功</span>
+							</li>
+						</ul>
+					</div>
+					<div class="ulmovkl">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL('/index')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:4000888115">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script src="__STATIC__/layer/layer.js"></script>
+	<script>
+		$(function() {
+			var jmz = {};
+			jmz.GetLength = function(str) {
+				var realLength = 0,
+					len = str.length,
+					charCode = -1;
+				for (var i = 0; i < len; i++) {
+					charCode = str.charCodeAt(i);
+					if (charCode >= 0 && charCode <= 128) realLength += 1;
+					else realLength += 2;
+				}
+				return realLength;
+			}
+			$('#btn11').click(function() {
+				var name1 = $("#username").val().trim(),
+					phone1 = $("#phone").val().trim();
+				var partten = /^1[3,5,8]\d{9}$/;
+				if (name1 === "") {
+					layer.alert('请输入姓名');
+					return false;
+				} else {
+					var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+					if (reg.test(name1)) {} else {
+						layer.alert('你的姓名太屌了，服务器被吓坏鸟');
+						return false;
+					}
+					if (jmz.GetLength(name1) >= 2 && jmz.GetLength(name1) <= 10) {} else {
+						layer.alert('你的姓名太长鸟，服务器被吓坏鸟');
+						return false;
+					}
+					if (phone1 === "") {
+						layer.alert('请输电话号码');
+						return false;
+					} else {
+						if (partten.test(phone1)) {
+							$.ajax({
+								type: "POST",
+								url: "{:URL('/add')}",
+								data: {
+									name: name1,
+									phone: phone1,
+								},
+								success: function(data) {
+									if (data == '报名成功') {
+										layer.msg(data);
+										setTimeout(function() {
+											location = location;
+										}, 1000)
+										$("#phone").val("");
+										$("#username").val("");
+									} else {
+										setTimeout(function() {
+											location = location;
+										}, 1000)
+										layer.msg(data, {
+											icon: 1
+										});
+										$("#phone").val("");
+										$("#username").val("");
+									}
+								}
+							});
+						} else {
+							layer.alert('请输入正确的电话号码');
+							return false;
+						}
+					}
+				}
+			});
+		})
+	</script>
+	<script>
+		var flages = false;
+		$(window).keyup(function(event) {
+				if (event.keyCode == 116) {} else if (event.keyCode == 13) {
+					if (flages) {
+						alert("成功");
+					}
+				} else {
+					formyz();
+				}
+			})
+			//    $(".clsubmit").click(function () {
+			//        if (flages) {
+			//            alert("成功")
+			//        }
+			//    })
+		function formyz() {
+			var uname = $('.username').val();
+			var uphone = $('.userinfo').val();
+			if (!(/^1(3|4|5|7|8)\d{9}$/.test(uphone))) {
+				$(".phoniconwap").css({
+					"borderColor": "red"
+				});
+				flages = false;
+			} else {
+				$(".phoniconwap").css({
+					"borderColor": "#DFD1B0"
+				});
+				flages = true;
+			}
+			if (uname.trim() == "" || uname.trim() == null) {
+				$(".usericonwa").css({
+					"borderColor": "red"
+				});
+				flages = false;
+			} else {
+				$(".usericonwa").css({
+					"borderColor": "#DFD1B0"
+				});
+				flages = true;
+			}
+		}
+		$(function() {
+			$(".thphon").each(function() {
+				$(this).html($(this).html().substring(0, 8) + "****");
+			})
+			$(".thname").each(function() {
+				$(this).html($(this).html().substring(0, 1) + "**");
+			})
+			var speed = 30;
+			var ulmovkl = document.getElementsByClassName("ulmovkl")[0];
+			var ulmove = document.getElementsByClassName("ulmove")[0];
+			var movelist = document.getElementsByClassName("movelist")[0];
+			ulmovkl.innerHTML = ulmove.innerHTML;
+
+			function Marquee1() {
+				if (ulmovkl.offsetTop - movelist.scrollTop <= 0) {
+					movelist.scrollTop -= ulmove.offsetHeight;
+				} else {
+					movelist.scrollTop++
+				}
+			}
+			var MyMar1 = setInterval(Marquee1, speed)
+			movelist.onmouseover = function() {
+				clearInterval(MyMar1)
+			}
+			movelist.onmouseout = function() {
+				MyMar1 = setInterval(Marquee1, speed)
+			}
+		})
+	</script>
+
+</html>

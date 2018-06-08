@@ -1,0 +1,101 @@
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<style type="text/css">
+	.newsbanner {
+		height: 320px;
+		width: 100%;
+		background-image: url({$newbg.img1});
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+</style>
+<div class="t-newsinfo">
+	<div class="newsbanner row">
+		<div class="column newsbannauto">
+			<div class="column">
+				<span class="newzx">{$newbg.titd1}</span>
+				<img src="__STATICI__/img/jituanxian.png" style="margin-top: 10px;" />
+			</div>
+		</div>
+	</div>
+	<div class="newsincowap column">
+		<div class="column newstitle">
+			<span class="newsToptitle">{$data.title}</span>
+			<span class="newsborder"></span>
+		</div>
+		<div class="sharnews row"><span>时间：{$data.date_time|date="Y/m/d",###}</span><span>浏览次数：{$data.look}次</span>
+			<span>来源：{$data.come}</span><span>版权所有：益华集团</span>分享：
+			<img src="__STATICI__/img/shareicon.png" class="shoreitem" />
+			<div class="bdsharebuttonbox" style="position: relative;right: 35px;top:2px;width: 50px;">
+				<a href="#" class="bds_more" data-cmd="more" style="width: 50px;opacity: 0;"></a>
+			</div>
+
+		</div>
+		<span class="newincont">{$data.content}</span>
+		<span class="row tablewap">
+        {volist name="data.tab" id="vo"}
+            <span class="newtable">{$vo}</span> {/volist}
+		</span>
+
+		<div class="Bread">
+
+			<div class="Previotop">
+				<span class="miaosu" style="display:none">{$data.miaosu}</span>
+				<div class="Previo">上一篇：</div>
+				<div class="next">下一篇：</div>
+			</div>
+
+			<div class="Previobtn">
+				<a href="{:URL('/nesinfo',['nid'=>$shang.id])}" class="Previoa">{$shang.title}</a>
+				<a href="{:URL('/nesinfo',['nid'=>$xia.id])}" class="nexta">{$xia.title}</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="__STATICI__/js/t_index.js"></script>
+<script>
+	//  $(".newincont p span").css({"font-size": "16px"})
+</script>
+
+<script>
+	var miaosuHt = $(".miaosu").html();
+	var newstitle = $(".newsToptitle").html();
+	var winHref = window.location.href;
+	window._bd_share_config = {
+		"common": {
+			"bdSnsKey": {},
+			"bdText": miaosuHt,
+			"bdMini": "2",
+			"bdMiniList": false,
+			"bdPic": "http://www.yhjtcity.com/static/index/img/logo.png",
+			"bdStyle": "0",
+			"bdSize": "16",
+			"bdUrl": winHref,
+			"bdDesc": newstitle,
+		},
+		"share": {}
+	};
+	with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
+<script>
+	$(function() {
+		$(".newsincowap img").each(function(i) {
+			var img = $(this);
+			var realWidth;
+			var realHeight;
+			$("<img/>").attr("src", $(img).attr("src")).load(function() {
+				realWidth = this.width;
+				realHeight = this.height;
+				if(realWidth >=900) {
+					img.css("width", "90%").css("height", "auto");
+				} else {
+					img.css("width", "auto").css("height", "auto");
+				}
+			});
+		});
+		var width = $(window).width();
+		$('.newsincowap').css('width', width - 400 + "px");
+	})
+</script>
+</body>

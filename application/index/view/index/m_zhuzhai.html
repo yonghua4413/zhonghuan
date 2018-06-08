@@ -1,0 +1,245 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<style>
+		.banner{
+			height: 1.6rem;
+		    width: 100%;
+		    background-repeat: no-repeat;
+		    background-position: center center;
+		    background-size: 100% 100%;
+			background-image:url({$data1.m_img}) ;
+		}
+	</style>
+	
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<ul class="navul row">
+					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
+					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
+					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="breasoncont column">
+			<div class="banner">
+			</div>
+			<div class="mainbjee">
+				<div class="column bywaper">
+					<span class="bytitle">{$data1.titdd}</span>
+					<div class="bdttbdmin"></div>
+					<span class="bdttbmax"></span>
+					<div class="itembdrow">
+						<div class="row rowmagrn">
+
+							<div style="border-right:1px solid black;height:67%;width: 100%;position:absolute;bottom:0;box-sizing:border-box;"></div>
+
+							<div class="item-left column">
+								<div class="topheight column">
+									<span class="boerridu">1</span>
+									<span class="bdrutitle">{$data1.titd1}</span>
+								</div>
+
+								<div class="borrdiu column">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+
+								<div class="topheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu1}</span>
+								</div>
+
+							</div>
+
+							<div class="item-right column">
+								<div class="topheight column">
+									<span class="boerridu">2</span>
+									<span class="bdrutitle">{$data1.titd2}</span>
+								</div>
+								<div class="borrdiu column">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="topheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu2}</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row rowmagrn">
+
+							<div style="position: absolute;display: block;width: 100%;height:100%;display: block;">
+								<div style="position: absolute;display: block;border-left:1px solid black;box-sizing: border-box;bottom: 0px;width: 100%;height:67%;display: block;"></div>
+								<div style="position: absolute;display: block;box-sizing: border-box;border-right:1px solid black;top:0px;width: 100%;height:33%;display: block;"></div>
+							</div>
+							<div class="item-left column">
+								<div class="topheight column">
+									<span class="boerridu">4</span>
+									<span class="bdrutitle">{$data1.titd4}</span>
+								</div>
+								<div class="borrdiu column">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="bottomheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu4}</span>
+								</div>
+							</div>
+
+							<div class="item-right column">
+								<div class="topheight column">
+									<span class="boerridu">3</span>
+									<span class="bdrutitle">{$data1.titd3} </span>
+								</div>
+
+								<div class="borrdiu">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="topheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu3}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row rowmagrn">
+							<div style="position: absolute;display: block;width: 100%;height:100%;display: block;">
+								<div style="position: absolute;display: block;border-left:1px solid black;box-sizing: border-box;top: 0px;width: 100%;height:33%;display: block;"></div>
+								<div style="position: absolute;display: block;box-sizing: border-box;border-right:1px solid black;bottom:0px;width: 100%;height:67%;display: block;"></div>
+							</div>
+							<div class="item-left column">
+								<div class="topheight column">
+									<span class="boerridu">5</span>
+									<span class="bdrutitle">{$data1.titd5}</span>
+								</div>
+								<div class="borrdiu column">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="bottomheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu5}</span>
+								</div>
+							</div>
+							<div class="item-right column">
+								<div class="topheight column">
+									<span class="boerridu">6</span>
+									<span class="bdrutitle">{$data1.titd6}</span>
+								</div>
+								<div class="borrdiu">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="topheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu6}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row rowmagrn">
+							<div style="position: absolute;top:0px;display: block;border-right:1px solid black;width: 100%;height:33%;display: block;box-sizing: border-box;"></div>
+							<div class="item-left column">
+								<div class="topheight column">
+									<span class="boerridu">8</span>
+									<span class="bdrutitle">{$data1.titd8}</span>
+								</div>
+								<div class="borrdiu column">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="bottomheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu8}</span>
+								</div>
+							</div>
+							<div class="item-right column">
+								<div class="topheight column">
+									<span class="boerridu">7</span>
+									<span class="bdrutitle">{$data1.titd7}</span>
+								</div>
+								<div class="borrdiu">
+									<div class="gdborder"></div>
+									<div class="bdriud"></div>
+								</div>
+								<div class="topheight column">
+									<span class="bdrutcont" style="overflow: hidden;">{$data1.miaosu7}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hxtuijian column">
+				<span class="bytitle">精品户型推荐</span>
+				<div class="bdttbdmin"></div>
+				<span class="bdttbmax"></span>
+
+				<div class="tjhxitemwap">
+					{volist name="data" id="vo"}
+					<a href="{:URL('/mengban',['id'=>$vo.id,'ty'=>1])}" class="column hxitms">
+						<div class="column">
+							<div class="imggdgao">
+								<img src="{$vo.picture}" alt="户型图"/>
+							</div>
+							<span class="hxmaoshu inline-block">{$vo.title}户型{:trim(substr($vo.living, 0 , 14),'|')}</span>
+							<span class="tjhxms inline-block">建面：约{$vo.area}m²&nbsp;赠{$vo.sarea}m²</span>
+						</div>
+					</a>
+					{/volist}
+				</div>
+			</div>
+		</div>
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(".coloses").click(function() {
+			$(".mengc").fadeOut(300)
+		})
+		$(".hxitms").click(function() {
+			$(".mengc").fadeIn(600);
+		})
+		$(".mcsubbtn").click(function() {
+			alert(123)
+		})
+	</script>
+
+</html>

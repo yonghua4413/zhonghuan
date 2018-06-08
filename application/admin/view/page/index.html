@@ -1,0 +1,104 @@
+<!--后台户型管理-->
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><span>户型管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong class="icon-reorder"> 户型列表</strong></div>
+        <div class="padding border-bottom">
+            <ul class="search">
+                <li>
+                    <form method="post" action="{:url('admin/Book/delall')}?tid={:input('param.tid/d')}">
+                        <a type="button"  class="button border-main" href="{:url('admin/page/index')}?tid=1"><span></span>全部房型 </a>
+                        <a type="button"  class="button border-main" href="{:url('admin/page/index')}?tid=2"><span></span>两房 </a>
+                        <a type="button"  class="button border-main" href="{:url('admin/page/index')}?tid=3"><span></span>三房</a>
+                        <a type="button"  class="button border-main" href="{:url('admin/page/index')}?tid=4"><span></span>四房 </a>
+                    </form>
+                </li>
+                <button type="button" class="button border-yellow" onclick="window.location.href='{:url('admin/page/add')}'"><span class="icon-plus-square-o"></span> 添加户型</button>
+                <button type="button" class="button border-blue" onclick="window.location.href='{:url('admin/page/you')}'"> 背景图和优势内容管理</button>
+            </ul>
+
+        </div>
+        <table class="table table-hover text-center">
+            <tr>
+                <th width="6%">户型</th>
+                <th width="4%">组团</th>
+                <th width="9%">室厅卫</th>
+                <th width="6%">是否推荐</th>
+                <th width="5%">面积 (m²)</th>
+                <th width="6%">赠送面积 (m²)</th>
+                <th width="10%">总价（万元/套）</th>
+                <th width="6%">所属房型</th>
+                <th width="13%">图片</th>
+                <th width="20%">描述</th>
+                <th width="15%">操作</th>
+            </tr>
+            {if empty($data)}
+            <tr><td colspan="7" style="color: red;height: 50px;font-size: 17px;"> 当前无任何内容 ! </td></tr>
+            {else}
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$vo.title}</td>
+                <td>{$vo.group}</td>
+                <td>{$vo.living}</td>
+                <td>{if $vo.rec == 0}不推荐{else}推荐{/if}</td>
+                <td>{$vo.area}</td>
+                <td>{$vo.sarea}</td>
+                <td>{$vo.money}</td>
+                <td>
+                    {switch name="vo.sort" }
+                    {case value="2"}<span>两房</span>{/case}
+                    {case value="3"}<span>三房</span>{/case}
+                    {case value="4"}<span>四房</span>{/case}
+                    {/switch}
+                </td>
+                <td><img src="{$vo.picture}" alt="" width="120" height="50" /></td>
+                <td>{$vo.content}</td>
+                <td><div class="button-group">
+                    <a class="button border-main" href="{:url('admin/page/edit')}?id={$vo.id}"><span class="icon-edit"></span> 修改</a>
+                    {if session('id') == 1}
+                     <a class="button border-red" href="javascript:void(0)" onclick="return del({$vo.id})"><span class="icon-trash-o"></span> 删除</a>
+                    {/if}
+                </div></td>
+            </tr>
+            {/volist}
+            {/if}
+        </table>
+    </div>
+    <script src="__STATIC__/layer/layer.js"></script>
+    <script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+    <script type="text/javascript">
+        //询问框
+        function del(id){
+            layer.confirm('您确定要删除吗？', {
+                btn: ['确定','取消']
+            }, function(){
+                $.ajax({
+                    type:"post",
+                    url:"{:url('admin/page/del')}",
+                    data:{
+                        id:id,
+                    },
+                    success:function(data){
+                        var data = eval('(' + data + ')');
+                        if (data.status == 1){
+                            layer.msg(data.msg, {icon: 1});
+                            setTimeout(function () {
+                                location=location;
+                            },1000)
+
+                        }else if(data.status == 0){
+                            layer.msg(data.msg, {icon: 2});
+                            setTimeout(function () {
+                                location=location;
+                            },1000)
+                        }
+                    }
+                });
+            }, function(){
+            });
+        }
+    </script>
+</div>

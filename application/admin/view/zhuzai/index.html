@@ -1,0 +1,260 @@
+<!--后台新闻添加-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<style type="text/css">
+    textarea{
+        resize: none;
+    }
+</style>
+<ul class="bread">
+    <li><a href="" class="icon-home"> 首页</a></li>
+    <li><span>住宅页管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>更新住宅页</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Zhuzai/upd')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <!--住宅页背景模块-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>住宅页背景标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd" value="{$data.titd}" style="width: 50%"/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>住宅页英文标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="tity" value="{$data.tity}" style="width: 50%"/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>住宅页背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="image" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 100%;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.img}" style="height: 100%;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>住宅页手机端背景图片 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" id="picInput">
+                        <input type="file" name="m_img" value="+ 浏览上传"  style="margin-top: 10px;float: left">
+                        <div style="height: 100%;width: 320px;float: left;margin-left:5px ">
+                            <img src="{$data.m_img}" style="height: 100%;width: 320px"/>
+                        </div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--<div class="form-group">-->
+                    <!--<div class="label">-->
+                        <!--<label>住宅页理由大标题 <span style="color:red">*</span>：</label>-->
+                    <!--</div>-->
+                    <!--<div class="field">-->
+                        <!--<input type="text" maxlength="80"  class="input w80" name="titdd" value="{$data.titdd}" style="width: 50%"/>-->
+                        <!--<input type="hidden" name="id" value=""/>-->
+                        <!--<div class="tipss"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--1-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>住宅页理由大标题 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titdd" value="{$data.titdd}" style="width: 50%"/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题1 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd1" value="{$data.titd1}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由1内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu1"  cols="50" rows="7">{$data.miaosu1}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--2-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题2 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd2" value="{$data.titd2}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由2内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu2"  cols="50" rows="7">{$data.miaosu2}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--3-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题3 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd3" value="{$data.titd3}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由3内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu3"  cols="50" rows="7">{$data.miaosu3}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--4-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题4 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd4" value="{$data.titd4}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由4内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu4"  cols="50" rows="7">{$data.miaosu4}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--5-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题5 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd5" value="{$data.titd5}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由5内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu5"  cols="50" rows="7">{$data.miaosu5}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--6-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题6 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd6" value="{$data.titd6}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由6内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu6"  cols="50" rows="7">{$data.miaosu6}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--7-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题7 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd7" value="{$data.titd7}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由7内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu7"  cols="50" rows="7">{$data.miaosu7}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <!--8-->
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由标题8 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="titd8" value="{$data.titd8}" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>理由8内容描述 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field" style="width: 888px">
+                        <textarea class="input" type="text" name="miaosu8"  cols="50" rows="7">{$data.miaosu8}</textarea>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)">提交修改</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>

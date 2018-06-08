@@ -1,0 +1,211 @@
+<!--后台管理员管理-->
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href="{:url('admin/index/index')}" class="icon-home"> 首页</a></li>
+    <li><span>管理员管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong class="icon-reorder"> 管理员管理</strong></div>
+        <div class="padding border-bottom">
+            <button type="button" class="button border-yellow" onclick="window.location.href='{:url('admin/User/add')}'"><span class="icon-plus-square-o"></span> 添加管理员</button>
+        </div>
+        <table class="table table-hover text-center">
+            <tr>
+                <th width="120">ID</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>管理员等级</th>
+                <th width="320">操作</th>
+            </tr>
+            {volist name="data" id="vo"}
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo.phone}</td>
+                <td>
+                    {if $vo.admin_rank == 2}
+                    <span style="color: orange">普通管理员</span>
+                    {else}
+                    <span style="color: red">超级管理员</span>
+                    {/if}
+                </td>
+                <td>
+                    <div class="button-group">
+                        {if session('id') == 1}
+                        <a class="button border-main" href="javascript:void({$vo.id})" onclick="return defaultpwd({$vo.id})""><span class="icon-check"></span> 设置为默认密码</a>
+                        {/if}
+                        <a class="button border-main" href="{:url('admin/User/update')}?id={$vo.id}"><span class="icon-check"></span> 编辑</a>
+                        {if $vo.id != 1}
+                        <a class="button border-red" href="javascript:void(0)" onclick="return del({$vo.id})"><span class="icon-trash-o"></span> 删除</a>
+                        {/if}
+                    </div>
+                </td>
+            </tr>
+            {/volist}
+            <tr>
+                <td colspan="8">
+                    <div class="pagelist">
+                        {if !empty($count)}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> {$count} </b> 条数据</span>
+                        {elseif !empty($tcount)}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> {$tcount} </b>条数据</span>
+                        {else}
+                        <span style="color: #00A2E8;font-size: 14px;">共 <b style="color: red"> 0 </b>条数据</span>
+                        {/if}
+                        {if input('param.page/d') > 1}
+                        <a href="?page={:input('param.page/d') - 1}"  class="last">上一页</a>
+                        {else}
+                        <a href="?page=1"  class="last">上一页</a>
+                        {/if}
+                        {for start="1" end="$pageNum+1"}
+                        <a href="?page={$i}">{$i}</a>
+                        {/for}
+                        {if input('param.page/d') < $pageNum}
+                        <a href="?page={:input('param.page/d') + 1}"  class="lest">下一页</a>
+                        {else}
+                        <a href="?page={$pageNum}" class="lest">下一页</a>
+                        {/if}
+                        <a href="?page={$pageNum}" class="list">尾页</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="__STATICA__/js/jedate.js"></script>
+<script>
+    var myDate = new Date();
+    myDate.toLocaleDateString()
+
+    //时间控件
+    var start = {
+        dateCell: '#time',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    var end = {
+        dateCell: '#time1',
+        format: 'YYYY/MM/DD hh:mm:ss',
+        minDate: "1900-01-01", //设定最小日期为当前日期
+        festival:true,
+        // maxDate:myDate.toLocaleDateString(), //最大日期
+        isTime: true,
+        choosefun: function(datas){
+            end.minDate = datas; //开始日选好后，重置结束日的最小日期
+        }
+    };
+    jeDate(start);
+    jeDate(end);
+</script>
+<script type="text/javascript">
+    $(".last").click(function () {
+        var page = {:input('param.page/d')};
+        if (page == 1){
+            $(".last").removeAttr("href");
+            layer.alert('已经是第一页了', {
+                tips: [4, '#78BA32']
+            });
+            //layer.alert('已经是第一页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    $(".lest").click(function () {
+        var page = {:input('param.page/d')};
+        if(page == {$pageNum}){
+            $(".lest").removeAttr("href");
+            layer.alert('已经是最后一页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    $(".list").click(function () {
+        var page = {:input('param.page/d')};
+        if(page == {$pageNum}){
+            $(".list").removeAttr("href");
+            layer.alert('已经是尾页了！');
+            setTimeout(function () {
+                location=location;
+            },1000)
+        }
+    });
+    function defaultpwd(id){
+        layer.confirm('您确定要恢复该管理员的密码吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.ajax({
+                type:"post",
+                url:"{:url('admin/user/defaultpwd')}",
+                data:{
+                    id:id,
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');
+                    if (data.status == 1){
+                        layer.msg(data.msg, {icon: 1});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+
+                    }else if(data.status == 0){
+                        layer.msg(data.msg, {icon: 2});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }
+                }
+            });
+        }, function(){
+        });
+    }
+    function del(id){
+        layer.confirm('您确定要删除吗？', {
+            btn: ['确定','取消']
+        }, function(){
+            $.ajax({
+                type:"post",
+                url:"{:url('admin/user/del')}?tid={:input('param.tid/d')}",
+                data:{
+                    id:id,
+                },
+                success:function(data){
+                    var data = eval('(' + data + ')');
+                    if (data.status == 1){
+                        layer.msg(data.msg, {icon: 1});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+
+                    }else if(data.status == 0){
+                        layer.msg(data.msg, {icon: 2});
+                        setTimeout(function () {
+                            location=location;
+                        },1000)
+                    }
+                }
+            });
+        }, function(){
+        });
+    }
+    $("#checkall").click(function(){
+        $("input[name='id[]']").each(function(){
+            if (this.checked) {
+                this.checked = false;
+            }
+            else {
+                this.checked = true;
+            }
+        });
+    })
+</script>

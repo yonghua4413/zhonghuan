@@ -1,0 +1,5 @@
+# robots.txt generated at http://www.yhjtcity.com/robots/ 
+User-agent: *
+Disallow: 
+Sitemap: http://www.yhjtcity.com/sitemap.xml
+Sitemap: http://www.yhjtcity.com/sitemap.html

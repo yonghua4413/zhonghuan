@@ -1,0 +1,219 @@
+<link rel="stylesheet" href="__STATICI__/css/z_zhuzhai.css" />
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<style type="text/css">
+	#z_main{
+		background-image: url({$data1.img});
+		position: relative;
+	}
+</style>
+<div class="t-main" id="z_main">
+	<div class="clicknav">
+	</div>
+	<div class="center_word">
+		<!-- <span class="top_center_word">公园大别墅·生活方向标</span>
+		<div><img src="__STATICI__/img/9.5zhe.png" alt="住宅9.5折"/></div> -->
+		<div class="top_center_word">{$data1.titd}</div>
+		<div class="top_center_word" style="letter-spacing: 30px;line-height: 80px;font-size: 20px;font-family:'Microsoft YaHe';position:relative;">
+			{$data1.tity}
+		</div>
+	</div>
+	<div class="bottom_image">
+		<img src="__STATICI__/img/mouseIco.png" />
+	</div>
+</div>
+<!--户型优势-->
+<div class="z_hxys">
+	<div class="z_hx_top_title">
+		<span>{$data1.titdd}</span>
+		<div class="z_hx_top_xian">
+			<div></div>
+		</div>
+	</div>
+	<!--优势边框-->
+	<div class="z_hxys_border">
+
+	</div>
+	<!--优势介绍-->
+	<div class="z_ysjs">
+		<ul>
+			<li class="jiyuanxl">
+				<div class="z_ysjs_num">1</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd1}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu1}</div>
+			</li>
+			<li class="jiyuanxl">
+				<div class="z_ysjs_num">2</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd2}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu2}</div>
+			</li>
+			<li class="jiyuanxl">
+				<div class="z_ysjs_num">3</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd3}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu3}</div>
+			</li>
+			<li class="jiyuanxl">
+				<div class="z_ysjs_num">4</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd4}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu4}</div>
+			</li>
+			<li style="width: 250px;margin-right: 70px;">
+				<div class="z_ysjs_num">8</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd8}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu8}</div>
+			</li>
+			<li style="width: 250px;margin-right: 70px;">
+				<div class="z_ysjs_num">7</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd7}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu7}</div>
+			</li>
+			<li style="width: 250px;margin-right: 70px;">
+				<div class="z_ysjs_num">6</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd6}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu6}</div>
+			</li>
+			<li>
+				<div class="z_ysjs_num">5</div>
+				<div class="z_ysjs_bigcir"></div>
+				<div class="z_ysjs_title">{$data1.titd5}</div>
+				<div class="z_ysjs_smallcir"></div>
+				<div class="z_ysjs_js">{$data1.miaosu5}</div>
+			</li>
+		</ul>
+	</div>
+	<img src="__STATICI__/img/hxysdiwen.png" class="z_fxys_diwen" alt="住宅底纹"/>
+</div>
+<center>
+<img src="{$data1.img1}" width="100%">
+<img src="{$data1.img2}" width="100%">
+</center>
+<script type="text/javascript" src="__STATICI__/js/z_zhuzhai.js"></script>
+</body>
+<script type="text/javascript">
+
+$(function(){
+	$(".jsul p").each(function() {
+		$(this).replaceWith("<span class='jslispan'>" + $(this).html() + "</span>");
+	})
+	$('.topnavli a').each(function() {
+		if ($($(this))[0].href == String(window.location)) {
+			$(this).addClass("ahref").parent().siblings().children().removeClass("ahref");
+		}
+	})
+	
+	$(".yuedu").click(function(){
+		
+		if($(this).is(":checked")){
+			$(".jssubmitbtn").css({"background":"red","color":'#fff'})
+			$(".jssubmitbtn").removeAttr("disabled");
+		}else{
+			$(".jssubmitbtn").css({"background":"#999","color":'#fff'})
+			
+			$(".jssubmitbtn").attr("disabled","disabled")
+		}
+		
+		
+	});
+	$("#zghgClose").click(function(){
+		$(".zhonghgjyhxyBox").css("display","none");
+	});
+	$(".zhonghgjyhxyBox").click(function(){
+		$(".zhonghgjyhxyBox").css("display","none");
+	});
+	$(".zhonghgjyhxy").click(function(){
+		$(".zhonghgjyhxyBox").css("display","block");
+	});
+	$(".weixin").hover(function() {
+		$(".weixinhao").css("display", "block");
+	}, function() {
+		$(".weixinhao").css("display", "none");
+	})
+	$(".weixinhao").hover(function() {
+		$(".weixinhao").css("display", "block");
+	}, function() {
+		$(".weixinhao").css("display", "none");
+	});
+	$(window).scroll(function() {
+		var sctop = $(window).height() / 2 + $(this).scrollTop();
+		$(".baoname").css("top", sctop + "px");
+	});
+	
+	})
+	$(function() {
+		$('.jssubmitbtn').click(function() {
+			var arr = '';
+			$(this).parent(".jslrickwap").siblings(".jslftckwap").find("input").each(function() {
+				
+				if ($(this).is(":checked")) {
+					arr+="-"+$(this).val();
+				}
+			})
+			var name1 = arr;
+			var phone1 =$(this).parent(".jslrickwap").children(".usericonwap").children("#phone").val().trim();
+			var partten = /^1[3,5,8]\d{9}$/;
+			if (name1 == "") {
+				layer.alert('请勾选你需要咨询的！');
+				return false;
+			} else {
+				if (phone1 == "") {
+					layer.alert('请输电话号码');
+					return false;
+				} else {
+					var name2 = '订阅用户('+name1+')';
+					var is_do1 = 3;
+					if (partten.test(phone1)) {
+						$.ajax({
+							type: "POST",
+							url: "{:url('index/index/add')}",
+							data: {
+								name: name2,
+                                phone: phone1,
+                                is_do: is_do1
+							},
+							success: function(data) {
+							    console.log(data);
+								if (data == '报名成功') {
+									layer.msg(data);
+									setTimeout(function() {
+										location = location;
+									}, 1000)
+									$("#phone").val("");
+									$("#username").val("");
+								}else{
+									setTimeout(function() {
+										location = location;
+									}, 1000)
+									layer.msg(data, {
+										icon: 1
+									});
+									$("#phone").val("");
+									$("#username").val("");
+								}
+							},
+							error:function (error) {
+								console.log(error)
+                            }
+						});
+					} else {
+						layer.alert('请输入正确的电话号码');
+						return false;
+					}
+				}
+			}
+		});
+	})
+</script>

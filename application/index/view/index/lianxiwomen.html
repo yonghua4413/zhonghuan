@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="__STATICI__/css/z_lianxiwomen.css"/>
+<style type="text/css">
+	#z_main{
+		background-image: url({$data.img});
+		position: relative;
+		width: 100%;
+	}
+</style>
+<div class="t-main" id="z_main">
+	<div class="clicknav">
+	</div>
+	<span class="z_yihua_top_title">{$data.titd}</span>
+	<span class="z_yihua_top_xian"><img src="__STATICI__/img/jituanxian.png"/></span>
+</div>
+<!--地址-->
+<div class="z_lianxi" style="padding-bottom: 0;">
+	<ul>
+		<li>
+			<img src="{$data.img1}" alt="公司地址" class="lxdituimg"/>
+		</li>
+		<li class="lianxiLi" style="top: 77px;">
+			<div style="height: auto;">
+						<span style="display: block;width: 31px; height: 31px;">
+							<img src="__STATICI__/img/maps.png" style="width: 100%; height: 100%;"/>
+						</span>
+				<span class="qian100po">项目地址 : {$data.titd1}</span>
+			</div>
+			<div>
+						<span style="float: left;display: block;width: 31px; height: 31px;margin-top:8px;margin-right: 21px;">
+							<img src="__STATICI__/img/tel1.png" style="width: 100%; height: 100%;"/>
+						</span>
+				<span style="float: left;position: relative;top: 12px;">咨询电话 : {$data.titd2}</span>
+				<br/>
+				<p class="kaifs" style="left: 53px;">开发商 : {$data.titd3}</p>
+			</div>
+			<div class="lianxi_weix" style="top: 258px;">
+				<img src="{$weixin.img2}" alt="微信公众号"/>
+				<p class="lianxi_zi">微信公众号</p>
+			</div>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+    $('.topnavli a').each(function () {
+        if ($($(this))[0].href == String(window.location)) {
+            $(this).addClass("ahref").parent().siblings().children().removeClass("ahref");
+        }
+    })
+    $(".weixin").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    })
+    $(".weixinhao").hover(function () {
+        $(".weixinhao").css("display", "block");
+    }, function () {
+        $(".weixinhao").css("display", "none");
+    });
+    $(window).scroll(function () {
+        var sctop = $(window).height() / 2 + $(this).scrollTop();
+        $(".baoname").css("top", sctop + "px");
+    })
+</script>
