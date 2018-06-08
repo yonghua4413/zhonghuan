@@ -1,0 +1,1473 @@
+body {
+	color: #333;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	height: auto;
+	margin: auto;
+}
+
+html,
+p,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+img,
+body,
+html {
+	border: 0;
+	display: block;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: 400;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+th,
+tr,
+td {
+	border: none;
+	text-align: center !important;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+a,
+a:visited {
+	color: #C1AB78;
+	text-decoration: none;
+	box-shadow: white;
+}
+
+a:hover,
+a:active {
+	text-decoration: none;
+	color: white;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.bring-to-top {
+	position: relative;
+	z-index: 500;
+}
+
+.clear {
+	clear: both;
+}
+
+.hidden {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.imgcenter {
+	display: inline-block;
+	/*将行内元素改变为行内块元素显示*/
+	width: 1px;
+	/*实现ＩＥ下可读效果*/
+	height: 100%;
+	/*使用元素高度和图片容器高度一样*/
+	vertical-align: middle;
+}
+
+.bdrbox {
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.transition {
+	-webkit-transition: all 0.45s;
+	transition: all 0.45s;
+	-moz-transition: all 0.45s;
+	-o-transition: all 0.45s;
+}
+
+.row {
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	align-items: center;
+	-webkit-align-items: center;
+}
+
+.column {
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	align-items: center;
+	-webkit-align-items: center;
+}
+
+.m-header {
+	height: 1.6rem;
+	width: 100%;
+	font-size: 0.35rem;
+	background: black;
+	margin: auto;
+}
+
+.hdlog {
+	height: 0.9rem;
+	width: 100%;
+}
+
+.hdlog a {
+	display: block;
+	width: auto;
+	float: left;
+	margin-right: 0.3rem;
+}
+
+.hdlog img {
+	height: 0.75rem;
+	display: block;
+	margin-left: 0.15rem;
+}
+
+.headponnum {
+	color: #E2CA8C;
+	font-size: 0.34rem;
+	letter-spacing: 1px;
+	display: block;
+	float: right;
+}
+
+.headnav {
+	background: #1C1F26;
+	height: 0.7rem;
+}
+
+.navul {
+	list-style: none;
+	display: block;
+	height: 0.7rem;
+	width: 100%;
+}
+
+.navli {
+	width: 12%;
+	font-size: 0.26rem;
+	color: #E2CA8C;
+	display: block;
+	height: 0.7rem;
+	float: left;
+	text-align: center;
+}
+
+.navlip {
+	width: 19%;
+}
+
+.navli a {
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	width: 100%;
+	text-align: center;
+}
+
+.navli:hover {
+	color: white;
+}
+
+
+/******main******/
+
+.m-maincont {
+	height: auto;
+	width: 100%;
+	margin-bottom: 0.9rem;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/indexbanner.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center center;
+}
+
+.indbancont {
+	height: 70%;
+	margin-left: 2.6rem;
+	margin-top: 0.8rem;
+	position: relative;
+	width: auto;
+}
+
+.indbanconta {
+	height: 70%;
+	margin-left: 2.6rem;
+	margin-top: 0.8rem;
+	position: relative;
+	width: auto;
+}
+
+.clikxqwap {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -0.9rem;
+}
+
+.indbancont img {
+	height: 100%;
+	width: auto;
+}
+
+.clikxq {
+	width: 0.3rem;
+	height: auto;
+	display: block;
+	padding: 0.1rem;
+	border: white solid 1px;
+	border-radius: 3px;
+	font-size: 0.24rem;
+	text-align: center;
+	color: white;
+}
+
+.indrowauto {
+	height: 100%;
+}
+
+.indqhnav {
+	height: 1.6rem;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.55);
+	position: absolute;
+	bottom: 0.9rem;
+	z-index: 300;
+}
+
+.autocenter {
+	width: 100%;
+	height: auto;
+}
+
+.indbtitem {
+	margin: auto 0.4rem;
+}
+
+.indbtitem img {
+	height: 0.5rem;
+	display: block;
+	margin-bottom: 0.8em;
+}
+
+.indbtitem span {
+	font-size: 0.28rem;
+	color: white;
+}
+
+.indborder {
+	height: 0.2rem;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	top: 0.81rem;
+}
+
+.bordresile,
+.bordresil {
+	height: 1px;
+	background: white;
+	width: 50%;
+	-webkit-transition: all 0.45s;
+	transition: all 0.45s;
+	-moz-transition: all 0.45s;
+	-o-transition: all 0.45s;
+}
+
+.indboridu {
+	height: 0.16rem;
+	width: 0.16rem;
+	border-radius: 100%;
+	border: 0.01rem solid #DFD1B0;
+	box-shadow: 0rem -0.3rem 0.8rem 0.1rem #FEB200;
+	display: none;
+}
+
+
+/***bottom****/
+
+.m-bottom {
+	height: 0.9rem;
+	width: 100%;
+	background: #1C1F26;
+	position: fixed;
+	bottom: 0px;
+	z-index: 9999;
+}
+
+.bnavitem {
+	width: 33.33%;
+	height: 100%;
+}
+
+.bnavitem:nth-of-type(2) {
+	width: 33.33%;
+	font-size: 0.26rem;
+	color: white;
+	background: #c9b27c;
+}
+
+.m-bottom a {
+	display: block;
+	width: 100%;
+}
+
+.btn-nav {
+	width: 100%;
+	font-size: 0.26rem;
+	color: white;
+	height: auto;
+}
+
+.btn-nav img {
+	width: 0.4rem;
+}
+
+
+/*****bname*******/
+
+.bnamebanner {
+	height: 1.6rem;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/bnamebanner.jpg);
+}
+
+.bnamebtitle {
+	width: 100%;
+	font-size: 0.32rem;
+	color: white;
+	text-align: center;
+	padding-bottom: 0.1rem;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/jituanxian.png);
+	background-position: bottom center;
+	background-size: 1.2rem;
+	background-repeat: no-repeat;
+}
+
+.bmtitle {
+	margin: 0.3rem auto;
+	font-size: 0.28rem;
+	width: 100%;
+	color: black;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/bnameborder.png);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 2rem;
+	padding-bottom: 0.2rem;
+}
+
+.formname {
+	width: 100%;
+}
+
+.username,
+.userinfo,
+.clsubmit {
+	width: 100%;
+	margin: auto;
+	height: 0.7rem;
+	outline: none;
+	text-indent: 30px;
+	background: none;
+	border-radius: 2px;
+	box-sizing: border-box;
+	border: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.clsubmit {
+	height: 0.8rem;
+	text-align: center;
+	background: #DFD1B0;
+	line-height: 0.8rem;
+	text-indent: 0px;
+	color: white;
+	font-size: 0.36rem;
+	width: 80%;
+	margin: 0.2rem;
+}
+
+.usericonwap,
+.phoniconwap {
+	margin: 0.2rem;
+	border: #DFD1B0 1px solid;
+	width: 80%;
+	height: 0.7rem;
+	border-radius: 3px;
+}
+
+.usericonwap {
+	background: url(http://www.yhjtcity.com/static/index/m_img/usericon.png) no-repeat 6px center;
+	background-size: 0.4rem;
+}
+
+.phoniconwap {
+	background: url(http://www.yhjtcity.com/static/index/m_img/phonicon.png) no-repeat 6px center;
+	background-size: 0.35rem;
+}
+
+.usertitle {
+	font-size: 0.32rem;
+	color: black;
+	margin: 0.5rem auto;
+}
+
+.movelist {
+	height: 2rem;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.uerul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-flex-direction: column;
+}
+
+.userli {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-flex-direction: row;
+}
+
+.userli span {
+	width: 100%;
+	text-align: center;
+	font-size: 0.28rem;
+	color: #666;
+}
+
+.thch,
+.thdh,
+.thms {
+	font-size: 0.32rem !important;
+	color: black !important;
+	margin-bottom: 0.2rem;
+}
+
+
+/*******news*******/
+
+.m-newscont {
+	height: auto;
+	width: 100%;
+	margin-bottom: 0.9rem;
+}
+
+.newsbordre {
+	height: 1rem;
+	width: 100%;
+	margin: 0.2rem auto;
+}
+
+.newauto {
+	width: 100%;
+	height: auto;
+}
+
+.clnewsitem {
+	width: 90%;
+	margin-bottom: 0.2rem;
+	margin: auto;
+}
+
+.clnewsitem span {
+	width: 33.33%;
+	text-align: center;
+	font-size: 0.26rem;
+	cursor: pointer;
+}
+
+.newbowap {
+	width: 100%;
+	height: 0.2rem;
+	position: relative;
+}
+
+.newbdauto {
+	background: #DFD1B0;
+	height: 1px;
+	width: 100%;
+	top: 50%;
+	position: absolute;
+}
+
+.newborridu {
+	height: 0.2rem;
+	width: 0.2rem;
+	border-radius: 100%;
+	background: #DFD1B0;
+	display: block;
+	position: absolute;
+	-webkit-transition: all 0.45s;
+	transition: all 0.45s;
+	-moz-transition: all 0.45s;
+	-o-transition: all 0.45s;
+}
+
+.newilistwap {
+	height: auto;
+	width: 90%;
+	margin: auto;
+}
+
+.listitem {
+	background: #EEEEEE;
+	height:2rem;
+	margin: 0.2rem auto;
+	color: #333;
+	border:#e3e3e3 solid 1px;
+	box-shadow:0px 6px 5px -5px rgba(0, 0, 0, 0.6);
+	box-shadow: border-box;
+	-webkit-box-shadow: border-box;
+	-moz-box-shadow: border-box;
+}
+
+.listitem :hover .listconts {
+	color: white;
+}
+
+.listitem:hover {
+	color: white;
+	background: #C9B27C;
+}
+
+.listcont {
+	width: 95%;
+	height:auto;
+	margin: auto;
+	padding-top: 0.24rem;
+}
+
+.listitem :hover .listtitel {
+	color: white;
+}
+
+.listitem a{
+	display: block;
+	width: 100%;
+	height: 100%;
+
+}
+
+
+.listtitel {
+	width: 100%;
+	font-size: 0.32rem;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	color:#000;
+}
+
+.listitmimg {
+	width: 30%;
+	height:1rem;
+	margin: 0.1rem auto;
+	display: block;
+}
+
+.listconts {
+	width: 68%;
+	font-size: 0.26rem;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	color: #666;
+}
+
+
+/**newitem****/
+
+.nesinfos {
+	width: 90%;
+	height: 1.2rem;
+	margin: auto;
+}
+
+.newinfotitle {
+	font-size: 0.32rem;
+	text-align: center;
+	margin-bottom: 0.2rem;
+}
+
+.ninfbd {
+	height: 2px;
+	width: 60%;
+	background: wheat;
+}
+
+.newsinfo {
+	font-size: 0.24rem;
+	color: #666;
+	width: 90%;
+	text-align: center;
+	margin: auto;
+}
+
+.newsinfo div {
+	text-align: center;
+}
+
+.newsinfo img {
+	width: 0.5rem;
+}
+
+.newinfocont {
+	width: 90%;
+	font-size: 0.3rem;
+	margin: auto;
+	color: #666;
+	margin: 0.3rem auto;
+}
+
+.newinfocont img {
+	margin: 0.2rem auto;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+.newinfocont p {
+	display: block;
+	width: 100%;
+	text-indent: 0.6rem;
+}
+
+
+.Bread{
+	display: flex;
+	flex-direction: column;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	-webkit-flex-direction: column;
+	width: 100%;
+	height: auto;
+
+}
+
+.Previotop,.Previobtn{
+	display: flex;
+	flex-direction: row;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	-webkit-flex-direction: row;
+	width: 100%;
+	margin: 0.1rem auto;
+}
+
+.Previo,.next{
+	font-size: 0.32rem;
+	color: #666;
+	text-decoration: none;
+	width:50%;
+	text-align:left;
+	display: block;
+}
+
+
+
+.Previoa,.nexta{
+	color: #666;
+	font-size: 0.24rem;
+	width: 50%;
+	margin: 0.2rem auto;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/******招聘内页******/
+
+.recruitinfo {
+	width: 90%;
+	height: auto;
+	margin: 0.4rem auto;
+}
+
+.cruitininfo {
+	width: 100%;
+	margin: auto;
+}
+
+.cruitininfo span {
+	font-size: 0.24rem;
+	color: #666;
+	width: 100%;
+	text-align: center;
+}
+
+.cruitininfo img {
+	width: 0.5rem;
+}
+
+.recruitct {
+	width: 90%;
+	height: auto;
+	margin-bottom: 1.2rem;
+}
+
+.recruitcttitle {
+	font-size: 0.3rem;
+	color: black;
+	font-weight: 600;
+	margin: 0.2rem auto;
+}
+
+.recruitctcont {
+	font-size: 0.26rem;
+	color: #666;
+	font-weight: 400;
+	color: #666;
+}
+
+
+/******八大理由*******/
+
+.breasoncont {
+	height: auto;
+	width: 100%;
+}
+
+.breasbanner {
+	height: 4rem;
+	width: 100%;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/rxhxbanner.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center center;
+}
+
+.mainbjee {
+	width: 100%;
+	height: auto;
+	background: #e3e3e3;
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/hxysdiwen.png);
+	background-position: bottom;
+	background-size: 100% 0.8rem;
+	background-repeat: no-repeat;
+}
+
+.bywaper {
+	width: 90%;
+	margin: auto;
+	margin-bottom: 1.3rem;
+	height: auto;
+}
+
+.bytitle {
+	font-size: 0.4rem;
+	color: #CEB274;
+	margin-top: 0.3rem;
+	margin-bottom: 0.2rem;
+}
+
+.bdttborderwap {
+	height: 3px;
+	width: 80%;
+}
+
+.bdttbdmin {
+	background: #CEB274;
+	height: 1px;
+	width: 45%;
+}
+
+.bdttbmax {
+	background: #CEB274;
+	height: 3px;
+	width: 30%;
+	margin-top: -2px;
+}
+
+.itembdrow {
+	height: auto;
+	margin-top: 0.5rem;
+	width: 100%;
+}
+
+.boerridu {
+	height: 0.4rem;
+	width: 0.4rem;
+	border-radius: 100%;
+	background: #E2CA8C;
+	font-size: 0.46rem;
+	color: black;
+	text-align: right;
+	font-weight: 600;
+	line-height: 0.4rem;
+	margin-top: 0.2rem;
+}
+
+.bottomheight,
+.topheight {
+	height: 1.3rem;
+	position: relative;
+	top: 0.1rem;
+}
+
+
+/*.bottomheight {
+	position: relative;
+	top: 0.1rem;
+}*/
+
+.item-left,
+.item-right {
+	width: 50%;
+}
+
+.rowmagrn {
+	width: 100%;
+	position: relative;
+}
+
+.bdrutitle {
+	margin-top: 0.15rem;
+	margin-bottom: 0.05rem;
+	font-size: 0.24rem;
+	text-align: center;
+	position: relative;
+	width: 100%;
+}
+
+.bdrutcont {
+	font-size: 0.24rem;
+	text-align: center;
+	color: #666;
+	display: inline-block;
+	width: 100%;
+}
+
+.bdrutcon {
+	font-size: 0.24rem;
+	color: #666;
+	margin-bottom: 0.3rem;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+.borrdiu {
+	height: 0.3rem;
+	width: 100%;
+	position: relative;
+}
+
+.gdborder {
+	height: 1px;
+	background: black;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+}
+
+.bdriud {
+	width: 0.3rem;
+	height: 0.3rem;
+	border-radius: 100%;
+	background: #CEB274;
+	position: absolute;
+	left: 50%;
+	margin-left: -0.15rem;
+}
+
+.hxtuijian {
+	height: auto;
+	width: 100%;
+}
+
+.tjhxitemwap {
+	width: 90%;
+	height: auto;
+	margin: 0.2rem auto 1.3rem auto;
+}
+
+.hxitms {
+	width: 49%;
+	display: inline-block;
+	height: auto;
+	float: left;
+	border: solid #ebe3d3 1px;
+	box-sizing: border-box;
+	margin-top: 0.3rem;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.hxitms:nth-of-type(2n+1) {
+	margin-right: 2%;
+}
+
+.hxitms img {
+	width: 100%;
+}
+
+.hxmaoshu {
+	font-size: 0.26rem;
+	color: black;
+	border-bottom: 1px #e0d2b3 solid;
+	display: inline-block;
+	margin: auto;
+	padding: 0.1rem 0.01rem;
+	text-align: center;
+}
+
+.tjhxms {
+	font-size: 0.24rem;
+	color: #666;
+	margin: auto;
+	width: auto;
+	text-align: center;
+	padding: 0.1rem 0.01rem;
+	text-align: center;
+}
+
+
+/*********热销户型************/
+
+.heathbanner {
+	height: 4rem;
+	width: 100%;
+	background-image: url(/static/index/m_img/rxhxban.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.heathrhxwap {
+	width: 90%;
+	margin: auto;
+	margin-bottom: 0.2rem;
+	height: auto;
+}
+
+.hreathbjee {
+	width: 100%;
+	height: auto;
+	background: #E3E3E3 !important;
+}
+
+.heatitem {
+	width: 90%;
+	height: auto;
+	margin: auto;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+}
+
+.heathsig {
+	width: 100%;
+	height: auto;
+	border: solid #ddddde 1px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 0.1rem 0;
+}
+
+.heathxlist {
+	margin-top: 0.3rem;
+	width: 100%;
+	height: auto;
+	margin-bottom: 0.9rem;
+}
+
+.hxjstitel {
+	font-size: 0.24rem;
+	font-weight: 600;
+	color: black;
+	padding: 0.1rem;
+	text-align: center;
+}
+
+.hxjsborder {
+	height: 1px;
+	width: 20%;
+	background: #E2CA8C;
+}
+
+.hxjscont {
+	font-size: 0.24rem;
+	color: #666;
+	padding: 0.1rem;
+}
+
+.rxhxborderwap {
+	height: 0.2rem;
+	width: 100%;
+	position: relative;
+}
+
+.fxborderridu {
+	height: auto;
+	width: 100%;
+}
+
+.rxborder {
+	height: 1px;
+	background: #C9B27C;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+}
+
+.rxhxborderwap span {
+	display: block;
+	position: absolute;
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 100%;
+	background: #C9B27C;
+	left: 22%;
+	-webkit-transition: all 0.45s;
+	transition: all 0.45s;
+	-moz-transition: all 0.45s;
+	-o-transition: all 0.45s;
+}
+
+.rxhxtext {
+	width: auto;
+	height: auto;
+	margin-bottom: 0.1rem;
+}
+
+.rxhxtext span {
+	margin: 0px 0.3rem;
+	width: auto;
+	height: auto;
+	font-size: 0.32rem;
+	color: black;
+	text-align: center;
+}
+
+.rxhxtext span:nth-of-type(1) {
+	margin: 0px 0.3rem;
+	width: auto;
+	height: auto;
+	font-size: 0.32rem;
+	color: #c9b27c;
+	text-align: center;
+}
+
+.hxtjitemleft {
+	width: 48%;
+	height: 4.5rem;
+	float: left;
+	border: solid #ebe3d3 1px;
+	box-sizing: border-box;
+	margin-top: 0.3rem;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 1%;
+}
+
+.imggdgao {
+	height: 3rem;
+	width: 100%;
+	position: relative;
+}
+
+.imggdgao img {
+	width: 100%;
+	display: block;
+	height: 100%;
+}
+
+.imageList {
+	width: 100%;
+	height: auto;
+	margin-bottom: 0.9rem;
+}
+
+.imageList ul {
+	height: auto;
+	width: 100%;
+	background: skyblue;
+	display: block;
+}
+
+.hxtjitem {
+	width: 100%;
+	height: auto;
+	margin: 0.3rem auto;
+	background-color: white;
+}
+
+
+/*******遮罩层*******/
+
+.mengc {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.35);
+	z-index: 99999;
+	display: none;
+}
+
+.menccont {
+	margin-bottom: 0.9rem;
+	overflow: auto;
+}
+
+.menccont::-webkit-scrollbar {
+	width: 3px;
+	height: 30px;
+}
+
+.menccont::-webkit-scrollbar-track {
+	background: #F0F0F0;
+}
+
+.menccont::-webkit-scrollbar-thumb {
+	background: #E3E3E3;
+	border-radius: 4px;
+}
+
+.menccont::-webkit-scrollbar-corner {
+	background: red;
+}
+
+.menccont {
+	width: 90%;
+	height: 100%;
+	margin: auto;
+}
+
+.mengctop {
+	width: 100%;
+	background: #f0f0f0;
+	height: auto;
+}
+
+.coloses {
+	position: absolute;
+	width: 0.6rem;
+	height: 0.6rem;
+	border: solid #e3e3e3 1px;
+	background: white;
+	border-radius: 100%;
+	top: 0.2rem;
+	right: 0.2rem;
+	text-align: center;
+	font-size: 18px;
+	color: #CEB274;
+	line-height: 0.6rem;
+	box-shadow: 0px 1px 20px 3px #E3E3E3;
+}
+
+.mengcimg {
+	width: 100%;
+	height: 3rem;
+}
+
+.mchtitll {
+	font-size: 1.4rem;
+	color: black;
+	font-weight: 600;
+}
+
+.mchtitll span {
+	width: 0.2rem;
+	height: auto;
+	font-size: 0.24rem;
+	background: #E2CA8C;
+	border: solid #E2CA8C 1px;
+	padding: 0.05rem;
+}
+
+.mchtitcot {
+	width: auto;
+	height: auto;
+}
+
+.mchtitcot span {
+	width: 100%;
+	height: auto;
+	color: black;
+	font-size: 0.24rem;
+}
+
+.mcteborder {
+	padding-top: 0.03rem;
+	border-top: 1px solid #E2CA8C;
+	width: auto;
+	display: block;
+}
+
+.mengimgauto {
+	width: 90%;
+	margin: auto;
+}
+
+.mengimgauto {
+	width: 80%;
+	margin: auto;
+	height: auto;
+}
+
+.mengimgauto img {
+	width: 100%;
+	margin: auto;
+}
+
+.mencmiaoshu {
+	width: 90%;
+	height: auto;
+	font-size: 0.28rem;
+	margin: 0.2rem auto;
+}
+
+.mencmiaoshu p {
+	width: 95%;
+	height: auto;
+	font-size: 0.3rem;
+	margin: 0.1rem auto;
+}
+
+.mcjsli {
+	font-size: 0.28rem;
+	color: #666;
+}
+
+.mcjsli span {
+	height: 0.1rem;
+	width: 0.1rem;
+	background: black;
+	margin-right: 0.1rem;
+	line-height: 0.3rem;
+}
+
+.mengcbtm {
+	height: auto;
+	width: 90%;
+	margin: auto;
+	margin-top: 0.3rem;
+	margin-bottom: 0.6rem;
+}
+
+.riborder {
+	height: 50%;
+	width: 1px;
+	background: #C1AB78;
+}
+
+.floacheck label {
+	font-size: 0.28rem;
+	color: black;
+	margin: 0.1rem auto;
+	margin-right: 0.2rem;
+}
+
+.floacheck label input {
+	width: 0.3rem;
+	height: 0.3rem;
+	position: relative;
+	top: 0.05rem;
+}
+
+.mcuserbz {
+	font-size: 0.32rem;
+	color: black;
+	margin: 0.1rem auto;
+}
+
+.mcuserphone {
+	width: 100%;
+	margin: auto;
+	height: 0.6rem;
+	outline: none;
+	text-indent: 30px;
+	border-radius: 2px;
+	box-sizing: border-box;
+	border: none;
+	box-sizing: border-box;
+	background: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-size: 0.32rem;
+}
+
+.mcusericonwap {
+	background: url(/static/index/m_img/usericon.png) no-repeat 5px center;
+	background-size: 0.4rem;
+	border: solid #E2CA8C 1px;
+}
+
+.mclrickwap label input {
+	width: 0.25rem;
+	height: 0.25rem;
+}
+
+.mclrickwap {
+	width: 100%;
+	margin: 0.3rem;
+}
+
+.mclrickwap label {
+	font-size: 0.28rem;
+	margin: 0.2rem auto;
+}
+
+.ydzhhgjxy:active {
+	color: black;
+}
+
+.ydzhhgjxy:link {
+	color: black;
+}
+
+.mcsubbtn {
+	width: 100%;
+	height: auto;
+	font-size: 0.36rem;
+	background: #999;
+	color: white;
+	text-align: center;
+	padding: 0.1rem 0px;
+	border: none;
+	display: block;
+	outline: none;
+}
+
+
+/*滑动css*/
+
+.carousel {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 0.9rem;
+}
+
+.carousel ul {
+	list-style: none;
+	position: relative;
+}
+
+.carousel ul li {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.z_chakxqImg {
+	width: 85% !important;
+	height: auto;
+	position: relative;
+	top: 0.06rem;
+	left: 0.03rem;
+}
+
+.navli {
+	position: relative;
+}
+
+.z_rightXian {
+	position: absolute;
+	right: 0;
+	top: 0.15rem;
+}
+
+.carousel {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel ul {
+	list-style: none;
+	height: auto;
+	width: 100%;
+}
+
+.tjhxitemwap a {
+	display: inline-block;
+	width: 49%;
+	height: 4.7rem;
+}

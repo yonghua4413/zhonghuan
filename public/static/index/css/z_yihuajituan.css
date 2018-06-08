@@ -1,0 +1,195 @@
+    /*#z_main {*/
+    	/*background-image: url(http://www.yhjtcity.com/static/index/img/jintuanbeijing.jpg);*/
+    	/*position: relative;*/
+    /*}*/
+    
+    .clicknav {
+    	height: 0;
+    }
+    
+    .z_yihua_top_title {
+    	font-size: 48px;
+    	text-align: center;
+    	line-height: 320px;
+    	color: white;
+    	width: 100%;
+    	display: inline-block;
+    	position: relative;
+    	bottom: 35px;
+    }
+    
+    .z_yihua_top_xian {
+    	position: absolute;
+    	left: 50%;
+    	margin-left: -116px;
+    	bottom: 135px;
+    }
+    
+    .z_good_introduce {
+    	color: #636363;
+    }
+    
+    .good_msg {
+    	color: #36383d;
+    }
+    
+    .z_zhaoping_msg {
+    	width: 100%;
+    	height: 480px;
+    	display: none;
+    	padding-bottom: 90px;
+    	background-image: url(http://www.yhjtcity.com/static/index/img/jituanzhaopin.jpg);
+    	overflow: auto;
+    	background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .z_zhaoping_zhiwei {
+    	width: 1280px;
+    	height: auto;
+    	margin: 0 auto;
+    	position: relative;
+    	top: 90px;
+    }
+    
+    
+    .z_zhaopinLiPosi{
+    	position: absolute;
+    	top: 10px;
+    	width: 90%;
+    }
+    .z_zhaoping_zhiwei ul {
+    	height: auto;
+    	display: inline-block;
+    }
+    
+    .z_zhaoping_zhiwei ul li {
+    	width: 263px;
+    	height: 152px;
+    	padding: 20px;
+    	float: left;
+    	margin-bottom: 20px;
+    	margin-right: 14px;
+    	background-color: white;
+    	position: relative;
+    	cursor: pointer;
+    }
+    
+    .z_zhaoping_zhiwei ul li a {
+    	display: inline-block;
+    	width: auto;
+    	height: auto;
+    	display: block;
+    	width: 100%;
+    }
+    
+    .z_zhiwei_mc {
+    	font-size: 22px;
+    	font-weight: bold;
+    	width: 70%;
+    }
+    
+    .z_zhao_ren {
+    	font-size: 40px;
+    	width: auto;
+    	margin-left:10px;
+    }
+    
+    .z_zhao_dan {
+    	font-size: 17px;
+    	width: 30%;
+    }
+    
+    .z_zhao_jie {
+    	position: absolute;
+    	bottom: 10px;
+    	color: #636363;
+    }
+    .z_zhaoping_zhiwei ul li:hover {
+    	background-color: #c9b37c !important;
+    	box-shadow: 5px 5px 10px 2px #999;
+    	color:white;
+    }
+    .z_zhaoping_zhiwei ul li:hover .z_zhao_jie {
+    	color: white;
+    }
+    .z_zhaoping_zhiwei ul li:hover a div{
+    	color: white;
+    }
+    
+    .bianse {
+    	background-color: #c9b37c !important;
+    	/*transform: scale(1.05, 1.05);*/
+    	box-shadow: 5px 5px 10px 2px #999;
+    }
+    
+    .bubianse {
+    	background-color: white !important;
+    	box-shadow: none;
+    }
+    
+    .jituanyj_img {
+    	width: 100%;
+    	height: auto;
+    }
+    
+    #zjituanyj,
+    #zGoodShool,
+    #zGoodJiao,
+    #zGoodHuan {
+    	display: none;
+    }
+	    
+	.z_jituanxian {
+	    width: 20%;
+	    height: 3px;
+	    background-color: #BCAB7A;
+	    margin: 0 auto;
+	    margin-top: 15px;
+	    margin-bottom: 46px;
+	}
+	.z_cneterfour{
+		font-size: 18px;
+		width: 100%;
+	}
+	#yhjttable,tbody{
+		width: 100%;
+	}
+	#yhjttable tr{
+		height: 45px;
+	}
+	#z_jituanzp{
+		font-size: 30px;
+		color: #36383d;
+	}
+	.good_msg{
+		font-size: 30px;
+	}
+	.z_good_introduce{
+		font-size: 22px;
+	}
+	.z_jituanwen{
+		text-align: left;
+		margin-top: 50px;
+		color: #636363;
+		font-size: 22px;
+	}
+	.z_good_introduce_z{
+		text-align: left;
+		text-indent: 52px;
+		margin-bottom: 10px;    
+		font-size: 22px;
+    	color: #979797;
+    	line-height: 50px;
+	}
+    .z_zhiwei_mc{
+    	width: 70% !important;
+    }
+	#yhjttable table{
+		margin: 0 auto;
+		margin-bottom: 40px;
+		border-collapse:collapse;
+	}
+	#yhjttable table tbody tr td{
+		border: 1px solid #ccc;
+	}

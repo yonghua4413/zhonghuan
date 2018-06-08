@@ -1,0 +1,72 @@
+
+	.clicknav{
+		height: 0;
+	}
+	.z_yihua_top_title{
+		font-size: 48px;
+		text-align: center;
+		line-height: 320px;
+		color:white;
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		bottom: 25px;
+	}
+	.z_yihua_top_xian{
+		position: absolute;
+		left: 50%;
+		margin-left: -116px;
+		bottom: 120px;
+	}
+	.z_lianxi{
+		width: 70%;
+		height: 527px;
+		padding: 100px 0px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.z_lianxi ul li{
+		float: left;
+		position: relative;
+		font-size: 24px;
+		width: 50%;
+		line-height: 50px;
+	}
+	.z_lianxi ul li div{
+		position: relative;
+		top: 20px;
+		margin-bottom: 30px;
+	}
+	.z_lianxi ul li img{
+		position: relative;
+		top: 12px;
+		margin-right: 11px;
+	}
+    .kaifs{
+    	position: relative;
+    	left:50px;
+    }
+    .z_lianxi ul li .lianxi_weix{
+    	position: absolute !important;
+    	left: 80px;
+    	top: 260px;
+    	
+    }
+    .lianxiLi{
+    	position: absolute !important;
+    	left:53.06203996%;
+    	width: 551px;
+    	height: 527px;
+    }
+    .lxdituimg{
+    	width: 100%;
+    	height: auto;
+    }
+    .qian100po{
+    	position: absolute;
+    	display: inline-block;
+    	width: 435px;
+    	top: 10px;
+    	left: 50px;
+    	line-height: 35px;
+    }

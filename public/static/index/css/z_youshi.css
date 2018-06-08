@@ -1,0 +1,302 @@
+/*中间*/ 
+	/*#z_main{*/
+    	/*background-image: url(http://www.yhjtcity.com/static/index/img/zzbj.jpg);*/
+    	/*position: relative;*/
+	/*}	*/
+	.clicknav{
+		height: 0;
+	}
+	#z_main .center_word{
+	    width: 1160px;
+	    height: auto;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    margin-left: -573px;
+	    text-align: center;
+	}
+	#z_main .center_word>span{
+	    display: block;
+	}
+	.z_center_div{
+	    position: relative;
+	    bottom: 15px;
+	}
+	#z_main .center_word .top_center_word{
+	    font-size: 60px;
+	    color: white;
+	    letter-spacing: 10px;
+	    font-weight: bolder;
+	    position: relative;
+	    bottom: 30px;
+	    font-family: fztysj;
+	}
+	#z_main .center_word .center_center_word{
+	    font-size: 33px;
+	    color: #bcab7a;
+	    letter-spacing: 7px;
+	    font-weight: 100;
+	}
+	.center_line_box{
+	    height: 3px;
+	}
+	.z_left_line{
+	    position: absolute;
+	    left: 0;
+	    top: 50%;
+	}
+	.z_left_line span{
+	    display: inline-block;
+	}
+	.z_box_line{
+	    width:95%;
+	    height: 2px;
+	    background-color: #BCAB7A;
+	}
+	.z_box_circle{
+	    width: 10px;
+	    height: 10px;
+	    border-radius: 50%;
+	    background-color: #BCAB7A;
+	    position: relative;
+	    bottom: 4px;
+	}
+	.z_left_line .center_left_line{
+	    float: left;
+	}
+	.z_left_line .center_left_circle{
+	    float: left;
+	}
+	.z_right_line {
+	    position: absolute;
+	    right: 0;
+	    top: 50%;
+	}
+	.z_right_line .center_right_line{
+	    float: right;
+	}
+	.z_right_line .center_right_circle{
+	    float: right;
+	}
+	.center_word .bottom_center_word{
+	    width: 1146px;
+	    margin: 0 auto;
+	    font-size: 38px;
+	    height: 68px;
+	    line-height: 68px;
+	    background-color: #BCAB7A;
+	    color: white;
+	    letter-spacing: 5px;
+	    font-family: "方正特雅宋简";
+	    src: "css/fztysj.TTF";
+	}
+	.bottom_image{
+	    position: absolute;
+	    bottom: 40px;
+	    left: 50%;
+	    margin-left: -12.5px;
+	    animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Firefox: */
+		-moz-animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Safari 和 Chrome: */
+		-webkit-animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Opera: */
+		-o-animation: xiala_ani 1.5s linear 0.5s infinite ;
+	}
+	@keyframes xiala_ani
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+	
+	@-moz-keyframes xiala_ani /* Firefox */
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom:0px;
+		}
+	}
+	
+	@-webkit-keyframes xiala_ani /* Safari 和 Chrome */
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+	
+	@-o-keyframes xiala_ani /* Opera */
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+/*优势*/
+    .z_goodness{
+        width: 100%;
+        padding: 33px 0 50px;
+        position: relative;
+        height: auto;
+    }
+    .z_good_top_ul{
+        width: auto;
+        position: absolute;
+        left: 50%;
+    }
+    .z_good_top_ul li{
+        float: left;
+        font-size: 24px;
+        margin-right: 93px;
+        cursor: pointer;
+    }
+    .z_good_circle{
+        width: 100%;
+        height: 1px;
+        background-color: #BCAB7A;
+        position: absolute;
+        top: 70px;
+    }
+    .z_good_circle .z_circle{
+        width: 12px;
+        height: 12px;
+        border-radius:50%;
+        position: absolute;
+        background-color: #BCAB7A;
+        top: -6px;
+    } 
+    #zGoodness span{
+        display: inline-block;
+        width: 100%;
+    }
+    .bottom_router{
+        position: relative;
+        top: 100px;
+        width: 1300px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        font-family: "microsoft yahei";
+        text-align: center;
+    }
+    .z_good_xaXian{
+        width: 20%;
+        height: 3px;
+        background-color: #BCAB7A;
+        margin: 0 auto;
+        margin-bottom: 46px;
+    }
+    .good_msg{
+        font-size: 36px;
+        padding-bottom: 14px;
+    }
+    .z_good_introduce{
+        font-size: 26px;
+        color: #979797;
+        text-align:start;
+        margin-bottom: 40px;
+        line-height: 50px;
+    }
+    #zGoodness ul li>a{
+        color: #000;
+    }
+    .danchu_ani{
+        opacity: 0;
+        animation: danchu 2s linear 0s forwards;
+		/* Firefox: */
+		-moz-animation: danchu 2s linear 0s forwards;
+		/* Safari 和 Chrome: */
+		-webkit-animation: danchu 2s linear 0s forwards;
+		/* Opera: */
+		-o-animation: danchu 2s linear 0s forwards;
+	}
+	@keyframes danchu
+	{
+		0%{
+		    opacity: 0;
+		}
+		10%{
+		    opacity: 0.3;
+		}
+		70%{
+		    opacity: 1;
+		}
+		100%{
+		    opacity: 1;
+		}
+	}
+	
+	@-moz-keyframes danchu /* Firefox */
+	{
+		0%{
+		    opacity: 0;
+		}
+		10%{
+		    opacity: 0.3;
+		}
+		70%{
+		    opacity: 1;
+		}
+		100%{
+		    opacity: 1;
+		}
+	}
+	
+	@-webkit-keyframes danchu /* Safari 和 Chrome */
+	{
+		0%{
+		    opacity: 0;
+		}
+		10%{
+		    opacity: 0.3;
+		}
+		70%{
+		    opacity: 1;
+		}
+		100%{
+		    opacity: 1;
+		}
+	}
+	
+	@-o-keyframes danchu /* Opera */
+	{
+		0%{
+		    opacity: 0;
+		}
+		10%{
+		    opacity: 0.3;
+		}
+		70%{
+		    opacity: 1;
+		}
+		100%{
+		    opacity: 1;
+		}
+	}
+	.guoduLeft{
+	    transition: 0.45s all;
+	}
+    #zGoodShool,#zGoodJiao,#zGoodPei,#zGoodHuan{
+    	display: none;
+    }

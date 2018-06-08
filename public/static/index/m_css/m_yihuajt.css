@@ -1,0 +1,191 @@
+.bnamebanner{
+	background-image:url(http://www.yhjtcity.com/static/index/m_img/yihuabeij.jpg) ;
+}
+.z_yihuafour{
+	font-size: 0.32rem;
+	position: relative;
+	top: 0.25rem;
+	margin-top: 0.2rem;
+	width:100%;
+	overflow:hidden;
+}
+.z_yihuafour ul li{
+	padding:0rem 0.18rem;
+}
+
+
+td{
+	text-align: center;
+	border: 1px solid #999 !important;
+
+	}
+		
+table{
+	height:5rem;
+	width: 100%;
+	margin-top: 0.5rem;
+}
+
+.rowborder{
+
+
+}
+
+.z_fourWord{
+	width:600px;
+	height:100%;
+}
+
+.z_jtzpWo{
+float: left;
+display: block;
+
+}
+
+.z_yihuafourline{
+	width: 100%;
+	height: 0.02rem;
+	background-color: #BCAB7A;
+	margin-top: 0.1rem;
+}
+.z_fourcircle{
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+	position: absolute;
+	left: 1.6rem;
+	top: -0.1rem;
+	background-color: #BCAB7A;
+	margin-top: 0.1rem;
+}
+
+#z_fourcircle{
+	left: 0.75rem;
+}
+/*滑动效果*/
+        .yhjthuadong{
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+	        top: 0.8rem;
+			height: 9.5rem;
+		}
+		.yhjthuadong ul li{
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 0;
+		}
+		.yhjthuadong ul li{
+			width: 100%;
+			background-color: white;
+			display: none;
+		}
+		.yhjthuadong ul li:nth-child(1){
+			display: block;
+		}
+		.z_cneterfour{
+			width: 94%;
+			height: auto;
+			margin: 0 auto;
+		}
+		.z_jtfzyj{
+			font-size: 0.36rem;
+			text-align: center;
+			color: #35393f;
+			margin-bottom: 0.15rem;
+			position: relative;
+		}
+		.z_jituanxian{
+			width: 30%;
+			height: 0.06rem;
+			background-color:#BCAB7A;
+			margin: 0 auto;
+		}
+		.z_jituanwen{
+			font-size: 0.28rem;
+			color:#666;
+			margin-top: 0.35rem;
+			margin-bottom: 0.3rem;
+			line-height: 0.50rem;
+			z-index: 9;
+			position: relative;
+		}
+		.z_yihuajtImg{
+			width: 100%;
+			height: auto;
+			margin-top: 0.2rem;
+		}
+		
+    /*集团招聘*/
+        .z_jtzpxx{
+            width: 100%;
+            background-image:url(http://www.yhjtcity.com/static/index/m_img/jituanzhaop.jpg) ;
+            display: none;
+            transition: all 0.5s; 
+            padding-bottom: 1.2rem;
+            margin-top: 1rem;
+        }
+        .z_jtzpxx ul {
+        	width: 94%;
+        	height: auto;
+        	margin: 0 auto;
+        }
+        .z_jtzpxx ul li{
+        	float:left;
+        	width: 45%;
+        	margin-right:2%;
+        	background-color: white;
+        	padding: 2%;
+        	height: 3rem;
+        	margin-top: 0.5rem;
+        }
+        .z_jtzpxx ul li a{
+        	color: #35393F;
+        	display: block;
+        	width: 100%;
+        	position: relative;
+        	height: 100%;
+        }
+        .z_jtzpxx ul li:nth-child(2n+0){
+        	margin-right: 0;
+        }
+        
+        .z_zhaozpzw{
+        	font-size: 0.32rem;
+        	width: 70%;
+        }
+        
+        .z_zhaozprs{
+        	width: 30%;
+        	font-size: 0.32rem;
+        	
+        }
+        .z_zhaozprsNum{
+        	font-size: 0.6rem;
+        }
+        
+        .z_zhaozprsdw{
+        	font-size: 0.28rem;
+        	padding-left: 0.05rem;
+        }
+        .z_zhaozpxq{
+        	font-size: 0.24rem;
+        	color: #666;
+        	letter-spacing: 0.02rem;
+        	margin-top: 0.6rem;
+        	position: absolute;
+        	bottom: 0px;
+        }
+        .ui-loader,.ui-corner-all,.ui-body-a,.ui-loader-default{
+        	display: none;
+        }
+
+
+        .z_ajiazaimore1,.z_ajiazaimore2,.z_ajiazaimore3{
+        	text-align: center;
+        	margin: 0.4rem 0rem;
+        }
+        .z_tianjiaDj1>div,.z_tianjiaDj2>div,.z_tianjiaDj3>div{
+        	display: none;
+        }

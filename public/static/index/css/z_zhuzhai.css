@@ -1,0 +1,229 @@
+    /*#z_main{*/
+    	/*background-image: url(http://www.yhjtcity.com/static/index/img/zhuzhai01_03.jpg);*/
+    	/*position: relative;*/
+	/*}	*/
+	.clicknav{
+		height: 0;
+	}
+	#z_main .center_word{
+	    width: 1160px;
+	    height: auto;
+	    position: absolute;
+	    top: 33%;
+	    left: 50%;
+	    margin-left: -573px;
+	    text-align: center;
+	}
+	
+	#z_main .center_word>span{
+	    display: block;
+	}
+	#z_main .center_word .top_center_word{
+	    font-size: 60px;
+	    color: white;
+	    letter-spacing: 10px;
+	    font-family: fztysj;
+	}
+	.bottom_image{
+	    position: absolute;
+	    bottom: 40px;
+	    left: 50%;
+	    margin-left: -12.5px;
+	    animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Firefox: */
+		-moz-animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Safari 和 Chrome: */
+		-webkit-animation: xiala_ani 1.5s linear 0.5s infinite ;
+		/* Opera: */
+		-o-animation: xiala_ani 1.5s linear 0.5s infinite ;
+	}
+	@keyframes xiala_ani
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+	
+	@-moz-keyframes xiala_ani /* Firefox */
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom:0px;
+		}
+	}
+	
+	@-webkit-keyframes xiala_ani /* Safari 和 Chrome */
+	{
+		0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+	
+	@-o-keyframes xiala_ani /* Opera */
+	{
+	    0%{
+		    bottom: 40px;
+		}
+		93%{
+		    bottom:0px;
+		}
+		100%{
+		    bottom: 0px;
+		}
+	}
+	/*户型优势*/
+	.z_hxys{
+		width: 100%;
+		height: auto;
+		background-color: #e3e3e3;
+		position: relative;
+		padding-bottom: 30px;
+	}
+	.z_hx_top_title{
+		text-align: center;
+		color: #c9b07e;
+		font-size: 40px;
+		padding-top: 76px;
+		position: relative;
+	}
+	.z_hx_top_title span{
+		position: relative;
+		bottom: 15px;
+	}
+	.z_hx_top_xian{
+		width: 300px;
+		height: 2px;
+		margin-top: 20px;
+		background-color: #c9b07e;
+		position: relative;
+		margin: 0 auto;
+		
+	}
+	.z_hx_top_xian div{
+		width: 220px;
+		height: 7px;
+		background-color: #c9b07e;
+		position: absolute;
+		left: 50%;
+		margin-left: -110px;
+		bottom: -3px;
+	}
+	.z_hxys_border{
+		width: 1280px;
+		height: 300px;
+		border: 3px solid black;
+		border-left: none;
+		margin: 0 auto;
+		margin-top: 140px;
+		margin-bottom: 210px;
+		z-index: 10;
+		position: relative;
+	}
+	.z_fxys_diwen{
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: auto;
+	}
+	.z_ysjs{
+		position: absolute;
+		width: 1300px;
+		left: 6%;
+		top: 175px;
+		z-index: 99;
+	}
+	.z_ysjs ul li{
+		width:250px;
+		margin-right: 70px;
+		margin-bottom: 120px;
+		height: 180px;
+		float: left;
+		text-align: center;
+		position: relative;
+	}
+	.z_ysjs_num{
+		font-size: 48px;
+		font-weight: bolder;
+		color: black;
+		position: relative;
+		z-index: 10;
+		bottom: 10px;
+	}
+	.z_ysjs_bigcir{
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: #C9B37C;
+		position: absolute;
+		left: 43%;
+		top: 10px;
+	}
+	.z_ysjs_title{
+		font-size: 21px;
+		line-height: 5px;
+		font-weight: bold;
+		position: relative;
+		bottom: -0px;
+	}
+    .z_ysjs_smallcir{
+    	width: 18px;
+    	height: 18px;
+    	border-radius: 50%;
+    	position: absolute;
+    	top:88.2px;
+    	left: 50%;
+    	margin-left:-9px ;
+    	background-color: #C9B37C;
+    	-webkit-margin-top: 10px;
+    }
+    .jiyuanxl{
+    	margin-bottom: 123px !important;
+    }
+    .z_ysjs_js{
+        font-size: 14px;
+        line-height: 25px;
+        margin-top: 20px;
+        position: relative;
+        top: 28px;
+    	text-align: left;
+    }
+    .z_jphxtj{
+    	width: 1300px;
+    	margin: 0 auto;
+    }
+        .newsincowap{
+    		color: #979797;
+    		font-size: 16px;
+    		line-height: 30px;
+    		margin-top: 60px;
+    		margin-bottom: 60px;
+    	}
+    	.newsincowap  b {
+    		display: block;
+    		width: 100%;
+    		color: black;
+    		margin: 20px 0 0 0;
+    	}
+    	.newsincowap  b p{
+    		/*line-height: 25px;*/
+    	}
+    	.kongli{
+    		text-indent: 32px;
+    	}

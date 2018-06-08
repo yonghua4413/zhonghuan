@@ -1,0 +1,59 @@
+.bnamebanner{
+	background-image: url(http://www.yhjtcity.com/static/index/m_img/lianxwmbg.jpg);
+}
+.z_lxwomap{
+	width: 100%;
+	height: auto;
+	margin-top: 0.15rem;
+}
+.z_lxwomapImg{
+	width: 100%;
+	margin: 0 auto;
+	height: auto;
+}
+.z_lxwmbox{
+	font-size: 0.3rem;
+	margin-bottom: 1rem;
+	letter-spacing: 0.02rem;
+}
+.z_lxwmbox>div{
+	width: 94%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 0.4rem;
+}
+.z_xmdzbox{
+	position: relative;
+	bottom: 0.3rem;
+}
+.z_xmdzbox1{
+	position: relative;
+	bottom: 0.1rem;
+}
+.z_xmdzbox2{
+	position: relative;
+	bottom: 0.2rem;
+}
+.z_xmdzbox3{
+	position: relative;
+	bottom: 0.2rem;
+}
+.z_lxwomapImg1{
+	height: auto;
+	width: 8%;
+}
+.z_lxwmdzWord{
+	position: absolute;
+	left: 10%;
+	top: 0.09rem;
+	line-height: 0.46rem;
+}
+.z_kafs{
+	position: relative;
+	left: 10%;
+}
+.z_kafs{
+	width: 22%;
+	height: auto;
+}
