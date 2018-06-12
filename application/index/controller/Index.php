@@ -166,6 +166,25 @@ class Index extends Controller
             return $this->fetch();
         }
     }
+    
+    //益华集团子招聘
+    public function yihuajituanzp(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
 
     //推荐户型页
     public function zhuzhai()

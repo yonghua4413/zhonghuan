@@ -34,6 +34,8 @@ Route::rule('yihuajituanxm','index/index/yihuajituanxm');
 
 Route::rule('yihuajituanzgs','index/index/yihuajituanzgs');
 
+Route::rule('yihuajituanzp','index/index/yihuajituanzp');
+
 Route::rule('mengban','index/index/mengban');
 
 Route::rule('rxhx','index/index/rxhx');

@@ -54,5 +54,8 @@ $(function(){
 		case "women.html":
 		    $(".headnav .navul .navli").eq(11).children("a").css("color","white");
 		break;
+		case "uanzp.html":
+		    $(".headnav .navul .navli").eq(10).children("a").css("color","white");
+		break;
 	};
 })
