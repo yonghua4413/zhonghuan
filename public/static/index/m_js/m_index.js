@@ -33,26 +33,26 @@ $(function(){
 	var locaZfcC=locati.substring(locati.length-10);
 	console.log(locaZfcC);
 	switch (locaZfcC){
-		case "sogou.com/":
+		case "zh.tt.com/":
 		    $(".headnav .navul .navli").eq(0).children("a").css("color","white");
 		break;
-		case "ituan.html":
+		case "uanjs.html":
 		    $(".headnav .navul .navli").eq(1).children("a").css("color","white");
 		break;
 		case "uzhai.html":
-			$(".headnav .navul .navli").eq(2).children("a").css("color","white");
+			$(".headnav .navul .navli").eq(5).children("a").css("color","white");
 		break;
 		case "angpu.html":
-		    $(".headnav .navul .navli").eq(3).children("a").css("color","white");
-		break;
-		case "/rxhx.html":
-		    $(".headnav .navul .navli").eq(4).children("a").css("color","white");
-		break;
-		case "fid/2.html":
 		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
 		break;
+		case "/rxhx.html":
+		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
+		break;
+		case "fid/2.html":
+		    $(".headnav .navul .navli").eq(9).children("a").css("color","white");
+		break;
 		case "women.html":
-		    $(".headnav .navul .navli").eq(6).children("a").css("color","white");
+		    $(".headnav .navul .navli").eq(11).children("a").css("color","white");
 		break;
 	};
 })

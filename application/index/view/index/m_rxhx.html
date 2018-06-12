@@ -8,6 +8,7 @@
 		<meta name="description" content="{$home['desc']}" />
 	</head>
 	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_main.css" />
 	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
 	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
@@ -22,14 +23,30 @@
 				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
 			</div>
 			<div class="headnav column">
-				<ul class="navul row">
-					<li class="navli"><a href="{:URL}">首页</a><span class="z_rightXian">|</span></li>
-					<li class="navli"><a href="{:URL('/zhuzhai')}">住宅 </a><span class="z_rightXian">|</span></li>
-					<li class="navli navlip"><a href="{:URL('/yihuajituan')}">益华集团 </a><span class="z_rightXian">|</span></li>
-					<li class="navli"><a href="{:URL('/shangpu')}">商铺 </a><span class="z_rightXian">|</span></li>
-					<li class="navli navlip"><a href="{:URL('/rxhx')}">热销户型 </a><span class="z_rightXian">|</span></li>
-					<li class="navli navlip"><a href="{:URL('/xwzx',['fid'=>2])}">新闻中心 </a><span class="z_rightXian">|</span></li>
-				</ul>
+				<div class="test">  
+				    <ul class="navul row">  
+			            <li class="navli"><a href="/">首页</a><span class="z_rightXian">|</span></li>
+			            <li class="navli navlip"><a href="#">益华集团 </a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanjs.html">{$con1.0.title}</a></li> 
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanxm.html">{$con1.1.title} </a></li>  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanzgs.html">{$con1.2.title} </a></li>  
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li> 
+		            	<li class="navli navlip"><a href="#">中环国际</a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/zhuzhai.html">住宅 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/shangpu.html">商铺 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/rxhx.html">热销户型 </a></li>
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li>  
+						<li class="navli navlip"><a href="/xwzx/fid/2.html">新闻中心 </a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/yihuajituan.html">{$con1.3.title}</a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/lianxiwomen.html">商务合作</a><span class="z_rightXian">|</span></li>
+				    </ul>  
+				</div>
 			</div>
 		</div>
 		<div class="breasoncont column">

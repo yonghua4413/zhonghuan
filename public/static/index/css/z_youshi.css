@@ -179,14 +179,6 @@
         position: absolute;
         top: 70px;
     }
-    .z_good_circle .z_circle{
-        width: 12px;
-        height: 12px;
-        border-radius:50%;
-        position: absolute;
-        background-color: #BCAB7A;
-        top: -6px;
-    } 
     #zGoodness span{
         display: inline-block;
         width: 100%;

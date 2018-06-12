@@ -28,6 +28,12 @@ Route::rule('zhuzhai','index/index/zhuzhai');
 
 Route::rule('shangpu','index/index/shangpu');
 
+Route::rule('yihuajituanjs','index/index/yihuajituanjs');
+
+Route::rule('yihuajituanxm','index/index/yihuajituanxm');
+
+Route::rule('yihuajituanzgs','index/index/yihuajituanzgs');
+
 Route::rule('mengban','index/index/mengban');
 
 Route::rule('rxhx','index/index/rxhx');

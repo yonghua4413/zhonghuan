@@ -22,7 +22,9 @@ class Index extends Controller
         $this->home = Db::name('home')->where('id',1)->find();
         $this->assign('home', $this->home);
         $this->tel = Db::name('baom')->where('id',1)->find();
+        $this->con1 = Db::name('con')->select();
         $this->assign('tel',$this->tel);
+        $this->assign('con1',$this->con1);
         $this->assign('siteurl',URL);
     }
 
@@ -101,6 +103,62 @@ class Index extends Controller
 //             foreach ($con1 as $k => &$v){
 //                 $con1[$k]['content'] = strip_tags($v['content']);
 //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    //益华集团介绍
+    public function yihuajituanjs(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    
+    //益华集团项目
+    public function yihuajituanxm(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    
+    //益华集团子公司
+    public function yihuajituanzgs(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
             $this->assign('con1',$con1);
             return $this->fetch('m_'.request()->action());
         }else{
