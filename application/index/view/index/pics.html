@@ -36,6 +36,11 @@
 </div>
 <script>
 	$(function(){
+		var empty = '{$empty}';
+		if(empty == 1){
+			layer.alert('暂无相册，敬请期待');
+			return;
+		}
 		$('.boxs').on('click', function(){
 			var id = $(this).attr('data-pid');
 			$.getJSON('/pic', {'id':id}, function(json){
