@@ -10,7 +10,6 @@ $(function() {
 	})
 	var zGoodLeZ=$(".z_good_zero").offset().left
 	$(".z_good_circle .z_circle").css("transform","translateX("+(zGoodLeZ+40.5)+"px)");
-	$(".z_good_zero").children("a").css("color","#BCAB7A");
 
 	function resizewindow(){
 		
@@ -38,7 +37,6 @@ $(function() {
     $("#zGoodness .z_good_top_ul li").click(function(){
         var topUlLiLe=$(this).offset().left;
         $("#zGoodness .z_good_top_ul li").children("a").css("color","");
-        $(this).children("a").css("color","#BCAB7A");       
         var zCircle=$(".z_good_circle .z_circle").offset().left;
         $(".z_good_circle .z_circle").addClass("z_circle guoduLeft");
         $(".z_good_circle .z_circle").css("transform","translateX("+(topUlLiLe+62)+"px)");

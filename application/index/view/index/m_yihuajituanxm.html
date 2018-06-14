@@ -1,0 +1,102 @@
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+		<style>
+			.yhjthuadong img{
+				width:100%;
+				height:auto;
+			}
+		</style>
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_main.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<div class="test">  
+				    <ul class="navul row">  
+			            <li class="navli"><a href="/">首页</a><span class="z_rightXian">|</span></li>
+			            <li class="navli navlip"><a href="#">益华集团 </a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanjs.html">{$con1.0.title}</a></li> 
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanxm.html">{$con1.1.title} </a></li>  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanzgs.html">{$con1.2.title} </a></li>  
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li> 
+		            	<li class="navli navlip"><a href="#">中环国际</a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/zhuzhai.html">住宅 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/shangpu.html">商铺 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/rxhx.html">热销户型 </a></li>
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li>  
+						<li class="navli navlip"><a href="/xwzx/fid/2.html">新闻中心 </a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/yihuajituanzp.html">{$con1.3.title}</a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/lianxiwomen.html">商务合作</a><span class="z_rightXian">|</span></li>
+				    </ul>  
+				</div>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="bnamebanner row">
+				<span class="bnamebtitle">{$bg.titd}</span>
+			</div>
+			<div class="js">
+				<center>
+				<span>{$con1.1.title}</span>
+				</center>
+				<span>{$con1.1.content}</span>
+			</div>
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		$(window).load(function() {  
+			$("table").css("width","100%");
+	    });  
+	</script>
+
+</html>

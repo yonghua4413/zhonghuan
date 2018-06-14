@@ -6,7 +6,7 @@
 		<title>{$home['title']}</title>
 		<link rel="stylesheet" href="{$siteurl}/static/index/css/t_index.css" />
 		<link rel="stylesheet" href="__STATICI__/css/anmition.css" />
-		<link rel="stylesheet" href="https://www.ttitt.net/css/Main.css" />
+		<link rel="stylesheet" href="__STATICI__/css/Main.css" />
 		<meta name="keywords" content="{$home['keywords']}" />
 		<meta name="description" content="{$home['desc']}" />
 	
@@ -116,44 +116,61 @@
 						<img src="{$home['img1']}" alt="公司logo" title="贵阳【中环国际.公园1号】项目官网,为您提供中环国际最新的房价走势,优惠信息让你时时掌握中环国际.公园1号楼盘最新动态" />
 					</a>
 				</div>
-				<div class="navwap">
-					<ul class="topnavul row">
-						<li class="topnavli">
-							<a href="{:URL}" style="padding: 0px 24px 10px 24px">首页</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-						
-						<li class="topnavli">
-							<a href="{:URL('/yihuajituan')}">益华集团</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-						
-						<li class="topnavli">
-							<a href="{:URL('/zhuzhai')}" style="padding: 0px 24px 10px 24px;">住宅</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-												
-						<li class="topnavli">
-							<a href="{:URL('/shangpu')}" style="padding: 0px 24px 10px 24px;">商铺</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-						
-						<li class="topnavli">
-							<a href="{:URL('/rxhx')}#fid=0">热销户型</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-
-						<li class="topnavli">
-							<a href="{:URL('/xwzx',['fid'=>2])}">新闻中心</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-
-						<li class="topnavli">
-							<a href="{:URL('/lianxiwomen')}">商务合作</a>
-						</li>
-						<li class="topnavlibd"><img src="__STATICI__/img/bdright.png" height="100%" /></li>
-					</ul>
-				</div>
+				
+				<div class="header">
+			        <ul class="nav">
+			        	<li>
+			                <a href="{:URL}" style="padding: 0px 24px 10px 24px">首页</a>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="{:URL('/yihuajituan')}">益华集团</a>
+			                <ul class="second-nav">
+			                    <li>
+			                        <a style="font-size:18px;" href="{:URL('/yihuajituan')}">{$con1.0.title}</a>
+			                    </li>
+			                    <li>
+			                        <a style="font-size:18px;" href="{:URL('/yihuajituan')}#!/goodZaiJian">{$con1.1.title}</a>
+			                    </li>
+			                    <li>
+			                        <a style="font-size:18px;" href="{:URL('/yihuajituan')}#!/jiaotong">{$con1.2.title}</a>
+			                    </li>
+			                </ul>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="{:URL('/pics')}">相册展示</a>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="#">中环国际</a>
+			                <ul class="second-nav">
+			                	<li>
+					                <a style="font-size:18px;" href="{:URL('/zhuzhai')}" style="padding: 0px 24px 10px 24px;">住宅</a>
+					            </li>
+					            <li>
+					                <a style="font-size:18px;" href="{:URL('/shangpu')}" style="padding: 0px 24px 10px 24px;">商铺</a>
+					            </li>
+					            <li>
+					                <a style="font-size:18px;" href="{:URL('/rxhx')}#fid=0">热销户型</a>
+					            </li>
+			                </ul>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="{:URL('/xwzx',['fid'=>2])}">新闻中心</a>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="{:URL('/yihuajituan')}#!/huanjing">{$con1.3.title}</a>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			            <li>
+			                <a href="{:URL('/lianxiwomen')}">商务合作</a>
+			                <li style="width:0px;height:2rem;margin-top: 0.7rem;" class="topnavlibd"><img src="http://www.zhonghuanguoji.cn/static/index/img/bdright.png" height="100%"></li>
+			            </li>
+			        </ul>
+			    </div>
 				<div class="wxwbfxwap row">
 					<span class="weixin row">
 						<img src="__STATICI__/img/wexinicon.png"/>
@@ -200,7 +217,7 @@
 
 </html>
 <script src="__STATIC__/layer/layer.js"></script>
-<!-- 导航脚本 -->
+	<!-- 导航脚本 -->
     <script type="text/javascript">
         $(function() {
             var _this1 = null;

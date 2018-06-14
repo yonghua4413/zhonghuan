@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="__STATICI__/css/z_zhuzhai.css" />
+<link rel="stylesheet" href="http://www.swiper.com.cn/dist/css/swiper.min.css" />
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<script type="text/javascript" src="http://www.swiper.com.cn/dist/js/swiper.js"></script>
+<style>
+.box{
+    width: 1000px;
+    height: 100%;
+}
+.boxs{
+	width:320px;
+	height:350px;
+	display:inline-block;
+	cursor: pointer;
+}
+</style>
+<div class="t-main" id="z_main" style="height: 320px; width: 100%;">
+	<div class="z_goodness" id="zGoodness">
+	<div class="z_good_circle">
+		<div class="z_circle" style="transform: translateX(520.5px);">
+	</div>
+	<center>
+	<div class="box" id="layer-photos-demo">
+		{volist name="data" id="vo"}
+	           <div class="boxs" data-id="{$vo.id}"><img src={if condition="$vo.url eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.url}{/if} alt="" style="width:320px;height:320px"><p>{$vo.title}</p>
+	           </div>
+	    {/volist}
+    </div>
+    </center>
+	<div class="center_word">
+	</div>
+	<div class="bottom_image">
+		<img src="__STATICI__/img/mouseIco.png" />
+	</div>
+</div>
+<script>
+	$(function(){
+		layer.photos({
+			  photos: '#layer-photos-demo',
+			  anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+		}); 
+	})
+</script>

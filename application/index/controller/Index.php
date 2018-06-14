@@ -22,7 +22,9 @@ class Index extends Controller
         $this->home = Db::name('home')->where('id',1)->find();
         $this->assign('home', $this->home);
         $this->tel = Db::name('baom')->where('id',1)->find();
+        $this->con1 = Db::name('con')->select();
         $this->assign('tel',$this->tel);
+        $this->assign('con1',$this->con1);
         $this->assign('siteurl',URL);
     }
 
@@ -108,6 +110,81 @@ class Index extends Controller
             return $this->fetch();
         }
     }
+    //益华集团介绍
+    public function yihuajituanjs(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    
+    //益华集团项目
+    public function yihuajituanxm(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    
+    //益华集团子公司
+    public function yihuajituanzgs(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
+    
+    //益华集团子招聘
+    public function yihuajituanzp(){
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        if (isMobile() || $this->isipad()){
+            //             foreach ($con1 as $k => &$v){
+            //                 $con1[$k]['content'] = strip_tags($v['content']);
+            //             }
+            $this->assign('con1',$con1);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            $this->assign('con1',$con1);
+            return $this->fetch();
+        }
+    }
 
     //推荐户型页
     public function zhuzhai()
@@ -121,6 +198,83 @@ class Index extends Controller
             return $this->fetch('m_'.request()->action());
         }else{
             return $this->fetch();
+        }
+    }
+    
+    //相册
+    public function pics()
+    {
+        $data = Db::name('pics')->where('is_del', 0)->select();
+        
+        if($data){
+            //提取相册id
+            $album_ids = array_column($data, 'id');
+            $map['pid']  = array('in',implode(',', $album_ids));
+            $map['is_del'] = 0;
+            $list = Db::name('pic')->where($map)->group('pid')->select();
+            foreach ($data as $k => $v){
+                $data[$k]['picimg'] = '';
+                if($list){
+                    foreach ($list as $key => $val){
+                        if($v['id'] == $val['pid']){
+                            $data[$k]['picimg'] = $val['url'];
+                        }
+                    }
+                }
+            }
+        }
+        $this->assign('data',$data);
+        if (isMobile() || $this->isipad()){
+            return $this->fetch('m_'.request()->action());
+        }else{
+            return $this->fetch();
+        }
+    }
+    
+    //相册
+    public function pic()
+    {
+        //提取相册id
+        $id = input('get.id');
+        $map['pid']  = $id;
+        $map['is_del'] = 0;
+        $list = Db::name('pic')->where($map)->select();
+        foreach ($list  as $k => $v){
+            if($list){
+                foreach ($list as $key => $val){
+                    if($v['id'] == $val['pid']){
+                        $list[$k]['picimg'] = $val['url'];
+                    }
+                }
+            }
+        }
+        
+        
+        if (isMobile() || $this->isipad()){
+            $this->assign('data',$list);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            //获取相册信息
+            $info = Db::name('pics')->where(['id' => $id])->find();
+            if($info && $list){
+                $arr = [
+                    'title' => $info['name'],
+                    'id' => $id,
+                    'start' => 0,
+                    'data' => []
+                ];
+                foreach ($list as $k => $v){
+                    $arr['data'][$k] = [
+                        'alt' => $v['title'],
+                        'pid' => $v['pid'],
+                        'src' => $v['url'],
+                        'thumb' => $v['url']
+                    ];
+                }
+                $this->return_json($arr);
+            }else{
+                
+            }
         }
     }
     
@@ -339,5 +493,19 @@ class Index extends Controller
                 }
             }
         }
+    }
+    
+    /**
+     * 转化为json字符串
+     * @author 1034487709@qq.com
+     * @param unknown $arr
+     * @ruturn return_type
+     */
+    public function return_json($arr) {
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+        header('Content-Type: application/json');
+        header('Cache-Control: no-cache');
+        echo json_encode($arr);exit;
     }
 }

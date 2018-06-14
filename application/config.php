@@ -15,7 +15,7 @@ return [
     // +----------------------------------------------------------------------
 
     // 应用调试模式
-    'app_debug'              => false,
+    'app_debug'              => true,
     // 应用Trace
     'app_trace'              => false,
     // 应用模式状态
@@ -145,8 +145,8 @@ return [
         '__URL__' => 'http://www.zhonghuanguoji.cn/',
         '__INDEX__' => 'http://www.zhonghuanguoji.cn/index',
         '__ADMIN__' => 'http://www.zhonghuanguoji.cn/admin',
-        '__STATIC__' => 'http://www.zhonghuanguoji.cn/static',
-        '__STATICI__' => 'http://www.zhonghuanguoji.cn/static/index',
+        '__STATIC__' => 'http://zh.tt.com/static',
+        '__STATICI__' => 'http://zh.tt.com/static/index',
         '__STATICA__' => 'http://www.zhonghuanguoji.cn/static/admin',
     ],
     // 默认跳转页面对应的模板文件
