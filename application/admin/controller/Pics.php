@@ -84,7 +84,7 @@ class Pics extends Controller
             if(!$res){
                 $this->error('添加相片失败！请稍后再试');
             }else{
-                $this->success('提交成功', '/admin/pics/addpic.html?id='.$data['pid']);
+                $this->success('提交成功');
             }
         }
         return $this->fetch();
@@ -97,7 +97,7 @@ class Pics extends Controller
         if(!$res){
             $this->error('删除照片失败！请稍后再试');
         }else{
-            $this->success('删除照片成功','index');
+            $this->success('删除照片成功');
         }
     }
     //删除相册
@@ -111,7 +111,7 @@ class Pics extends Controller
             if(!$res){
                 $this->error('删除相册失败！请稍后再试');
             }else{
-                $this->success('删除相册成功','index');
+                $this->success('删除相册成功');
             }
         }else{
             $this->error('该相册还有照片，无法删除');
