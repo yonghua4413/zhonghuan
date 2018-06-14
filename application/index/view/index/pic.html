@@ -23,7 +23,7 @@
 	<center>
 	<div class="box" id="layer-photos-demo">
 		{volist name="data" id="vo"}
-	           <div class="boxs" data-pid="{$vo.id}"><img src={if condition="$vo.picimg eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.picimg}{/if} alt="" style="width:320px;height:320px"><p>{$vo.name}</p>
+	           <div class="boxs" data-id="{$vo.id}"><img src={if condition="$vo.url eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.url}{/if} alt="" style="width:320px;height:320px"><p>{$vo.title}</p>
 	           </div>
 	    {/volist}
     </div>
@@ -36,15 +36,9 @@
 </div>
 <script>
 	$(function(){
-		$('.boxs').on('click', function(){
-			var id = $(this).attr('data-pid');
-			$.getJSON('/pic', {'id':id}, function(json){
-				  layer.photos({
-				    photos: json
-				    ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
-				  });
-			}); 
-		});
-	});
-	
+		layer.photos({
+			  photos: '#layer-photos-demo',
+			  anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+		}); 
+	})
 </script>

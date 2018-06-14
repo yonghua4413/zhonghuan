@@ -84,7 +84,7 @@ class Pics extends Controller
             if(!$res){
                 $this->error('添加相片失败！请稍后再试');
             }else{
-                $this->success('提交成功','index');
+                $this->success('提交成功', '/admin/pics/addpic.html?id='.$data['pid']);
             }
         }
         return $this->fetch();

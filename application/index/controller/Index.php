@@ -205,13 +205,22 @@ class Index extends Controller
     public function pics()
     {
         $data = Db::name('pics')->where('is_del', 0)->select();
-        for ($i = 0; $i<count($data); $i++){
-            $res = Db::name('pic')->where(['pid' => $data[$i]['id'],'is_del' => 0])->select();
-            if(!$res){
-                $data[$i]['picsimg'] = '';
-            }else{
-                $data[$i]['picsimg'] = $res[0]['url'];
-                $data[$i]['pic'] = $res;
+        
+        if($data){
+            //提取相册id
+            $album_ids = array_column($data, 'id');
+            $map['pid']  = array('in',implode(',', $album_ids));
+            $map['is_del'] = 0;
+            $list = Db::name('pic')->where($map)->group('pid')->select();
+            foreach ($data as $k => $v){
+                $data[$k]['picimg'] = '';
+                if($list){
+                    foreach ($list as $key => $val){
+                        if($v['id'] == $val['pid']){
+                            $data[$k]['picimg'] = $val['url'];
+                        }
+                    }
+                }
             }
         }
         $this->assign('data',$data);
@@ -219,6 +228,53 @@ class Index extends Controller
             return $this->fetch('m_'.request()->action());
         }else{
             return $this->fetch();
+        }
+    }
+    
+    //相册
+    public function pic()
+    {
+        //提取相册id
+        $id = input('get.id');
+        $map['pid']  = $id;
+        $map['is_del'] = 0;
+        $list = Db::name('pic')->where($map)->select();
+        foreach ($list  as $k => $v){
+            if($list){
+                foreach ($list as $key => $val){
+                    if($v['id'] == $val['pid']){
+                        $list[$k]['picimg'] = $val['url'];
+                    }
+                }
+            }
+        }
+        
+        
+        if (isMobile() || $this->isipad()){
+            $this->assign('data',$list);
+            return $this->fetch('m_'.request()->action());
+        }else{
+            //获取相册信息
+            $info = Db::name('pics')->where(['id' => $id])->find();
+            if($info && $list){
+                $arr = [
+                    'title' => $info['name'],
+                    'id' => $id,
+                    'start' => 0,
+                    'data' => []
+                ];
+                foreach ($list as $k => $v){
+                    $arr['data'][$k] = [
+                        'alt' => $v['title'],
+                        'pid' => $v['pid'],
+                        'src' => $v['url'],
+                        'thumb' => $v['url']
+                    ];
+                }
+                $this->return_json($arr);
+            }else{
+                
+            }
         }
     }
     
@@ -437,5 +493,19 @@ class Index extends Controller
                 }
             }
         }
+    }
+    
+    /**
+     * 转化为json字符串
+     * @author 1034487709@qq.com
+     * @param unknown $arr
+     * @ruturn return_type
+     */
+    public function return_json($arr) {
+        header('Access-Control-Allow-Credentials: true');
+        header('Access-Control-Allow-Headers: X-Requested-With');
+        header('Content-Type: application/json');
+        header('Cache-Control: no-cache');
+        echo json_encode($arr);exit;
     }
 }
