@@ -223,6 +223,9 @@ class Index extends Controller
                 }
             }
         }
+        $empty = 0;
+        if(count($data) == 0) $empty = 1;
+        $this->assign('empty',$empty);
         $this->assign('data',$data);
         if (isMobile() || $this->isipad()){
             return $this->fetch('m_'.request()->action());
