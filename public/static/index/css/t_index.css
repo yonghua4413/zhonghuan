@@ -405,6 +405,8 @@ a:active {
 /***bottom***/
 
 .t-bottom {
+    position: fixed;
+    bottom: 0;
 	font-size: 14px;
 	color: #C1AB78;
 	height: 55px;

@@ -145,7 +145,7 @@ return [
         '__URL__' => 'http://www.zhonghuanguoji.cn/',
         '__INDEX__' => 'http://www.zhonghuanguoji.cn/index',
         '__ADMIN__' => 'http://www.zhonghuanguoji.cn/admin',
-        '__STATIC__' => 'http://www.zhonghuanguoji.cn/static',
+        '__STATIC__' => 'http://zh.tt.com/static',
         '__STATICI__' => 'http://zh.tt.com/static/index',
         '__STATICA__' => 'http://www.zhonghuanguoji.cn/static/admin',
     ],

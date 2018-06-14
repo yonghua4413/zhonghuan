@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="__STATICI__/css/z_zhuzhai.css" />
+<link rel="stylesheet" href="http://www.swiper.com.cn/dist/css/swiper.min.css" />
+<script type="text/javascript" src="__STATICI__/js/vue.min.js"></script>
+<script type="text/javascript" src="__STATICI__/js/vue-router.js"></script>
+<script type="text/javascript" src="http://www.swiper.com.cn/dist/js/swiper.js"></script>
+<style>
+.box{
+    width: 1000px;
+    height: 100%;
+}
+.boxs{
+	width:320px;
+	height:350px;
+	display:inline-block;
+	cursor: pointer;
+}
+</style>
+<div class="t-main" id="z_main" style="height: 320px; width: 100%;">
+	<div class="z_goodness" id="zGoodness">
+	<div class="z_good_circle">
+		<div class="z_circle" style="transform: translateX(520.5px);">
+	</div>
+	<center>
+	<div class="box" id="layer-photos-demo">
+		{volist name="data" id="vo"}
+	           <div class="boxs" data-id="{$vo.id}"><img src={if condition="$vo.picsimg eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.picsimg}{/if} alt="" style="width:320px;height:320px"><p>{$vo.name}</p>
+	           </div>
+	    {/volist}
+    </div>
+    </center>
+	<div class="center_word">
+	</div>
+	<div class="bottom_image">
+		<img src="__STATICI__/img/mouseIco.png" />
+	</div>
+</div>
+<script>
+$(function(){
+	/*
+	$('.boxs').on('click',function(){
+	var id = (this.getAttribute('data-id'));
+	$('#table tbody').height(document.body.clientHeight - $('.layui-nav').height() - 48);
+	var html ='<div style="margin: 0 auto;width: 400px; height: 300px;">';
+	html +='<div class="swiper-container gallery-top">';
+	html +='<div class="swiper-wrapper">';
+    html +='<div class="swiper-slide" style="background-image:url(__STATICI__/img/mouseIco.png)"></div>';
+	html +='</div>';
+	html +='<div class="swiper-button-next swiper-button-white"></div>';
+	html +='<div class="swiper-button-prev swiper-button-white"></div>';
+	html +='</div>';
+	html +='<div class="swiper-container gallery-thumbs">';
+	html +='<div class="swiper-wrapper">';
+    html +='<div class="swiper-slide" style="background-image:url(__STATICI__/img/mouseIco.png)"></div>';
+	html +='</div>';
+	html +='</div>';  
+	layer.open({
+		  type: 1,
+		  shade: 1.0,
+		  offset: '100px',
+		  title: '登记注册计算机', //不显示标题栏
+		  skin: 'layui-layer-rim', //加上边框
+		  area: ['600px', '540px'], //宽高
+		  content: html
+		});
+	});
+	*/
+	//调用示例
+	layer.photos({
+	  photos: '#layer-photos-demo'
+	  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+	}); 
+})
+</script>

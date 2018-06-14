@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="__STATICA__/css/jedate.css">
+<ul class="bread">
+    <li><a href="" class="icon-home"> 首页</a></li>
+    <li><span>首页管理</span></li>
+</ul>
+<div class="admin">
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加相册</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Pics/add')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                <div class="form-group">
+                    <div class="label">
+                        <label>相册名 <span style="color:red">*</span>：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" maxlength="80"  class="input w80" name="name" value="" style="width: 50%"/>
+                        <input type="hidden" name="id" value=""/>
+                        <div class="tipss"></div>
+                    </div>
+                </div>
+                <!--！！！-->
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" onclick="return check(this.form)">添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel admin-panel margin-top">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>相册列表</strong></div>
+        <div class="body-content">
+            <form method="post" class="form-x" action="{:url('admin/Home/update')}" enctype="multipart/form-data">
+                <input type="hidden" name="id"  value="" />
+                {volist name="data" id="vo"}
+		            <div style="height: 320px;width: 320px;float: left;margin-left:5px ">
+	                    <a href="{:url('admin/Pics/addpic')}?id={$vo.id}"><img src={if condition="$vo.picsimg eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.picsimg}{/if} style="height: 100%;width: 320px"></a>
+	                    <center><label>{$vo.name}&nbsp&nbsp&nbsp&nbsp&nbsp</label><a style="padding:0px;" class="button border-red" href="{:url('admin/Pics/delpics')}?id={$vo.id}"><span class="icon-trash-o"></span> 删除</a>
+	                    </center>
+	                </div>
+          		{/volist}
+            </form>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/layer/layer.js"></script>
+<script src="__STATIC__/index/js/jquery-2.0.3.js"></script>
+<!--<script>-->
+    <!--function check(form) {-->
+        <!--if(form.title.value.trim() == '') {-->
+            <!--layer.msg("请输入标题!");-->
+            <!--form.title.focus();-->
+            <!--return false;-->
+        <!--}-->
+        <!--return true;-->
+    <!--}-->
+<!--</script>-->

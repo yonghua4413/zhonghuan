@@ -201,6 +201,27 @@ class Index extends Controller
         }
     }
     
+    //相册
+    public function pics()
+    {
+        $data = Db::name('pics')->where('is_del', 0)->select();
+        for ($i = 0; $i<count($data); $i++){
+            $res = Db::name('pic')->where(['pid' => $data[$i]['id'],'is_del' => 0])->select();
+            if(!$res){
+                $data[$i]['picsimg'] = '';
+            }else{
+                $data[$i]['picsimg'] = $res[0]['url'];
+                $data[$i]['pic'] = $res;
+            }
+        }
+        $this->assign('data',$data);
+        if (isMobile() || $this->isipad()){
+            return $this->fetch('m_'.request()->action());
+        }else{
+            return $this->fetch();
+        }
+    }
+    
     //商铺页
     public function shangpu()
     {
