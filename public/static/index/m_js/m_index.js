@@ -39,23 +39,32 @@ $(function(){
 		case "uanjs.html":
 		    $(".headnav .navul .navli").eq(1).children("a").css("color","white");
 		break;
+		case "uanxm.html":
+		    $(".headnav .navul .navli").eq(1).children("a").css("color","white");
+		break;
+		case "anzgs.html":
+		    $(".headnav .navul .navli").eq(1).children("a").css("color","white");
+		break;
 		case "uzhai.html":
-			$(".headnav .navul .navli").eq(5).children("a").css("color","white");
+		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
 		break;
 		case "angpu.html":
 		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
-		break;
+		break;	
 		case "/rxhx.html":
 		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
-		break;
+		break;	
+		case "/pics.html":
+		    $(".headnav .navul .navli").eq(5).children("a").css("color","white");
+		break;	
 		case "fid/2.html":
-		    $(".headnav .navul .navli").eq(9).children("a").css("color","white");
-		break;
-		case "women.html":
-		    $(".headnav .navul .navli").eq(11).children("a").css("color","white");
+		    $(".headnav .navul .navli").eq(10).children("a").css("color","white");
 		break;
 		case "uanzp.html":
-		    $(".headnav .navul .navli").eq(10).children("a").css("color","white");
+		    $(".headnav .navul .navli").eq(11).children("a").css("color","white");
+		break;
+		case "women.html":
+		    $(".headnav .navul .navli").eq(12).children("a").css("color","white");
 		break;
 	};
 })
