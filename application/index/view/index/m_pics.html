@@ -1,1 +1,127 @@
-{__NOLAYOUT__}
+<!DOCTYPE html> {__NOLAYOUT__}
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{$home['title']}</title>
+		<meta name="keywords" content="{$home['keywords']}" />
+		<meta name="description" content="{$home['desc']}" />
+		<style>
+			.yhjthuadong img{
+				width:100%;
+				height:auto;
+			}
+		.box{
+		    width: 80%;
+		    height: 100%;
+		}
+		.boxs{
+			width:2.82rem;
+			height:2.82rem;
+			display:inline-block;
+			cursor: pointer;
+		}
+		</style>
+	</head>
+	<link rel="stylesheet" href="__STATICI__/m_css/m_index.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_main.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<link rel="stylesheet" href="__STATIC__/layer/skin/default/layer.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
+
+	<body>
+		<div class="m-header">
+			<div class="hdlog row">
+				<a href="{:URL}">
+					<img src="{$home.img1}" height="100%" alt="中环国际公司logo"/>
+				</a>
+				<span class="headponnum">|&nbsp;&nbsp;{$tel.titd}</span>
+			</div>
+			<div class="headnav column">
+				<div class="test">  
+				    <ul class="navul row">  
+			            <li class="navli"><a href="/">首页</a><span class="z_rightXian">|</span></li>
+			            <li class="navli navlip"><a href="#">益华集团 </a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanjs.html">{$con1.0.title}</a></li> 
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanxm.html">{$con1.1.title} </a></li>  
+	                            <li class="navli navlip"><a id="ttmain" href="/yihuajituanzgs.html">{$con1.2.title} </a></li>  
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li> 
+		            	<li class="navli navlip"><a href="#">中环国际</a>  
+		                    <ul class="navtt">  
+	                            <li class="navli navlip"><a id="ttmain" href="/zhuzhai.html">住宅 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/shangpu.html">商铺 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/rxhx.html">热销户型 </a></li>
+								<li class="navli navlip"><a id="ttmain" href="/pics.html">相册展示 </a></li>
+		                    </ul>  
+		                    <span class="z_rightXian">|</span>
+		            	</li>  
+						<li class="navli navlip"><a href="/xwzx/fid/2.html">新闻中心 </a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/yihuajituanzp.html">{$con1.3.title}</a><span class="z_rightXian">|</span></li>
+		                <li class="navli navlip"><a href="/lianxiwomen.html">商务合作</a><span class="z_rightXian">|</span></li>
+				    </ul>  
+				</div>
+			</div>
+		</div>
+
+		<div class="m-newscont column">
+			<div class="box" style="text-align: left;" id="layer-photos-demo">
+				<br><p style="text-align:center">相册展示</p><br>
+				<center>
+				{volist name="data" id="vo"}
+			           <div class="boxs"  data-pid="{$vo.id}"><img src={if condition="$vo.picimg eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.picimg}{/if} alt="" style="width:2.82rem;height:2.82rem"><p style="text-align: center;">{$vo.name}</p>
+			           </div>
+			    {/volist}
+			    </center>
+		    </div>
+		</div>
+
+		<div class="m-bottom row">
+			<div class="bnavitem row">
+				<a href="{:URL}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/homicon.png" />首页
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="{:URL('/bname')}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/baonameicon.png" />特惠报名
+					</div>
+				</a>
+			</div>
+			<div class="bnavitem row">
+				<a href="tel:{$baom.titd}">
+					<div class="btn-nav column">
+						<img src="__STATICI__/m_img/lianxiwomicon.png" /> 联系我们
+					</div>
+				</a>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				var empty = '{$empty}';
+				if(empty == 1){
+					layer.alert('暂无相册，敬请期待');
+					return;
+				}
+				$('.boxs').on('click', function(){
+					var id = $(this).attr('data-pid');
+					$.getJSON('/pic', {'id':id}, function(json){
+						  layer.photos({
+						    photos: json
+						    ,anim: 0 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+						  });
+					}); 
+				});
+			});
+		</script>
+	</body>
+
+</html>

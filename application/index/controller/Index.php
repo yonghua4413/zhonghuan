@@ -251,33 +251,26 @@ class Index extends Controller
                 }
             }
         }
-        
-        
-        if (isMobile() || $this->isipad()){
-            $this->assign('data',$list);
-            return $this->fetch('m_'.request()->action());
-        }else{
-            //获取相册信息
-            $info = Db::name('pics')->where(['id' => $id])->find();
-            if($info && $list){
-                $arr = [
-                    'title' => $info['name'],
-                    'id' => $id,
-                    'start' => 0,
-                    'data' => []
+        //获取相册信息
+        $info = Db::name('pics')->where(['id' => $id])->find();
+        if($info && $list){
+            $arr = [
+                'title' => $info['name'],
+                'id' => $id,
+                'start' => 0,
+                'data' => []
+            ];
+            foreach ($list as $k => $v){
+                $arr['data'][$k] = [
+                    'alt' => $v['title'],
+                    'pid' => $v['pid'],
+                    'src' => $v['url'],
+                    'thumb' => $v['url']
                 ];
-                foreach ($list as $k => $v){
-                    $arr['data'][$k] = [
-                        'alt' => $v['title'],
-                        'pid' => $v['pid'],
-                        'src' => $v['url'],
-                        'thumb' => $v['url']
-                    ];
-                }
-                $this->return_json($arr);
-            }else{
-                
             }
+            $this->return_json($arr);
+        }else{
+            
         }
     }
     
