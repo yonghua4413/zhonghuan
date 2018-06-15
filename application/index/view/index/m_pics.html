@@ -72,12 +72,10 @@
 		<div class="m-newscont column">
 			<div class="box" style="text-align: left;" id="layer-photos-demo">
 				<br><p style="text-align:center">相册展示</p><br>
-				<center>
 				{volist name="data" id="vo"}
 			           <div class="boxs"  data-pid="{$vo.id}"><img src={if condition="$vo.picimg eq ''"}"__STATIC__/admin/img/pics.jpg"{else /}{$vo.picimg}{/if} alt="" style="width:2.82rem;height:2.82rem"><p style="text-align: center;">{$vo.name}</p>
 			           </div>
 			    {/volist}
-			    </center>
 		    </div>
 		</div>
 
