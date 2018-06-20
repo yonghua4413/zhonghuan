@@ -28,8 +28,14 @@
 .test ul li ul{  
     display: none;  
 }  
-.test li:hover ul{  
+.test li:hover ul{
     display:block;  
+}
+.tete{
+	-webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;	
 }
 .navtt a {
 	width: 100%;

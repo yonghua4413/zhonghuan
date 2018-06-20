@@ -242,15 +242,6 @@ class Index extends Controller
         $map['pid']  = $id;
         $map['is_del'] = 0;
         $list = Db::name('pic')->where($map)->select();
-        foreach ($list  as $k => $v){
-            if($list){
-                foreach ($list as $key => $val){
-                    if($v['id'] == $val['pid']){
-                        $list[$k]['picimg'] = $val['url'];
-                    }
-                }
-            }
-        }
         //获取相册信息
         $info = Db::name('pics')->where(['id' => $id])->find();
         if($info && $list){

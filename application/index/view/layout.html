@@ -220,10 +220,13 @@
 	<!-- 导航脚本 -->
     <script type="text/javascript">
         $(function() {
+        	//$(".second-nav").fadeIn();
+            //$(".second-nav").fadeIn("slow");
+            //$(".second-nav").fadeIn(3000);
             var _this1 = null;
             $('.nav>li').hover(function() {
                 _this1 = $(this);
-                _this1.find('.second-nav').show();
+                _this1.find(".second-nav").fadeIn(1200);
                 var _this2 = null;
                 _this1.find('.second-nav').find('li').hover(function() {
                     _this2 = $(this);
