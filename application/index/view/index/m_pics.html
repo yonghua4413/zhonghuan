@@ -26,10 +26,12 @@
 	<link rel="stylesheet" href="__STATICI__/m_css/m_main.css" />
 	<link rel="stylesheet" href="__STATICI__/m_css/anmition.css" />
 	<link rel="stylesheet" href="__STATICI__/m_css/m_yihuajt.css" />
+	<link rel="stylesheet" href="__STATICI__/m_css/swiper.min.css" />
 	<link rel="stylesheet" href="__STATIC__/layer/skin/default/layer.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script type="text/javascript" src="__STATICI__/m_js/jquery-2.1.0.js"></script>
 	<script type="text/javascript" src="__STATICI__/m_js/m_index.js"></script>
+	<script type="text/javascript" src="__STATICI__/m_js/swiper.js"></script>
 	<script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
 
 	<body>
@@ -111,12 +113,42 @@
 				}
 				$('.boxs').on('click', function(){
 					var id = $(this).attr('data-pid');
-					$.getJSON('/pic', {'id':id}, function(json){
-						  layer.photos({
-						    photos: json,
-						    anim: 0, //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
-						    width:'1000px'
-						  });
+					
+					$.getJSON('/pic',{"id":id}, function(json){
+						//页面文件
+						html = '<html lang="en"><head><meta charset="utf-8"><title>Swiper demo</title>';
+						html += '<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">';
+						html += '<style>html, body {position: relative;height: 100%;}body {background: #000;';
+						html += 'font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color:#000;margin: 0;padding: 0;}';
+						html += '.swiper-container {width: 100%;height: 300px;margin-left: auto;margin-right: auto;}';
+						html += '.swiper-slide {background-size: cover;background-position: center;}';
+						html += '.gallery-top {height: 80%;width: 100%;}.gallery-thumbs {height: 20%;box-sizing: border-box;padding: 10px 0;}';
+						html += '.gallery-thumbs .swiper-slide {height: 100%;opacity: 0.4;}';
+						html += '.gallery-thumbs .swiper-slide-active {opacity: 1;}</style></head><body>';
+						html += '<div class="swiper-container gallery-top"><div class="swiper-wrapper">';
+						for(var i = 0; i<json.data.length; i++){
+							html += '<div class="swiper-slide" style="background-image:url('+ json.data[i].src +')"></div>'
+						}
+						html += '</div><div class="swiper-button-next swiper-button-white"></div><div class="swiper-button-prev swiper-button-white"></div>';
+						html += '</div><div class="swiper-container gallery-thumbs"><div class="swiper-wrapper">';
+						for(var i = 0; i<json.data.length; i++){
+							html += '<div class="swiper-slide" style="background-image:url('+ json.data[i].src +')"></div>'
+						}
+						html += '</div></div><script>';
+						html += "var galleryTop = new Swiper('.gallery-top', {spaceBetween: 10,loop:true,loopedSlides: 5,navigation: {";
+						html += "nextEl: '.swiper-button-next',prevEl: '.swiper-button-prev',}, });";
+						html += "var galleryThumbs = new Swiper('.gallery-thumbs', {spaceBetween: 10,slidesPerView: 4,";
+						html += "touchRatio: 0.2,loop: true,loopedSlides: 5,slideToClickedSlide: true,});";
+						html += "galleryTop.controller.control = galleryThumbs;galleryThumbs.controller.control = galleryTop;";
+						html += '</' + 'script></body></html>';
+						//页面层
+						layer.open({
+						  type: 1,
+						  title: '相册查看',
+						  skin: 'layui-layer-rim', //加上边框
+						  area: ['90%', '70%'], //宽高
+						  content: html
+						});
 					}); 
 				});
 			});
