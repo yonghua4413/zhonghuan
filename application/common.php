@@ -30,6 +30,8 @@ Route::rule('shangpu','index/index/shangpu');
 
 Route::rule('pics','index/index/pics');
 
+Route::rule('recruit','index/index/recruit');
+
 Route::rule('pic','index/index/pic');
 
 Route::rule('yihuajituanjs','index/index/yihuajituanjs');
