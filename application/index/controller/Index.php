@@ -90,6 +90,18 @@ class Index extends Controller
             return $this->fetch();
         }
     }
+    
+    //益华集团
+    public function recruit()
+    {
+        $data = Db::name('position')->order('date_time')->select();
+        $bg = Db::name('bg')->where('id',1)->find();
+        $con1 = Db::name('con')->select();
+        $this->assign('data',$data);
+        $this->assign('bg',$bg);
+        $this->assign('con1',$con1);
+        return $this->fetch();
+    }
 
     //益华集团
     public function yihuajituan()
