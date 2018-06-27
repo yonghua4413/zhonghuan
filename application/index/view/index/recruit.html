@@ -23,9 +23,24 @@
 		<span class="good_msg">{$con1.3.title}</span>
 		<div class="z_good_xaXian"></div>
 		<span class="z_good_introduce_z">{$con1.3.content}</span>
-		<!--<span class="good_msg">{{msg}}</span>
-		<div class="z_good_xaXian"></div>
-		<span class="z_good_introduce">{{introduce}}</span>
-		<img v-bind:src="imgSrc" class="jituanyj_img" alt="集团发展愿景" />-->
+	</div>
+	<div class="z_zhaoping_msg" style="display: block;">
+		<div class="z_zhaoping_zhiwei">
+			<ul>
+			{volist name="data" id="vo"}
+			<li class="row bianse bubianse guoduLeft">
+				<a href="/rencaizp/pid/{$vo.id}.html" class="column" style="">
+					<div class="row z_zhaopinLiPosi">
+						<span class="z_zhiwei_mc">{$vo.name}</span>
+						<div class="z_zhao_dan">
+							<span class="z_zhao_ren">{$vo.num}</span>人
+						</div>
+					</div>
+					<span class="z_zhao_jie">{$vo.miaosu}</span>
+				</a>
+			</li>
+			{/volist}
+			</ul>
+		</div>
 	</div>
 </center>
