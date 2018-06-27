@@ -69,6 +69,28 @@
 				<span>{$con1.3.content}</span>
 			</div>
 		</div>
+		<div class="z_jtzpxx" style="display: block;">
+			<ul>
+			{volist name="data" id="vo"}
+			<li>
+				<a href="/rencaizp/pid/{$vo.id}.html" class="row">
+					<div class="cloumn" style="width: 100%; height: 100%; align-items: stretch; -webkit-align-items: stretch;">
+						<div class="row" style="margin-top: 0.1rem;">
+							<span class="z_zhaozpzw">{$vo.name}</span>
+							<div class="z_zhaozprs row">
+								<span class="z_zhaozprsNum">{$vo.num}</span>
+								<span class="z_zhaozprsdw">人</span>
+							</div>
+						</div>
+						<div class="z_zhaozpxq">
+							<span class="z_zhaozpxqSpan">{$vo.miaosu}</span>
+						</div>
+					</div>
+				</a>
+			</li>
+			{/volist}
+			</ul>
+		</div>
 
 		<div class="m-bottom row">
 			<div class="bnavitem row">
@@ -100,5 +122,4 @@
 			$("table").css("width","100%");
 	    });  
 	</script>
-
 </html>
